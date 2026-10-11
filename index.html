@@ -784,7 +784,7 @@ p,li{text-wrap:pretty}
 /* ================= Hero als Scroll-Video ================= */
 body>section.sv{position:relative;height:270vh;padding:0!important;margin:0!important;background:var(--bg)}
 .sv-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
-.sv-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0b0c}
+.sv-v{position:absolute;inset:0;width:100%;height:100%;display:block;background:#0a0b0c url(media/hero-poster.jpg) center/cover no-repeat}
 .sv-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,11,12,.84) 0%,rgba(10,11,12,.5) 34%,rgba(10,11,12,0) 60%),linear-gradient(0deg,rgba(10,11,12,.55) 0%,transparent 34%),linear-gradient(180deg,rgba(10,11,12,.55) 0%,transparent 18%)}
 .sv-copy{position:absolute;left:clamp(20px,6.5vw,110px);bottom:clamp(56px,10vh,120px);width:min(640px,calc(100vw - 40px));height:0}
 .sv-b{position:absolute;left:0;bottom:0;width:100%;opacity:0;visibility:hidden;will-change:opacity,transform}
@@ -862,35 +862,6 @@ body>section.why{padding-bottom:clamp(40px,6vw,96px)}
 .cta-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
 
-/* Hero: Video läuft von selbst, Aussagen als Untertitel */
-body>section.sv{height:100vh!important;height:100svh!important;min-height:600px}
-.sv-pin{position:relative;height:100%}
-.sv-copy{height:auto;bottom:clamp(56px,11vh,120px);width:min(620px,calc(100vw - 40px))}
-.sv-cap{position:absolute;right:clamp(20px,5vw,88px);bottom:clamp(56px,11vh,120px);width:min(400px,calc(100vw - 40px))}
-.sv-steps{position:static;transform:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 18px}
-.sv-steps li{width:auto;height:3px}
-.sv-steps li::after{transform:scaleX(var(--f,0));transform-origin:left}
-.sv-caps{position:relative;min-height:150px}
-.sv-c{position:absolute;left:0;right:0;bottom:0;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .9s cubic-bezier(.22,1,.36,1);pointer-events:none}
-.sv-c.on{opacity:1;transform:none}
-.sv-c .sv-t{font-size:clamp(28px,2.6vw,42px);line-height:1.04}
-.sv-c .sv-s{font-size:16.5px;margin-top:12px;max-width:none}
-.sv-replay{all:unset;cursor:pointer;margin-top:16px;display:inline-flex;gap:8px;align-items:center;font:700 14px/1 var(--ui);letter-spacing:.06em;color:rgba(247,245,239,.85);padding:10px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(247,245,239,.35)}
-.sv-replay[hidden]{display:none}
-.sv-replay:hover{color:#fff;box-shadow:inset 0 0 0 1px #fff}
-.sv-replay:focus-visible{outline:2px solid #D6523A;outline-offset:3px}
-.sv-shade{background:linear-gradient(90deg,rgba(10,11,12,.82) 0%,rgba(10,11,12,.45) 36%,rgba(10,11,12,0) 58%),linear-gradient(0deg,rgba(10,11,12,.78) 0%,rgba(10,11,12,.2) 34%,transparent 52%),linear-gradient(180deg,rgba(10,11,12,.55) 0%,transparent 18%)!important}
-@media (max-width:1100px){.sv-cap{display:none}}
-@media (max-width:900px){
-  .sv-copy{top:92px;bottom:auto}
-  .sv-cap{display:block;left:20px;right:20px;width:auto;bottom:22px}
-  .sv-caps{min-height:118px}
-  .sv-c .sv-t{font-size:26px}.sv-c .sv-s{font-size:15px}
-  .sv-copy .btn.ghost{display:none}
-  .sv-cue{display:none}
-  .sv-shade{background:linear-gradient(180deg,#0a0b0c 0%,#0a0b0c 42%,rgba(10,11,12,0) 54%),linear-gradient(0deg,rgba(10,11,12,.85) 0%,transparent 30%)!important}
-}
-
 /* Responsive */
 @media (max-width:900px){
   .proof .wrap,.who-row,.price-grid,.contact,.loc{grid-template-columns:1fr}
@@ -929,7 +900,7 @@ DIRECTION CONTRACT
 World: aerial freight line at night. Cream type on coal black, one signal-red accent (#D6523A). Condensed display caps for headlines only; body in sentence case.
 Signature: the rail. Hero axis (client brief, fixed) continues as the service route whose track fills red on scroll, and as the distance map from Detmold.
 Composition: every section a different family (statement, index rows, route, two-way split, price sheet + calculator, numbered steps, grouped columns, line map, open Q&A, form).
-Lean page: no duplicates (no SLA block, no fit list, no integrations section, no second hall photo). No order deadline and no next-day promise as a standard; the message is "we pack and ship for you". Prices shown as lowest "ab" tier. Hero: POV video (warehouse to doorstep) autoplays once at 0.8x, headline and CTAs fixed, three statements run as captions with step bars; replay button at the end; pauses offscreen. Photography (team, packing, container, conveyor) in the situation cards and as the services header; rounded like the light sheets. Motion: the "Why us" film (51 s, Apple-like restraint: one lit hero parcel in CSS 3D growing into a 3D field of parcels, container to pallet to carton, words flying through space, warm dawn at the turn, dot map of Germany with next-day wave, iOS-style call banner from "Detmold" (no names, no device), small print dissolving, channel marquees; words fade up from blur; scenes cross-dissolve into depth). No shake, flashes, pulse line or sound. Route fill + station lights.
+Lean page: no duplicates (no SLA block, no fit list, no integrations section, no second hall photo). No order deadline and no next-day promise as a standard; the message is "we pack and ship for you". Prices shown as lowest "ab" tier. Hero: scroll-driven POV image sequence (96 WebP frames on canvas, coarse frames load first so scrubbing works immediately), three statements at the matching frames. Photography (team, packing, container, conveyor) in the situation cards and as the services header; rounded like the light sheets. Motion: the "Why us" film (51 s, Apple-like restraint: one lit hero parcel in CSS 3D growing into a 3D field of parcels, container to pallet to carton, words flying through space, warm dawn at the turn, dot map of Germany with next-day wave, iOS-style call banner from "Detmold" (no names, no device), small print dissolving, channel marquees; words fade up from blur; scenes cross-dissolve into depth). No shake, flashes, pulse line or sound. Route fill + station lights.
 Story: answer a first-time visitor's questions (pain first; never personal names or fake devices in the film).
 Page order follows the buying mind: recognise (hero, film, figures, "Wo stehst du gerade?" situation chooser), understand (services diorama, shipping, location), trust (commitments, security), decide (start + integrations, prices, FAQ, request). Light sections are rounded sheets on the dark stage. Textured cardboard material on every 3D box; process diorama (slab, racks, packing table, truck, returns bin, glowing route, upright labels); plain-language copy (no "cut-off" jargon). Dark base broken by light paper sections (solutions, shipping, security, FAQ) and a red CTA block; 3D scenes in tabs, isometric warehouse zones in the process, dot map at location; no price calculator. Enterprise structure (KPI band, solutions tabs, sticky process, SLA cards, comparison table, security, column footer) with a fixed left guide whose red dot travels to the active section; never claim market leadership (no price calculator). CTA red block uses #BF432C for AA contrast. Mobile: film scenes centred, comparison table stacked; film transcript is screen-reader only. Section headings in sentence case (caps only in the hero). Guide labels appear on hover only. (for whom, what, why us) via setup/payoff, not the parcel's journey.
 Voice: German "du", short native lines, values modern, fast, personal, solution-minded; working claim "Läuft." (never claim "we ship our own goods").
@@ -963,24 +934,21 @@ Rules: no eyebrows below the hero, no dashes as separators, no shipping/material
 <section class="sv" id="top" aria-labelledby="sv-h">
   <span class="sentinel" aria-hidden="true"></span>
   <div class="sv-pin">
-    <video class="sv-v" id="sv-v" muted playsinline autoplay preload="auto" disablepictureinpicture poster="media/hero-poster.jpg"
-      aria-label="Ein Paket wird aus der Lagerhalle bis an die Haustür eines Kunden getragen"></video>
+    <canvas class="sv-v" id="sv-cv" role="img" aria-label="Ein Paket wird aus der Lagerhalle bis an die Haustür eines Kunden getragen"></canvas>
     <div class="sv-shade" aria-hidden="true"></div>
     <div class="sv-copy">
-      <h1 class="sv-h" id="sv-h"><span data-i18n="hl1">Lagern.</span> <span data-i18n="hl2">Packen.</span> <span data-i18n="hl3">Versenden.</span> <em data-i18n="hl4">Läuft.</em></h1>
-      <p class="sv-sub" data-i18n="sv_sub">Fulfillment aus der Mitte Deutschlands für Online-Händler und Seller aus China. Mehr als 100.000 Pakete im Jahr.</p>
-      <div class="sv-cta"><a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a><a class="btn ghost" href="#preise" data-i18n="cta_calc">Preise ansehen</a></div>
-    </div>
-    <div class="sv-cap">
-      <ol class="sv-steps" aria-hidden="true"><li></li><li></li><li></li></ol>
-      <div class="sv-caps">
-        <div class="sv-c" data-in="0" data-out=".36"><p class="sv-t" data-i18n="sv_b1">Deine Ware liegt in Detmold.</p><p class="sv-s" data-i18n="sv_b1s">Jeder Wareneingang wird gezählt, Abweichungen belegen wir mit Fotos.</p></div>
-        <div class="sv-c" data-in=".36" data-out=".68"><p class="sv-t" data-i18n="sv_b2">Wir packen für dich.</p><p class="sv-s" data-i18n="sv_b2s">In deiner Verpackung, mit Beilage und Lieferschein.</p></div>
-        <div class="sv-c" data-in=".68" data-out="1.01"><p class="sv-t" data-i18n="sv_b3">Und verschicken für dich.</p><p class="sv-s" data-i18n="sv_b3s">Mit deinem Versandvertrag oder mit unserem. Nach Deutschland, Österreich, in die Schweiz und in die EU.</p></div>
+      <div class="sv-b sv-open" data-in="0" data-out=".16">
+        <h1 class="sv-h" id="sv-h"><span data-i18n="hl1">Lagern.</span> <span data-i18n="hl2">Packen.</span> <span data-i18n="hl3">Versenden.</span> <em data-i18n="hl4">Läuft.</em></h1>
+        <p class="sv-sub" data-i18n="sv_sub">Fulfillment aus der Mitte Deutschlands für Online-Händler und Seller aus China. Mehr als 100.000 Pakete im Jahr.</p>
+        <div class="sv-cta"><a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a><a class="btn ghost" href="#preise" data-i18n="cta_calc">Preise ansehen</a></div>
       </div>
-      <button type="button" class="sv-replay" id="sv-replay" hidden><span aria-hidden="true">↻</span> <span data-i18n="sv_replay">Nochmal ansehen</span></button>
+      <div class="sv-b" data-in=".24" data-out=".44"><p class="sv-t" data-i18n="sv_b1">Deine Ware liegt in Detmold.</p><p class="sv-s" data-i18n="sv_b1s">Jeder Wareneingang wird gezählt, Abweichungen belegen wir mit Fotos.</p></div>
+      <div class="sv-b" data-in=".5" data-out=".7"><p class="sv-t" data-i18n="sv_b2">Wir packen für dich.</p><p class="sv-s" data-i18n="sv_b2s">In deiner Verpackung, mit Beilage und Lieferschein.</p></div>
+      <div class="sv-b" data-in=".78" data-out="1"><p class="sv-t" data-i18n="sv_b3">Und verschicken für dich.</p><p class="sv-s" data-i18n="sv_b3s">Mit deinem Versandvertrag oder mit unserem. Nach Deutschland, Österreich, in die Schweiz und in die EU.</p>
+        <div class="sv-cta"><a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a></div></div>
     </div>
     <div class="sv-cue" aria-hidden="true"><i></i><span data-i18n="sv_cue">Scrollen</span></div>
+    <ol class="sv-steps" aria-hidden="true"><li></li><li></li><li></li></ol>
   </div>
 </section>
 
@@ -1879,22 +1847,34 @@ form.addEventListener("submit",function(e){
 });
 $("f-t").value=String(Date.now());
 
-/* Hero: Video spielt einmal von selbst, die drei Aussagen laufen als Untertitel mit */
+/* Hero: Scroll steuert eine Bildfolge (96 Einzelbilder) auf einem Canvas.
+   Grobe Bilder laden zuerst, damit das Scrubben sofort funktioniert; feinere Zwischenbilder kommen nach. */
 (function(){
-  var sv=document.querySelector(".sv"),v=$("sv-v");if(!sv||!v)return;
-  var caps=[].slice.call(sv.querySelectorAll(".sv-c")),steps=[].slice.call(sv.querySelectorAll(".sv-steps li")),rep=$("sv-replay"),started=false,RATE=.8;
-  function paint(p){caps.forEach(function(c,i){var a=+c.dataset.in,b=+c.dataset.out;c.classList.toggle("on",p>=a&&p<b);
-    if(steps[i])steps[i].style.setProperty("--f",Math.max(0,Math.min(1,(p-a)/(Math.min(b,1)-a))))})}
-  v.src=innerWidth<900?"media/hero-960.mp4":"media/hero-1600.mp4";
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();paint(.99);return}
-  function tick(){if(v.duration)paint(v.currentTime/v.duration);if(!v.paused&&!v.ended)requestAnimationFrame(tick)}
-  v.addEventListener("loadedmetadata",function(){v.playbackRate=RATE});
-  v.addEventListener("play",function(){started=true;v.playbackRate=RATE;rep.hidden=true;requestAnimationFrame(tick)});
-  v.addEventListener("ended",function(){paint(.99);rep.hidden=false});
-  rep.addEventListener("click",function(){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){})});
-  if("IntersectionObserver" in window)new IntersectionObserver(function(es){
-    if(es[0].isIntersecting){if(started&&v.paused&&!v.ended){var p=v.play();if(p&&p.catch)p.catch(function(){})}}else if(!v.paused)v.pause()},{threshold:.25}).observe(sv);
-  paint(0);var p=v.play();if(p&&p.catch)p.catch(function(){rep.hidden=false});
+  var sv=document.querySelector(".sv"),cv=$("sv-cv");if(!sv||!cv)return;
+  var N=96,dir=innerWidth<900?"m":"d",imgs=new Array(N),ok=new Array(N),ctx=cv.getContext("2d"),
+      beats=[].slice.call(sv.querySelectorAll(".sv-b")),steps=[].slice.call(sv.querySelectorAll(".sv-steps li")),
+      F=.05,cur=0,target=0,raf=0,drawn=-1;
+  function src(i){return "media/f/"+dir+"/"+("00"+(i+1)).slice(-3)+".webp"}
+  function load(i){if(imgs[i])return;var im=new Image();im.decoding="async";im.onload=function(){ok[i]=true;if(Math.abs(i-Math.round(cur))<6)req(true)};im.src=src(i);imgs[i]=im}
+  /* Ladereihenfolge: erstes Bild, dann jedes 16., 8., 4., 2. und zuletzt alle */
+  var order=[0];[16,8,4,2,1].forEach(function(st){for(var i=0;i<N;i+=st)if(order.indexOf(i)<0)order.push(i)});order.push(N-1);
+  var q=0;function pump(){for(var k=0;k<6&&q<order.length;k++,q++)load(order[q]);if(q<order.length)setTimeout(pump,60)}
+  function size(){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);drawn=-1}
+  function nearest(i){for(var o=0;o<N;o++){if(ok[i-o])return i-o;if(ok[i+o])return i+o}return -1}
+  function draw(i){var k=nearest(i);if(k<0||k===drawn)return;var im=imgs[k],cw=cv.width,ch=cv.height,s=Math.max(cw/im.naturalWidth,ch/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
+    ctx.drawImage(im,(cw-w)/2,(ch-h)/2,w,h);drawn=k}
+  function prog(){var h=sv.offsetHeight-innerHeight;return h>0?Math.min(1,Math.max(0,-sv.getBoundingClientRect().top/h)):0}
+  function paint(p){
+    beats.forEach(function(b){var a=+b.dataset.in,o=+b.dataset.out,k=Math.min(a<=0?1:(p-a)/F,o>=1?1:(o-p)/F);k=Math.max(0,Math.min(1,k));
+      b.style.opacity=k;b.style.visibility=k>.01?"visible":"hidden";b.style.transform="translateY("+((1-k)*(p<a+F?28:-28))+"px)"});
+    steps.forEach(function(li,i){var a=[.24,.5,.78][i];li.style.setProperty("--f",Math.max(0,Math.min(1,(p-a+.08)/.2)))});
+    sv.style.setProperty("--p",p)}
+  function tick(){raf=0;var p=prog();paint(p);target=p*(N-1);cur+=(target-cur)*.35;if(Math.abs(target-cur)<.05)cur=target;
+    draw(Math.round(cur));if(cur!==target)raf=requestAnimationFrame(tick)}
+  function req(force){if(force)drawn=-1;if(!raf)raf=requestAnimationFrame(tick)}
+  size();
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){sv.classList.add("still");load(0);imgs[0].onload=function(){ok[0]=true;draw(0)};return}
+  pump();addEventListener("scroll",function(){req()},{passive:true});addEventListener("resize",function(){size();req(true)});paint(prog());req();
 })();
 
 /* Falls Autoplay blockiert wurde: stumm erneut starten */
