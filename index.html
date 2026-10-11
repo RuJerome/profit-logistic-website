@@ -1875,7 +1875,7 @@ $("f-t").value=String(Date.now());
   function req(force){if(force)drawn=-1;if(!raf)raf=requestAnimationFrame(tick)}
   size();
   if(matchMedia("(prefers-reduced-motion: reduce)").matches){sv.classList.add("still");load(0);imgs[0].onload=function(){ok[0]=true;draw(0)};return}
-  (document.readyState==="complete"?pump():addEventListener("load",function(){setTimeout(pump,50)}));addEventListener("scroll",function(){req()},{passive:true});addEventListener("resize",function(){size();req(true)});paint(prog());req();
+  for(;q<COARSE;q++)load(order[q]);(document.readyState==="complete"?pump():addEventListener("load",function(){setTimeout(pump,50)}));addEventListener("scroll",function(){req()},{passive:true});addEventListener("resize",function(){size();req(true)});paint(prog());req();
 })();
 
 /* Falls Autoplay blockiert wurde: stumm erneut starten */
