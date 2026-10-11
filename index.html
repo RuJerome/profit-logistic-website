@@ -1,0 +1,1882 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Profit Logistic | Fulfillment aus Detmold</title>
+<meta name="description" content="Lagerung, Pick &amp; Pack, Versand und Retouren aus Detmold. Für Online-Händler aus DACH und Cross-Border-Seller aus China.">
+<meta name="theme-color" content="#0a0b0c">
+<link rel="preload" as="image" href="media/hero-poster.jpg">
+<style>
+/* Schriften: zuerst selbst gehostetes Oswald (fonts/ ablegen, OFL), sonst lokal installierte Alternativen. Keine externen Requests. */
+@font-face{font-family:Display;font-weight:800;font-display:block;ascent-override:99.9%;descent-override:20.1%;line-gap-override:0%;
+  src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald ExtraBold"),local("Oswald-ExtraBold"),local("Bebas Neue"),local("AvenirNextCondensed-Heavy"),local("Impact")}
+@font-face{font-family:UI;font-weight:700;font-display:block;ascent-override:95%;descent-override:22.5%;line-gap-override:0%;
+  src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald Bold"),local("Oswald-Bold"),local("Barlow Condensed Bold"),local("AvenirNextCondensed-Bold"),local("Arial Narrow Bold")}
+@font-face{font-family:UI;font-weight:400;font-display:block;ascent-override:95%;descent-override:22.5%;line-gap-override:0%;
+  src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald Regular"),local("Oswald-Regular"),local("Barlow Condensed"),local("AvenirNextCondensed-Regular"),local("Arial Narrow")}
+
+:root{
+  --cream:#F7F5EF;--white:#F9F9F9;--ink:rgba(247,245,239,.86);--mute:rgba(247,245,239,.6);--faint:rgba(247,245,239,.38);
+  --line:rgba(247,245,239,.13);--accent:#D6523A;--bg:#0a0b0c;--panel:#101215;
+  --s:min(100vh / 800, 100vw / 716);--cover:max(100vw / 1280, 100vh / 800);
+  --ui:UI,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --display:Display,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --gut:clamp(16px,5vw,72px);--max:1240px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;scrollbar-color:rgba(247,245,239,.25) var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-weight:400;
+  font-kerning:none;font-variant-ligatures:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:geometricPrecision;caret-color:var(--accent)}
+::selection{background:var(--accent);color:var(--bg)}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:16px;top:-60px;z-index:60;background:var(--cream);color:var(--bg);padding:10px 14px;font:700 14px/1 var(--ui)}
+.skip:focus{top:12px}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--max);margin:0 auto}
+
+/* ---------- Navigation ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;gap:28px;height:68px;
+  padding:0 var(--gut);padding-top:env(safe-area-inset-top);transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(10,11,12,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.brand{font:800 22px/1 var(--display);letter-spacing:.01em;color:var(--cream);text-decoration:none;text-transform:uppercase;white-space:nowrap}
+.brand b{color:var(--accent)}
+.nav ul{display:flex;gap:26px;margin:0 0 0 auto;padding:0;list-style:none}
+.nav ul a{font:400 16px/1 var(--ui);text-decoration:none;color:var(--ink)}
+.nav ul a:hover{color:var(--cream);text-decoration:underline}
+.lang{display:flex}
+.lang button{all:unset;cursor:pointer;font:700 13px/1 var(--ui);letter-spacing:.06em;padding:9px 8px;color:var(--faint)}
+.lang button[aria-pressed="true"]{color:var(--cream);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px}
+.lang button:hover{color:var(--cream)}
+.lang button:focus-visible{outline:2px solid var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 14px/1 var(--ui);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+  text-decoration:none;color:var(--bg);background:var(--cream);padding:15px 22px;border:0;cursor:pointer;transition:background .2s,color .2s,transform .12s}
+.btn:hover{background:var(--accent);color:var(--bg)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px rgba(247,245,239,.4)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--cream);color:var(--cream)}
+.btn.small{padding:12px 15px;font-size:12px}
+.btn[hidden]{display:none}
+@media (max-width:960px){.nav ul{display:none}.nav .lang{margin-left:auto}}
+@media (max-width:480px){.nav .btn.small{display:none}.nav{gap:8px}}
+
+/* =================================================================
+   HERO – Vorgabe des Kunden (1280×800-Bühne, skaliert). Unverändert bis auf CTA-Zeile.
+   ================================================================= */
+.frame{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;background:var(--bg)}
+.sentinel{position:absolute;top:60px;left:0;width:1px;height:1px}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;background:var(--bg)}
+.tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,
+  rgba(0,0,0,.118) 0%,rgba(0,0,0,.092) 11%,rgba(0,0,0,.083) 20%,rgba(0,0,0,.079) 29%,rgba(0,0,0,.014) 37.5%,rgba(0,0,0,.016) 46%,
+  rgba(0,0,0,.043) 55%,rgba(0,0,0,.058) 64%,rgba(0,0,0,.062) 73%,rgba(0,0,0,.080) 81%,rgba(0,0,0,.090) 90%,rgba(0,0,0,.095) 100%)}
+.tint::after{content:"";position:absolute;inset:auto 0 0 0;height:20%;background:linear-gradient(to bottom,transparent,var(--bg))}
+.stage{position:absolute;left:50%;top:calc(50% + 26px);width:1280px;height:800px;margin:-400px 0 0 -640px;transform:scale(var(--s));transform-origin:50% 50%}
+.eyebrow{position:absolute;left:0;top:67.8px;width:1280px;margin:0;font:700 7.4px/7.4px var(--ui);word-spacing:.522px;text-align:center;
+  text-transform:uppercase;color:var(--cream);text-shadow:0 1px 3px rgba(0,0,0,.45);letter-spacing:2.252px;text-indent:2.252px}
+.eyebrow span{position:relative;display:block;left:-.9px}
+.headline{position:absolute;left:0;top:0;width:1280px;margin:0;font:800 61.74px/61.74px var(--display);word-spacing:2.691px;text-align:center;
+  text-transform:uppercase;color:var(--cream);text-shadow:0 15px 36px rgba(0,0,0,.5)}
+.headline span{position:absolute;left:0;width:1280px;display:block;white-space:nowrap}
+.hl1{top:83.62px;letter-spacing:-.075px;left:.45px!important;text-indent:-.075px}
+.hl2{top:137.02px;letter-spacing:-1.237px;text-indent:-1.237px}
+.hl3{top:187.97px;letter-spacing:-.237px;left:1.8px!important;text-indent:-.237px}
+.hl4{top:247.92px;letter-spacing:-.487px;left:1.35px!important;text-indent:-.487px}
+.hl4 em{font-style:normal;color:var(--accent)}
+.mark{position:absolute;left:549.5px;top:493.6px;width:52px;height:52px;overflow:visible}
+.feature{position:absolute;top:0}
+.feature .icon{position:absolute}
+.feature h2{position:absolute;top:617.68px;margin:0;font:700 19.57px/20px var(--ui);word-spacing:1.838px;text-transform:uppercase;color:var(--white);text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.feature p{position:absolute;top:681.9px;margin:0;font:400 12.28px/15.1px var(--ui);word-spacing:-.194px;color:rgba(255,255,255,.88);text-shadow:0 1px 3px rgba(0,0,0,.35)}
+.feature h2 span,.feature p span{position:relative;display:block;white-space:nowrap}
+.f-left{text-align:right;right:748.5px}
+.f-left .icon{right:-4.5px;top:549.5px;width:35px;height:34px}
+.f-left h2{right:0}.f-left p{right:12px}
+.f-left h2 span:nth-child(1){letter-spacing:-.109px}.f-left h2 span:nth-child(2){letter-spacing:.246px}
+.f-left p span:nth-child(1){letter-spacing:-.097px;left:.9px}.f-left p span:nth-child(2){letter-spacing:-.271px;left:1.8px}.f-left p span:nth-child(3){letter-spacing:-.161px;left:.9px}
+.f-right{text-align:left;left:748.5px}
+.f-right .icon{left:-3px;top:547.5px;width:35px;height:38px}
+.f-right h2{left:0}.f-right p{left:12px}
+.f-right h2 span:nth-child(1){letter-spacing:-.354px;left:-.9px}.f-right h2 span:nth-child(2){letter-spacing:-.154px}
+.f-right p span{left:-.9px;letter-spacing:-.247px}.f-right p span:nth-child(2){letter-spacing:-.15px}
+.hero-cta{position:absolute;left:0;width:1280px;top:330px;display:flex;justify-content:center;gap:10px}
+.hero-cta .btn{font-size:7.6px;padding:9px 13px;letter-spacing:.16em}
+
+@media (prefers-reduced-motion:no-preference){
+  .eyebrow{animation:riseIn .55s cubic-bezier(.33,.9,.35,1) .15s both}
+  .headline span{animation:lineIn .9s cubic-bezier(.16,1,.3,1) both}
+  .hl1{animation-delay:.28s!important}.hl2{animation-delay:.37s!important}.hl3{animation-delay:.46s!important}.hl4{animation-delay:.55s!important}
+  .mark{transform-origin:50% 50%;animation:markIn .7s cubic-bezier(.2,.9,.25,1) .72s both}
+  .f-left{animation:blockInL .75s cubic-bezier(.16,1,.3,1) .82s both}
+  .f-right{animation:blockInR .75s cubic-bezier(.16,1,.3,1) .9s both}
+  .hero-cta{animation:riseIn .6s cubic-bezier(.33,.9,.35,1) 1.05s both}
+}
+@keyframes riseIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes lineIn{0%{opacity:0;transform:translateY(.26em);clip-path:inset(100% -30% 0% -30%)}35%{opacity:1}90%{clip-path:inset(0% -30% -100% -30%)}100%{opacity:1;transform:none;clip-path:inset(-80% -30% -100% -30%)}}
+@keyframes markIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:none}}
+@keyframes blockInL{from{opacity:0;transform:translate(-12px,8px)}to{opacity:1;transform:none}}
+@keyframes blockInR{from{opacity:0;transform:translate(12px,8px)}to{opacity:1;transform:none}}
+
+@media (min-width:610px) and (max-aspect-ratio:1/1){
+  :root{--u:min(100vw / 768, 100vh / 1024);--rail:clamp(120px, calc(var(--cover) * 219), 26vw)}
+  .stage{inset:0;left:0;top:0;width:auto;height:auto;margin:0;transform:none;display:grid;grid-template-columns:1fr var(--rail) 1fr;
+    grid-template-rows:auto auto auto 1fr auto auto minmax(0,.38fr);padding:calc(100 * var(--u)) clamp(24px,5.2vw,72px) calc(24 * var(--u))}
+  .eyebrow,.headline,.feature,.feature h2,.feature p,.feature .icon,.hero-cta{position:static}
+  .eyebrow{grid-area:1/1/2/-1;width:auto;font-size:calc(11 * var(--u));line-height:1;letter-spacing:.304em;text-indent:.304em;word-spacing:.07em;margin-bottom:calc(20 * var(--u))}
+  .headline{grid-area:2/1/3/-1;width:auto;font-size:calc(84 * var(--u));line-height:.92;word-spacing:.0436em}
+  .headline span{position:static;width:auto;letter-spacing:-.012em;text-indent:0}
+  .hero-cta{grid-area:3/1/4/-1;width:auto;margin-top:calc(26 * var(--u))}
+  .hero-cta .btn{font-size:calc(13 * var(--u));padding:calc(14 * var(--u)) calc(18 * var(--u))}
+  .mark{grid-area:5/1/6/-1;justify-self:center;position:relative;left:auto;top:auto;right:5%;width:calc(64 * var(--u));height:calc(64 * var(--u));margin-bottom:calc(16 * var(--u))}
+  .f-left{grid-area:6/1/7/2}.f-right{grid-area:6/3/7/4}
+  .feature .icon{display:block;width:calc(42 * var(--u));height:calc(46 * var(--u));margin-bottom:calc(14 * var(--u))}
+  .f-left .icon{margin-left:auto;margin-right:calc(-4.5 * var(--u))}.f-right .icon{margin-right:auto;margin-left:calc(-3 * var(--u))}
+  .feature h2{font-size:calc(22 * var(--u));line-height:1.08;word-spacing:.094em;margin-bottom:calc(12 * var(--u))}
+  .feature h2 span{white-space:normal;letter-spacing:-.018em!important;left:0!important}
+  .feature p{font-size:calc(14.5 * var(--u));line-height:1.34;word-spacing:-.016em;max-width:calc(310 * var(--u))}
+  .feature p span{display:inline;white-space:normal;letter-spacing:-.02em!important;left:0!important}
+  .feature p span::after{content:" "}
+  .f-left p{margin-left:auto;margin-right:calc(10 * var(--u))}.f-right p{margin-right:auto;margin-left:calc(10 * var(--u))}
+}
+@media (max-width:609px){
+  .frame{height:100vh;height:100dvh}
+  :root{--u:min(100vw / 390, 100vh / 780)}
+  @supports (height:100dvh){:root{--u:min(100vw / 390, 100dvh / 780)}}
+  .stage{inset:0;left:0;top:0;width:auto;height:auto;margin:0;transform:none;display:grid;grid-template-columns:100%;
+    grid-template-rows:auto auto auto 1fr auto auto auto minmax(0,.3fr);
+    padding:calc(88 * var(--u)) max(calc(22 * var(--u)),env(safe-area-inset-right)) max(calc(32 * var(--u)),env(safe-area-inset-bottom)) max(calc(22 * var(--u)),env(safe-area-inset-left))}
+  .eyebrow,.headline,.feature,.feature h2,.feature p,.feature .icon,.hero-cta{position:static}
+  .eyebrow{grid-row:1;width:auto;font-size:clamp(8px,calc(9.5 * var(--u)),11px);line-height:1.3;letter-spacing:.304em;text-indent:.304em;margin-bottom:calc(16 * var(--u))}
+  .headline{grid-row:2;width:auto;font-size:clamp(26px,min(11vw,calc(48 * var(--u))),60px);line-height:.92}
+  .headline span{position:static;width:auto;letter-spacing:-.012em;text-indent:0}
+  .hero-cta{grid-row:3;width:auto;margin-top:calc(20 * var(--u));flex-wrap:wrap}
+  .hero-cta .btn{font-size:12px;padding:13px 16px}
+  .hero-cta .btn.ghost{display:none}
+  .mark{display:none}
+  .f-left{grid-row:6;margin-bottom:calc(26 * var(--u))}.f-right{grid-row:7}
+  .feature .icon{display:block;width:clamp(26px,calc(34 * var(--u)),40px);height:clamp(28px,calc(37 * var(--u)),43px);margin-bottom:10px}
+  .f-left .icon{margin-left:auto;margin-right:calc(-4 * var(--u))}.f-right .icon{margin-right:auto;margin-left:calc(-3 * var(--u))}
+  .feature h2{font-size:clamp(15px,calc(17 * var(--u)),20px);line-height:1.08;margin-bottom:8px}
+  .feature h2 span{white-space:normal;left:0!important}
+  .feature p{font-size:clamp(11.5px,calc(13.5 * var(--u)),14.5px);line-height:1.36;max-width:calc(320 * var(--u))}
+  .feature p span{display:inline;white-space:normal;left:0!important}
+  .feature p span::after{content:" "}
+  .f-left p{margin-left:auto}.f-right p{margin-right:auto}
+}
+
+/* =================================================================
+   SEITE
+   ================================================================= */
+body>section{position:relative;padding:clamp(88px,11vw,152px) var(--gut)}
+.h2{margin:0 0 clamp(36px,4.5vw,60px);font:700 clamp(36px,4.6vw,64px)/1.04 var(--ui);color:var(--cream);letter-spacing:-.022em;max-width:20ch;text-wrap:balance}
+.lead{margin:-28px 0 clamp(40px,5vw,64px);max-width:58ch;font-size:clamp(17px,1.4vw,19px);line-height:1.5;color:var(--mute)}
+h3{margin:0 0 10px;font:700 clamp(21px,1.9vw,26px)/1.15 var(--ui);color:var(--white);letter-spacing:0}
+p{font-size:17.5px;line-height:1.55;margin:0}
+.more{display:inline-block;margin-top:18px;font:700 15px/1 var(--ui);color:var(--cream);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px}
+.more:hover{color:var(--accent)}
+
+
+
+
+
+
+/* 0 · Film (Bühne .fstage): ruhige Kamera, ein Hauptobjekt pro Bild, weiche Überblendungen in die Tiefe. */
+.film{--W:1280px;--H:720px;max-width:var(--max);margin:0 auto}
+.film.portrait{--W:720px;--H:960px}
+.screen{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:4px;background:radial-gradient(120% 100% at 50% 40%,#16181c 0%,#0b0c0e 60%,#070809 100%)}
+.film.portrait .screen{aspect-ratio:3/4}
+.fstage{position:absolute;left:0;top:0;width:var(--W);height:var(--H);transform-origin:0 0;overflow:hidden}
+.shot{position:absolute;inset:0;opacity:0;visibility:hidden;will-change:opacity,transform,filter}
+.vis{position:absolute}
+.film.portrait .vis{left:50%!important;top:auto!important;bottom:70px;transform:translateX(-50%) scale(.62);transform-origin:50% 100%}
+/* Typo im Film: groß, ruhig, normale Schreibung */
+.tx{position:absolute;z-index:3}
+.tx.l{left:96px;top:50%;width:560px;transform:translateY(-50%)}
+.tx.c{left:50%;width:1000px;margin-left:-500px;text-align:center}
+.tx.top{top:84px}.tx.mid{top:50%;transform:translateY(-50%)}.tx.bot{bottom:86px}
+.film.portrait .tx.l,.film.portrait .tx.c{left:56px;width:608px;margin-left:0;text-align:left;top:96px;bottom:auto;transform:none}
+.mt{margin:0;font:700 66px/1.04 var(--ui);color:var(--cream);letter-spacing:-.018em;text-wrap:balance}
+.mt.xl{font-size:92px;letter-spacing:-.022em}
+.mt.m{font-size:48px}
+.mt.dim{color:rgba(247,245,239,.42)}
+.mt.acc{color:#D6523A}
+.mt.s{font:400 24px/1.45 var(--ui);color:rgba(247,245,239,.62);letter-spacing:0;margin-top:20px;max-width:30ch}
+.tx.c .mt.s{margin-left:auto;margin-right:auto}
+.film.portrait .tx.c .mt.s{margin-left:0}
+.mt .w{display:inline-block;will-change:transform,opacity,filter}
+/* Paket in 3D */
+.persp{position:absolute;inset:0}
+.world{position:absolute;width:0;height:0;transform-style:preserve-3d}
+.world *{transform-style:preserve-3d}
+.box{position:absolute;left:0;top:0}
+.f{position:absolute;left:0;top:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.pk .t{background:linear-gradient(140deg,#f3eadb 0%,#e3d6be 60%,#d6c8ad 100%)}
+.pk .fr{background:linear-gradient(180deg,#d9cbb0,#c2b294)}
+.pk .bk{background:#bfae90}
+.pk .rt{background:linear-gradient(0deg,#b9a98b,#a6957a)}
+.pk .lf{background:#b0a084}
+.pk .tape{position:absolute;left:44%;top:0;width:12%;height:100%;background:#D6523A;transform-origin:50% 0;transform:scaleY(0)}
+.pk .tag{position:absolute;right:9%;bottom:12%;width:34%;height:30%;background:#f7f5ef;opacity:0;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.pk .tag::before{content:"";position:absolute;left:9%;top:16%;width:42%;height:62%;background:repeating-linear-gradient(90deg,#1a1a1a 0 2px,transparent 2px 4px,#1a1a1a 4px 5px,transparent 5px 7px)}
+.glow{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(255,226,190,.16),rgba(214,82,58,.06) 55%,transparent)}
+.gshadow{position:absolute;left:0;top:0;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.65),transparent);transform:translate(-50%,-50%)}
+/* Tiefe im Paketfeld: hintere Reihen dunkler */
+.pk.plain .tape{background:#b3a385;transform:scaleY(1)}
+.pk.d1 .f::after,.pk.d2 .f::after,.pk.d3 .f::after{content:"";position:absolute;inset:0;background:#0b0c0e}
+.pk.d1 .f::after{opacity:.35}.pk.d2 .f::after{opacity:.58}.pk.d3 .f::after{opacity:.76}
+/* Container und Palette */
+.ct .t{background:#3b4148}
+.ct .fr,.ct .bk{background:repeating-linear-gradient(90deg,#2b3137 0 12px,#363c43 12px 17px)}
+.ct .rt,.ct .lf{background:repeating-linear-gradient(0deg,#262b30 0 12px,#30363c 12px 17px)}
+.ct .fr::after{content:"";position:absolute;left:0;right:0;top:16%;height:9px;background:#D6523A}
+.pl .t{background:repeating-linear-gradient(90deg,#9c835f 0 30px,#7d6748 30px 38px)}
+.pl .fr,.pl .bk,.pl .rt,.pl .lf{background:linear-gradient(90deg,#7a6446 0 18%,#4a3c2a 18% 41%,#7a6446 41% 59%,#4a3c2a 59% 82%,#7a6446 82%)}
+.grp{position:absolute;left:0;top:0}
+/* 2 Worte im Raum */
+.fly{position:absolute;inset:0;pointer-events:none}
+.fw{position:absolute;left:50%;top:52%;white-space:nowrap;font:700 72px/1 var(--ui);color:rgba(247,245,239,.85);letter-spacing:-.015em;opacity:0}
+/* 3 Licht */
+.dawn{position:absolute;left:50%;top:58%;width:1600px;height:900px;margin:-450px 0 0 -800px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,214,170,.32),rgba(214,82,58,.14) 40%,transparent 72%);opacity:0;transform:scale(.2)}
+/* 5 Karte */
+.mapw{width:640px;height:600px;perspective:1300px}
+.mapp{position:absolute;inset:0;transform-origin:50% 60%}
+.mapp canvas{width:100%;height:100%}
+.maplbl{position:absolute;font:700 22px/1 var(--ui);color:var(--cream);white-space:nowrap}
+/* 6 Anruf: Banner im iOS-Stil */
+.isl{position:absolute;left:0;top:0;width:150px;height:46px;border-radius:23px;background:#000;overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06),inset 0 1px 0 rgba(255,255,255,.06);transform:translate(-50%,-50%)}
+.isl .ic{position:absolute;left:34px;top:50%;transform:translateY(-50%);opacity:0;white-space:nowrap}
+.isl .ic b{display:block;font:700 34px/1.05 var(--ui);color:var(--cream);letter-spacing:-.01em}
+.isl .ic small{display:block;margin-top:6px;font:400 19px/1 var(--ui);color:rgba(247,245,239,.55)}
+.isl .ct2{position:absolute;right:36px;top:50%;transform:translateY(-50%);font:700 26px/1 var(--ui);color:#D6523A;font-variant-numeric:tabular-nums;opacity:0}
+/* alt */
+/* 7 Kleingedrucktes löst sich auf */
+.ghosts{position:absolute;right:60px;top:50%;width:560px;transform:translateY(-50%);text-align:right}
+.ghosts p{margin:0 0 12px;font:700 46px/1.05 var(--ui);color:rgba(247,245,239,.5);letter-spacing:-.01em}
+.film.portrait .ghosts{right:auto;left:56px;top:auto;bottom:90px;transform:none;text-align:left;width:600px}
+/* 8 Kanäle als Laufbänder */
+.rows{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.row{white-space:nowrap;margin:22px 0;will-change:transform}
+.row span{display:inline-block;margin-right:64px;font:700 44px/1 var(--ui);color:rgba(247,245,239,.2);letter-spacing:-.01em}
+.row.m span{font-size:62px;color:rgba(247,245,239,.55)}
+.film.portrait .rows{top:62%}
+/* Schluss */
+.end{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center}
+.end .btn{margin-top:40px;font-size:20px;padding:22px 34px;opacity:0}
+.end small{margin-top:20px;font:400 20px/1 var(--ui);color:rgba(247,245,239,.55);opacity:0}
+.film.portrait .end{place-content:center start;justify-items:start;text-align:left;padding:0 56px}
+/* Steuerung */
+.film-ui{display:grid;grid-template-columns:1fr auto;gap:14px 28px;align-items:center;margin-top:16px}
+.segs{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+.sg{all:unset;cursor:pointer;padding:10px 0}
+.sg i{display:block;height:2px;background:var(--line);overflow:hidden;border-radius:2px}
+.sg i b{display:block;height:100%;background:var(--cream);transform-origin:left;transform:scaleX(0)}
+.sg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.film-meta{display:flex;align-items:center;gap:18px}
+.film-chap{font:400 16px/1 var(--ui);color:var(--mute);min-width:9ch;text-align:right}
+@media (max-width:640px){.film-ui{grid-template-columns:1fr}.film-meta{justify-content:space-between}.film-chap{text-align:left}}
+
+
+/* 1 · Zusagen */
+.promises{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,44px)}
+.promises li{padding-top:22px;border-top:2px solid var(--accent);display:grid;gap:10px;align-content:start}
+.promises b{font:700 clamp(21px,1.9vw,25px)/1.2 var(--ui);color:var(--cream)}
+.promises span{font-size:16.5px;line-height:1.55;color:var(--mute)}
+.proof-line{margin-top:clamp(48px,6vw,80px);font:400 clamp(22px,2.4vw,32px)/1.35 var(--ui);color:var(--mute);max-width:40ch}
+.proof-line strong{font-weight:700;color:var(--cream)}
+@media (max-width:1000px){.promises{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.promises{grid-template-columns:1fr}}
+/* Passt zu dir */
+.fit{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px)}
+.fit h3{font-size:clamp(24px,2.6vw,34px)}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fit li{font-size:18px;line-height:1.5;color:var(--ink);padding-left:26px;position:relative}
+.fit li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:2px;background:var(--accent)}
+@media (max-width:900px){.fit{grid-template-columns:1fr}}
+/* Ansprechpartner */
+.person{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center}
+.person .ph{width:96px;height:96px;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--faint);text-align:center;padding:8px}
+.person b{display:block;font:700 22px/1.2 var(--ui);color:var(--cream)}
+.person span{font-size:15.5px;color:var(--mute)}
+/* 1 · Beweis: ein großer Satz */
+.proof{padding-top:clamp(72px,9vw,120px)}
+.proof .wrap{display:block}
+.statement{margin:0;font:400 clamp(26px,3.3vw,46px)/1.22 var(--ui);color:var(--mute);text-wrap:pretty;max-width:26ch}
+.statement strong{font-weight:700;color:var(--cream)}
+.photo{aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line);display:flex;align-items:flex-end;padding:18px;color:var(--faint);font:400 14px/1.4 var(--ui)}
+
+/* 2 · Zielgruppen: Indexzeilen */
+.who-row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,80px);padding:clamp(36px,4.5vw,56px) 0;border-top:1px solid var(--line);align-items:start}
+.who-row:last-child{border-bottom:1px solid var(--line)}
+.who-row h3{font-size:clamp(24px,2.6vw,34px);line-height:1.12;margin:0;max-width:20ch}
+.who-row p{max-width:52ch;color:var(--ink)}
+
+/* 3 · Leistungen: die Strecke */
+.route{position:relative;list-style:none;margin:0;padding:0;max-width:var(--max);margin-inline:auto}
+.route{view-timeline-name:--route}
+.route::before,.route::after{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:2px;margin-left:-1px;background:var(--line)}
+.route::after{background:var(--accent);transform-origin:top;transform:scaleY(0)}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .route::after{animation:fillRail linear both;animation-timeline:--route;animation-range:cover 30% cover 80%}
+  }
+}
+@keyframes fillRail{to{transform:scaleY(1)}}
+.stop{display:grid;grid-template-columns:1fr 96px 1fr;position:relative;padding-bottom:clamp(44px,5.5vw,76px)}
+.stop:last-child{padding-bottom:0}
+.stop::before{content:"";position:absolute;left:50%;top:6px;width:16px;height:16px;margin-left:-8px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);transition:background .4s}
+.stop.on::before{background:var(--accent)}
+.stop .body{grid-column:1;text-align:right}
+.stop.r .body{grid-column:3;text-align:left}
+.stop .body p{max-width:42ch;color:var(--ink)}
+.stop:not(.r) .body p{margin-left:auto}
+
+/* 4 · Versand: zwei Wege */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);max-width:var(--max);margin:0 auto}
+.way{padding:clamp(28px,3.5vw,44px);background:var(--panel)}
+.way.mine{box-shadow:inset 0 0 0 1px rgba(214,82,58,.55)}
+.way p{color:var(--ink)}
+.way .list{margin:20px 0 0;color:var(--cream);font:700 17px/1.4 var(--ui)}
+
+/* 5 · Preise + Rechner */
+.price-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,5vw,80px);max-width:var(--max);margin:0 auto;align-items:start}
+.hero-prices{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-bottom:clamp(36px,4vw,52px)}
+.big-price .v{display:block;font:800 clamp(56px,7vw,104px)/.9 var(--display);color:var(--cream);letter-spacing:-.01em}
+.big-price .u{display:block;margin-top:10px;font:700 16px/1.3 var(--ui);color:var(--cream)}
+.big-price .d{display:block;margin-top:4px;font-size:15px;line-height:1.45;color:var(--mute)}
+.small-prices{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px;padding-top:28px;border-top:1px solid var(--line)}
+.small-prices div{display:grid;gap:4px}
+.small-prices .v{font:700 26px/1 var(--ui);color:var(--cream)}
+.small-prices .d{font-size:15px;line-height:1.4;color:var(--mute)}
+.terms{margin-top:32px;max-width:60ch;font-size:15.5px;line-height:1.6;color:var(--mute)}
+.terms strong{color:var(--cream);font-weight:700}
+.calc{background:var(--panel);padding:clamp(24px,3.4vw,40px);position:sticky;top:96px}
+.calc h3{margin-bottom:26px}
+.field{margin-bottom:24px}
+.field label{display:flex;justify-content:space-between;gap:12px;font:400 16px/1.2 var(--ui);color:var(--ink);margin-bottom:10px}
+.field output{color:var(--cream);font-weight:700}
+input[type=range]{width:100%;accent-color:var(--accent);height:24px;margin:0}
+.result{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.result .big{font:800 clamp(48px,5.6vw,76px)/.9 var(--display);color:var(--cream)}
+.result .per{margin-top:10px;font-size:15px;color:var(--mute)}
+.result dl{display:grid;grid-template-columns:1fr auto;gap:8px 18px;margin:20px 0 0;font-size:15.5px}
+.result dt{color:var(--mute)}.result dd{margin:0;color:var(--cream);text-align:right;font-weight:700}
+.result .note{margin-top:18px;font-size:13.5px;line-height:1.5;color:var(--faint)}
+.calc .btn{margin-top:22px;width:100%}
+
+/* 6 · Ablauf */
+.steps{list-style:none;margin:0 auto;padding:0;max-width:var(--max);display:grid;grid-template-columns:repeat(4,1fr);gap:0 clamp(16px,2.5vw,36px);counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:var(--line)}
+.steps li{position:relative;counter-increment:s;padding-top:66px}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);
+  display:grid;place-items:center;font:700 17px/1 var(--ui);color:var(--cream)}
+.steps p{color:var(--mute);font-size:16.5px}
+.checks{max-width:var(--max);margin:clamp(48px,5vw,72px) auto 0;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,.4fr) minmax(0,.6fr);gap:10px clamp(24px,4vw,64px);align-items:baseline}
+.checks strong{font:700 17px/1.3 var(--ui);color:var(--cream)}
+.checks p{color:var(--ink);font-size:16.5px}
+
+/* 7 · Anbindung: gruppierte Spalten */
+.groups{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);max-width:var(--max);margin:0 auto}
+.groups h3{font-size:20px;color:var(--cream);margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--accent);display:inline-block}
+.groups ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.groups li{font:400 18px/1.3 var(--ui);color:var(--ink)}
+.groups li span{color:var(--faint);font-size:15px}
+
+/* 8 · Standort: Streckenplan */
+.loc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);max-width:var(--max);margin:0 auto;align-items:center}
+.loc .h2{margin-bottom:24px}
+.loc .lead{margin:0}
+.map{position:relative;height:220px}
+.map .track{position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,var(--accent),rgba(214,82,58,.25))}
+.city{position:absolute;top:50%;transform:translateX(-50%)}
+.city::before{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--bg);border:2px solid var(--cream)}
+.city span{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center;font:400 15px/1.25 var(--ui);color:var(--ink)}
+.city span b{display:block;font:700 20px/1 var(--ui);color:var(--cream)}
+.city.up span{bottom:22px}.city.down span{top:20px}
+.city.home::before{width:22px;height:22px;top:-12px;margin-left:-11px;background:var(--accent);border-color:var(--accent)}
+.city.home span b{color:var(--accent)}
+.city:last-child span{left:auto;right:-6px;transform:none;text-align:right}
+.city.home span{left:-6px;transform:none;text-align:left}
+.map-note{margin-top:8px;font-size:14px;color:var(--faint)}
+
+/* 9 · FAQ: offene Liste in zwei Spalten */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px) clamp(32px,6vw,96px);max-width:var(--max);margin:0 auto}
+.faq h3{font-size:clamp(19px,1.6vw,22px);margin-bottom:10px}
+.faq p{color:var(--mute);font-size:16.5px;max-width:52ch}
+
+/* 10 · Anfrage */
+.contact{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:clamp(28px,4vw,64px);max-width:var(--max);margin:0 auto;align-items:start}
+.form{background:var(--panel);padding:clamp(24px,4vw,48px)}
+.progress{display:flex;gap:6px;margin-bottom:14px}
+.progress i{flex:1;height:3px;background:var(--line)}
+.progress i.on{background:var(--accent)}
+.stepno{font-size:14px;color:var(--mute);margin-bottom:26px}
+fieldset{border:0;margin:0 0 28px;padding:0}
+legend{padding:0;font:700 18px/1.2 var(--ui);color:var(--cream);margin-bottom:14px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.opt span{display:flex;align-items:center;min-height:46px;font:400 16px/1 var(--ui);padding:0 16px;box-shadow:inset 0 0 0 1px rgba(247,245,239,.22);color:var(--cream);transition:background .15s,color .15s,box-shadow .15s}
+.opt:hover span{box-shadow:inset 0 0 0 1px rgba(247,245,239,.5)}
+.opt input:checked+span{background:var(--cream);color:var(--bg);box-shadow:none;font-weight:700}
+.opt input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.inp{display:grid;gap:8px;margin-bottom:18px}
+.inp label{font:700 16px/1.2 var(--ui);color:var(--cream)}
+.inp label em{font-style:normal;font-weight:400;color:var(--mute)}
+.inp input,.inp textarea{font:400 17px/1.3 var(--ui);color:var(--white);background:var(--bg);border:1px solid rgba(247,245,239,.22);padding:13px 14px;border-radius:0;min-height:50px;width:100%}
+.inp input::placeholder{color:rgba(247,245,239,.45)}
+.inp input:focus,.inp textarea:focus{outline:none;border-color:var(--cream)}
+.inp .err{display:none;font-size:15px;color:#f0937f}
+.inp.bad input{border-color:#f0937f}.inp.bad .err{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.nav-btns{display:flex;justify-content:space-between;gap:12px;margin-top:8px}
+.hp{position:absolute;left:-9999px}
+.privacy{font-size:14px;line-height:1.5;color:var(--mute);margin:4px 0 20px}
+.done{display:none}
+.done h3{font-size:clamp(26px,3vw,34px);color:var(--cream)}
+.done p{color:var(--ink)}
+.aside{display:grid;gap:28px}
+.aside .k{font-size:14px;color:var(--mute);margin-bottom:6px}
+.aside .v{font:700 19px/1.3 var(--ui);color:var(--cream);text-decoration:none;word-break:break-all}
+.aside .v:hover{text-decoration:underline}
+.qr{width:150px;aspect-ratio:1;background:var(--panel);border:1px solid var(--line);display:flex;align-items:flex-end;padding:12px;font-size:13px;line-height:1.35;color:var(--faint)}
+.aside p{font-size:15.5px;color:var(--mute)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px var(--gut) max(44px,env(safe-area-inset-bottom))}
+footer .wrap{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}
+footer .brand{font-size:30px}
+footer p{margin-top:12px;font-size:14.5px;color:var(--mute);max-width:60ch}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a{font-size:15px;color:var(--mute);text-decoration:none}
+footer nav a:hover{color:var(--cream);text-decoration:underline}
+
+
+/* ================= Konzern-Auftritt: Leitfaden, Kennzahlen, Lösungen, Prozess, SLA, Vergleich, Sicherheit ================= */
+/* Leitfaden */
+.guide{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:40;display:flex;gap:14px;opacity:0;pointer-events:none;transition:opacity .5s}
+.guide.on{opacity:1;pointer-events:auto}
+.g-line{position:relative;width:2px;background:var(--line);border-radius:2px}
+.g-fill{position:absolute;left:0;top:0;width:2px;height:100%;background:var(--accent);transform-origin:top;transform:scaleY(0);transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.g-dot{position:absolute;left:50%;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:2px;background:var(--accent);box-shadow:0 0 0 4px rgba(214,82,58,.18);transition:top .7s cubic-bezier(.22,1,.36,1)}
+.guide ol{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.guide a{display:flex;align-items:center;gap:10px;font:400 13px/1 var(--ui);color:var(--faint);text-decoration:none;white-space:nowrap}
+.guide a span{opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s}
+.guide:hover a span{opacity:1;transform:none}
+.guide a[aria-current="true"]{color:var(--cream)}
+.guide a::before{content:"";width:6px;height:6px;border-radius:50%;background:rgba(247,245,239,.25);flex:none;margin-left:-22px;transition:background .3s}
+.guide a[aria-current="true"]::before{background:transparent}
+.guide:hover{background:linear-gradient(90deg,rgba(10,11,12,.92),rgba(10,11,12,0));padding-right:40px}
+@media (max-width:1180px){.guide{display:none}}
+.gbar{position:fixed;left:0;right:0;top:0;height:2px;z-index:60;pointer-events:none}
+.gbar i{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+@media (min-width:1181px){.gbar{display:none}}
+/* Einblenden beim Scrollen: ruhig, einmal */
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  .rise.in{opacity:1;transform:none}
+}
+/* Kennzahlen */
+.kpi-band .logos{margin-top:0!important;border-top:0!important}
+.kpi-band{padding-top:clamp(56px,7vw,96px)!important;padding-bottom:clamp(56px,7vw,96px)!important;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0d0f11,var(--bg))}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,48px);margin:0}
+.kpis div{display:flex;flex-direction:column-reverse;gap:10px}
+.kpis dd{margin:0;font:700 clamp(40px,4.6vw,68px)/1 var(--ui);color:var(--cream);letter-spacing:-.02em}
+.kpis dt{font-size:16px;color:var(--mute)}
+.logos{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.logos-l{font-size:14px;color:var(--faint);white-space:nowrap}
+.logos-track{overflow:visible}
+.logos-row{display:flex;flex-wrap:wrap;gap:18px 44px}
+.logos-row b[aria-hidden]{display:none}
+.logos-row b{font:700 22px/1 var(--ui);color:rgba(247,245,239,.42);letter-spacing:-.01em;white-space:nowrap}
+@media (max-width:860px){.kpis{grid-template-columns:1fr 1fr;row-gap:36px}.logos{grid-template-columns:1fr}}
+/* Lösungen: Tabs */
+.tabs{position:relative;display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:clamp(32px,4vw,48px);overflow-x:auto;scrollbar-width:none}
+.tabs button{all:unset;cursor:pointer;padding:16px 18px 18px;font:700 17px/1 var(--ui);color:var(--mute);white-space:nowrap;transition:color .25s}
+.tabs button:hover{color:var(--cream)}
+.tabs button[aria-selected="true"]{color:var(--cream)}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.tab-ind{position:absolute;bottom:-1px;left:0;width:100px;height:2px;background:var(--accent);transform-origin:0 0;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.tp[hidden]{display:none}
+.tp{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,5vw,80px);align-items:start}
+@media (prefers-reduced-motion:no-preference){.tp:not([hidden]){animation:tpIn .55s cubic-bezier(.22,1,.36,1)}}
+@keyframes tpIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.tp h3{font-size:clamp(28px,3vw,40px);line-height:1.08;margin-bottom:16px}
+.tp-main>p{max-width:56ch;color:var(--ink)}
+.ticks{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:30px;font-size:17px;color:var(--ink)}
+.ticks li::before{content:"";position:absolute;left:2px;top:.42em;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.tp-facts{display:grid;gap:14px}
+.tp-facts div{padding:24px 26px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(247,245,239,.035),rgba(247,245,239,.01))}
+.tp-facts b{display:block;font:700 clamp(34px,3.6vw,48px)/1 var(--ui);color:var(--cream);letter-spacing:-.02em}
+.tp-facts b small{font-size:.45em;color:var(--mute);font-weight:400}
+.tp-facts span{display:block;margin-top:10px;font-size:15.5px;color:var(--mute)}
+@media (max-width:900px){.tp{grid-template-columns:1fr}}
+/* Prozess */
+.proc{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px)}
+.proc-stick{position:sticky;top:120px;align-self:start;height:min(70vh,560px);display:flex;flex-direction:column}
+.proc-idx{font:700 clamp(80px,10vw,150px)/.9 var(--ui);color:var(--cream);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.proc-idx small{font-size:.22em;color:var(--faint);letter-spacing:0;margin-left:8px}
+.proc-name{margin-top:18px;font:700 clamp(24px,2.4vw,32px)/1.15 var(--ui);color:var(--accent);min-height:2.4em}
+.proc-rail{list-style:none;margin:auto 0 0;padding:0;display:flex;gap:8px}
+.proc-rail li{flex:1;height:3px;border-radius:3px;background:var(--line);transition:background .4s}
+.proc-rail li.on{background:var(--accent)}
+.proc-steps{list-style:none;margin:0;padding:0}
+.pstep{min-height:52vh;display:flex;flex-direction:column;justify-content:center;padding:28px 0;border-top:1px solid var(--line);opacity:.35;transition:opacity .5s}
+.pstep.on{opacity:1}
+.pstep h3{font-size:clamp(26px,2.6vw,36px);line-height:1.1}
+.pstep p{max-width:46ch;color:var(--ink);font-size:18px}
+@media (max-width:860px){.proc{grid-template-columns:1fr}.proc-stick{display:none}.pstep{min-height:0;opacity:1}}
+/* SLA */
+.sla{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sla>div{padding:28px 26px 30px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(247,245,239,.04),rgba(247,245,239,.008));display:flex;flex-direction:column}
+.sla b{font:700 clamp(36px,3.8vw,54px)/1 var(--ui);color:var(--cream);letter-spacing:-.02em}
+.sla b small{font-size:.42em;color:var(--mute);font-weight:400}
+.sla h3{margin:18px 0 8px;font-size:18px;line-height:1.25;color:#EC7A62}
+.sla p{font-size:15.5px;line-height:1.55;color:var(--mute)}
+@media (max-width:1000px){.sla{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.sla{grid-template-columns:1fr}}
+/* Vergleichstabelle */
+.cmp-wrap{max-width:var(--max);margin:0 auto;overflow-x:auto}
+.cmp-t{width:100%;border-collapse:separate;border-spacing:0;min-width:620px}
+.cmp-t th,.cmp-t td{padding:20px 22px;text-align:left;border-bottom:1px solid var(--line);font-size:17px;vertical-align:top}
+.cmp-t thead th{font:700 18px/1.2 var(--ui);color:var(--cream);border-bottom:2px solid var(--line)}
+.cmp-t tbody th{font-weight:400;color:var(--mute);width:24%}
+.cmp-t td{color:var(--ink)}
+.cmp-t .hl{background:rgba(214,82,58,.06)}
+.cmp-t thead .hl{border-bottom-color:var(--accent);border-radius:14px 14px 0 0}
+/* Sicherheit */
+.secg{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px)}
+.secg li{padding-top:22px;border-top:1px solid var(--line)}
+.secg h3{font-size:20px}
+.secg p{font-size:16px;color:var(--mute)}
+@media (max-width:1000px){.secg{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.secg{grid-template-columns:1fr}}
+/* Footer */
+footer .wrap{display:block!important}
+.foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(24px,4vw,64px);padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-brand .btn{margin-top:22px}
+.foot-col{display:flex!important;flex-direction:column;gap:12px}
+.foot-col h4{margin:0 0 6px;font:700 15px/1 var(--ui);color:var(--cream)}
+.foot-col a{font-size:15px;color:var(--mute);text-decoration:none}
+.foot-col a:hover{color:var(--cream)}
+.foot-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:14px;color:var(--faint)}
+.foot-bot nav{display:flex;gap:22px;flex-wrap:wrap}
+.foot-bot a{color:var(--faint);text-decoration:none}.foot-bot a:hover{color:var(--cream)}
+@media (max-width:860px){.foot-top{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}}
+/* ruhigerer Abschnittsrhythmus für die neuen Bereiche */
+#loesungen .fit{margin-top:clamp(56px,6vw,88px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
+
+
+/* ================= Helle Abschnitte, Farbblock, Bildelemente ================= */
+.light{--cream:#121314;--white:#121314;--ink:rgba(18,19,20,.84);--mute:rgba(18,19,20,.62);--faint:rgba(18,19,20,.45);--line:rgba(18,19,20,.13);--panel:#e9e5dc;--bg:#F3F0E9;background:#F3F0E9;color:var(--ink)}
+.light ::selection{background:#D6523A;color:#fff}
+.light .more{color:#121314}
+.light .tp-facts>div:not(.tp-vis){border-radius:16px;background:#fff;border-color:rgba(18,19,20,.08);box-shadow:0 1px 0 rgba(18,19,20,.04),0 18px 40px -24px rgba(18,19,20,.25)}
+.light .sla>div,.light .cmp-t .hl{background:rgba(214,82,58,.07)}
+.light .opt span{box-shadow:inset 0 0 0 1px rgba(18,19,20,.22)}
+.light .inp input,.light .inp textarea{background:#fff;border-color:rgba(18,19,20,.18);color:#121314}
+.light .inp input::placeholder{color:rgba(18,19,20,.4)}
+.light .inp input:focus,.light .inp textarea:focus{border-color:#121314}
+.light .btn.ghost{color:#121314;box-shadow:inset 0 0 0 1px rgba(18,19,20,.35)}
+.light .btn:hover{color:#fff;background:#121314}
+#faq.light,#sicherheit.light,#versand.light,#loesungen.light{border-top:0}
+/* Leitfaden über hellen Flächen lesbar */
+.guide{padding:12px 6px 12px 9px;border-radius:20px;background:rgba(10,11,12,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);gap:10px}
+.guide:hover{background:rgba(10,11,12,.55);padding-right:6px}
+.guide ol{gap:13px!important}
+.guide a{position:relative;width:8px;height:8px}
+.guide a::before{margin-left:-15px!important}
+.guide a span{position:absolute;left:14px;top:50%;margin-top:-13px;padding:6px 10px;border-radius:8px;background:rgba(10,11,12,.92);color:#F7F5EF;font-size:13px;line-height:14px;pointer-events:none}
+/* 3D-Szenen in den Tabs */
+.tp-vis{position:relative;height:230px;border-radius:16px;background:radial-gradient(80% 90% at 50% 40%,#fff 0%,#ebe6dc 100%);overflow:hidden;perspective:1100px}
+.tp-vis .world{left:50%;top:58%}
+/* Prozess: Lager */
+.proc-stick{height:min(82vh,660px)!important}
+.proc-idx{font-size:clamp(56px,6vw,88px)!important}
+.wh-scene{position:relative;flex:1;min-height:260px;perspective:1300px;margin:6px 0 18px}
+.wh-scene .world{left:50%;top:52%}
+.mk{transition:transform .9s cubic-bezier(.22,1,.36,1)}
+/* Standort: Punktkarte */
+.dmap{position:relative;max-width:620px;margin-left:auto}
+.dmap canvas{display:block;width:100%;height:auto}
+/* Angebots-Karte statt Rechner */
+.quote-card{position:sticky;top:96px;padding:clamp(28px,3.4vw,44px);border-radius:20px;background:linear-gradient(160deg,#1a1d21,#121417);box-shadow:inset 0 0 0 1px rgba(247,245,239,.08)}
+.quote-card h3{font-size:clamp(24px,2.4vw,32px);line-height:1.12}
+.quote-card p{color:var(--mute);margin-top:6px}
+.qc-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.qc-opts button{all:unset;cursor:pointer;padding:18px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(247,245,239,.2);font:700 17px/1.2 var(--ui);color:var(--cream);text-align:center;transition:background .2s,box-shadow .2s,color .2s}
+.qc-opts button:hover{background:var(--cream);color:var(--bg);box-shadow:none}
+.qc-opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.quote-card small{display:block;margin-top:18px;font-size:14px;color:var(--faint)}
+/* Anfrage als roter Block */
+.red{background:#BF432C;--line:rgba(255,255,255,.28)}
+.red .contact{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;align-items:center;gap:clamp(32px,6vw,96px)!important}
+.red .h2{color:#fff;max-width:13ch}
+.red .lead{color:rgba(255,255,255,.88);margin:0 0 28px}
+.cta-trust{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.cta-trust li{position:relative;padding-left:30px;font:700 18px/1.3 var(--ui);color:#fff}
+.cta-trust li::before{content:"";position:absolute;left:2px;top:.35em;width:12px;height:7px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.cta-direct{margin-top:30px;font-size:16px;color:rgba(255,255,255,.85)}
+.cta-direct a{color:#fff;font-weight:700;margin-right:14px}
+.cta-direct .wechat{display:none;color:#fff;font-weight:700}
+:lang(zh-Hans) .cta-direct .wechat{display:inline}
+.red .form{--cream:#121314;--white:#121314;--ink:rgba(18,19,20,.84);--mute:rgba(18,19,20,.6);--faint:rgba(18,19,20,.45);--line:rgba(18,19,20,.13);--bg:#fff;
+  background:#fff;border-radius:20px;box-shadow:0 40px 80px -30px rgba(0,0,0,.4);color:var(--ink)}
+.red .form .opt span{box-shadow:inset 0 0 0 1px rgba(18,19,20,.2)}
+.red .form .inp input,.red .form .inp textarea{background:#fff;border-color:rgba(18,19,20,.2);color:#121314;border-radius:10px}
+.red .form .inp input::placeholder{color:rgba(18,19,20,.4)}
+.red .form .inp input:focus,.red .form .inp textarea:focus{border-color:#121314}
+.red .form .btn.ghost{color:#121314;box-shadow:inset 0 0 0 1px rgba(18,19,20,.3)}
+.red .form .btn:hover{background:#121314;color:#fff}
+.red .form .opt span{border-radius:10px}
+.red .form .progress i.on{background:#D6523A}
+@media (max-width:900px){.red .contact{grid-template-columns:1fr!important}}
+
+
+/* Film im Hochformat: 3D-Szenen mittig */
+.film.portrait #w1{left:360px!important;top:690px!important}
+.film.portrait #w4{left:360px!important;top:720px!important}
+.film.portrait #w9{left:360px!important;top:330px!important}
+.film.portrait .isl{left:360px!important;top:660px!important}
+.film.portrait .end{padding-top:260px!important}
+/* Versandtabelle auf dem Handy gestapelt */
+@media (max-width:640px){
+  .cmp-t{min-width:0}.cmp-t thead{display:none}
+  .cmp-t,.cmp-t tbody,.cmp-t tr,.cmp-t th,.cmp-t td{display:block;width:auto!important}
+  .cmp-t tr{padding:16px 0;border-bottom:1px solid var(--line)}
+  .cmp-t th,.cmp-t td{border:0;padding:4px 0}
+  .cmp-t tbody th{font-weight:700;color:var(--cream);margin-bottom:6px}
+  .cmp-t td{padding:8px 12px;border-radius:8px}
+  .cmp-t td::before{content:attr(data-l);display:block;font-size:13px;color:var(--faint);margin-bottom:2px}
+}
+
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ================= Feinschliff: Material, Diorama, Oberflächen ================= */
+/* Pappe mit Struktur, Lichtkante und Schatten zum Boden */
+.pk .f::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .36  0 0 0 0 .25  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>")}
+.pk .t{background:linear-gradient(90deg,transparent 49.4%,rgba(90,70,40,.22) 49.4% 50.6%,transparent 50.6%),linear-gradient(140deg,#f6eddf 0%,#e8dbc3 55%,#d9caae 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.pk .fr{background:linear-gradient(180deg,rgba(255,255,255,.18) 0,rgba(255,255,255,0) 6%),linear-gradient(180deg,#ddceb3 0%,#c9b898 72%,#b6a483 100%)}
+.pk .bk{background:linear-gradient(180deg,#c8b797,#ae9c7c)}
+.pk .rt{background:linear-gradient(180deg,rgba(255,255,255,.1) 0,rgba(255,255,255,0) 6%),linear-gradient(180deg,#c0af90 0%,#a99878 75%,#97866a 100%)}
+.pk .lf{background:linear-gradient(180deg,#b9a889,#9e8d70)}
+.pk .tape{box-shadow:inset 1px 0 0 rgba(255,255,255,.25),inset -1px 0 0 rgba(0,0,0,.15)}
+.gshadow{background:radial-gradient(closest-side,rgba(0,0,0,.7),rgba(0,0,0,.25) 55%,transparent)!important}
+/* Diorama */
+.slab .t{background:radial-gradient(120% 90% at 30% 20%,#23262b,#14161a 70%)}
+.slab .fr,.slab .bk{background:#0f1113}.slab .rt,.slab .lf{background:#0c0d0f}
+.post .t,.post .fr,.post .bk,.post .rt,.post .lf{background:#5b6168}
+.shelf .t{background:#7a8088}.shelf .fr,.shelf .bk,.shelf .rt,.shelf .lf{background:#4c5157}
+.tbl .t{background:linear-gradient(140deg,#e9e4da,#cfc8bb)}.tbl .fr,.tbl .bk,.tbl .rt,.tbl .lf{background:#3c4046}
+.trl .t{background:#e9e6df}.trl .fr,.trl .bk{background:linear-gradient(180deg,#dcd8cf,#c6c1b6)}.trl .rt,.trl .lf{background:#b3aea3}
+.trl .rt::after{content:"";position:absolute;left:0;right:0;top:40%;height:12%;background:#D6523A}
+.cab .t{background:#d9d5cc}.cab .fr,.cab .bk{background:linear-gradient(180deg,#3d4249 0 38%,#cfcac0 38%)}.cab .rt,.cab .lf{background:#aaa59a}
+.bin .t{background:#3a2a26}.bin .fr,.bin .bk,.bin .rt,.bin .lf{background:linear-gradient(180deg,#a3402c,#7d2f20)}
+.zone{position:absolute;left:0;top:0;border-radius:12px;box-shadow:inset 0 0 0 1.5px rgba(247,245,239,.16);transition:background .6s,box-shadow .6s}
+.zone::before{content:"";position:absolute;inset:8px;border-radius:8px;border:1.5px dashed rgba(247,245,239,.12)}
+.zone.on{background:rgba(214,82,58,.16);box-shadow:inset 0 0 0 2px #D6523A}
+.route{position:absolute;left:0;top:0;overflow:visible}
+.route path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.blabel{position:absolute;left:0;top:0;white-space:nowrap;padding:7px 12px;border-radius:999px;background:rgba(12,13,15,.86);box-shadow:inset 0 0 0 1px rgba(247,245,239,.14);
+  font:700 15px/1 var(--ui);color:rgba(247,245,239,.78);transition:background .5s,color .5s,box-shadow .5s}
+.blabel.on{background:#D6523A;color:#fff;box-shadow:0 6px 14px rgba(0,0,0,.45)}
+.mk{transition:transform 1s cubic-bezier(.22,1,.36,1)}
+.mring{position:absolute;left:0;top:0;width:110px;height:110px;margin:-55px 0 0 -55px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,82,58,.45),transparent);transition:transform 1s cubic-bezier(.22,1,.36,1)}
+#whw{transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.wh-scene{min-height:320px!important}
+/* Tabs: Szene dreht beim Darüberfahren */
+.tp-vis .world{transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+.tp-vis::after{content:"";position:absolute;left:10%;right:10%;bottom:0;height:40%;background:linear-gradient(180deg,transparent,rgba(18,19,20,.04));pointer-events:none}
+/* Oberflächen statt Rahmen */
+.sla>div{border:0!important;background:linear-gradient(180deg,#17191c,#111315)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 30px 60px -36px rgba(0,0,0,.8)}
+.sla b{background:none}
+.sla>div::before{content:"";display:block;width:28px;height:3px;border-radius:3px;background:#D6523A;margin-bottom:22px}
+.kpis>div{padding-left:24px;border-left:1px solid var(--line)}
+.kpis>div:first-child{padding-left:0;border-left:0}
+.quote-card{background:linear-gradient(160deg,#1b1e22 0%,#121417 70%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 40px 80px -40px rgba(0,0,0,.8)!important}
+.secg li{padding:26px 24px 28px!important;border:0!important;border-radius:16px;background:#fff;box-shadow:0 1px 0 rgba(18,19,20,.04),0 24px 48px -32px rgba(18,19,20,.35)}
+.secg li::before{content:"";display:block;width:28px;height:3px;border-radius:3px;background:#D6523A;margin-bottom:18px}
+.faq.light>div,#faq .faq>div{padding:24px 0;border-top:1px solid var(--line)}
+/* Scroll-getriebene Tiefe, wo unterstützt */
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .wh-scene,.tp-vis,.dmap{animation:depthIn linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+    #beweis .sla>div,#sicherheit .secg li{animation:liftIn linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+  }
+}
+@keyframes depthIn{from{transform:perspective(1200px) rotateX(10deg) translateY(40px) scale(.94);opacity:.3}to{transform:none;opacity:1}}
+@keyframes liftIn{from{transform:translateY(36px);opacity:0}to{transform:none;opacity:1}}
+
+
+/* Tabs als Bento: Szene groß, Fakten nebeneinander */
+.tp{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;align-items:center!important}
+.tp-facts{grid-template-columns:1fr 1fr}
+.tp-facts .tp-vis{grid-column:1/-1;height:clamp(260px,26vw,340px)!important;border:0!important;box-shadow:inset 0 0 0 1px rgba(18,19,20,.06)}
+.tp-facts b{font-size:clamp(30px,3vw,42px)!important}
+@media (max-width:900px){.tp{grid-template-columns:1fr!important}}
+
+/* Mobil: Diorama bleibt oben stehen, Schritte laufen darunter */
+@media (max-width:860px){
+  .proc-stick{display:flex!important;position:sticky;top:60px;height:300px!important;z-index:2;margin:0 -20px;padding:12px 20px 0;background:var(--bg);overflow:hidden;box-shadow:0 18px 24px -6px var(--bg)}
+  .proc-stick #proc-n{font-size:34px}.proc-stick #proc-name{font-size:18px;margin-top:2px}
+  .proc-stick .wh-scene{min-height:0!important;margin:-10px 0 0;scale:.56;transform-origin:50% 45%;animation:none!important}
+  .proc-stick .proc-bar,.proc-stick .pbar{display:none}
+  .pstep{opacity:.45;transition:opacity .4s}.pstep.on{opacity:1}
+}
+
+/* ================= Seitenarchitektur: helle Bögen, Situationswahl ================= */
+/* Helle Abschnitte liegen als Bögen auf der dunklen Bühne */
+body>section.light,body>section.red{margin-inline:clamp(6px,1vw,14px);border-radius:clamp(22px,3vw,40px);position:relative;z-index:1}
+body>section.light+section.light{margin-top:clamp(6px,1vw,14px)}
+#standort{padding-top:clamp(40px,6vw,96px)!important}
+.h2,h3,.sit-t{text-wrap:balance}
+p,li{text-wrap:pretty}
+/* Situationen: eine öffnet sich, die anderen bleiben lesbar */
+.sits{display:flex;gap:12px;height:clamp(500px,40vw,580px);margin-top:clamp(28px,3vw,44px)}
+.sit{position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:clamp(24px,2.4vw,36px);border-radius:24px;background:#fff;color:#121314;overflow:hidden;cursor:pointer;
+  box-shadow:0 1px 0 rgba(18,19,20,.05),0 30px 60px -40px rgba(18,19,20,.3);transition:flex-grow .85s cubic-bezier(.22,1,.36,1),background-color .5s,color .5s}
+.sit.on{flex-grow:2.75;background:#121416;color:#F7F5EF;cursor:default;box-shadow:0 40px 80px -40px rgba(18,19,20,.55)}
+.sit:not(.on):hover{background:#fbfaf7}
+.sit-h{all:unset;display:block;max-width:330px;cursor:inherit}
+.sit-h:focus-visible{outline:2px solid #D6523A;outline-offset:6px;border-radius:6px}
+.sit-n{display:block;margin-bottom:18px;font:700 14px/1 var(--ui);letter-spacing:.04em;color:#BF432C;font-variant-numeric:tabular-nums}
+.sit.on .sit-n{color:#EC7A62}
+.sit-t{display:block;font:700 clamp(26px,2.3vw,34px)/1.05 var(--ui);letter-spacing:-.01em}
+.sit-pain{margin:auto 0 0;max-width:30ch;font-size:16.5px;line-height:1.5;color:rgba(18,19,20,.62);transition:color .5s}
+.sit.on .sit-pain{margin-top:16px;color:rgba(247,245,239,.5)}
+.sit-more{position:absolute;left:clamp(24px,2.4vw,36px);bottom:clamp(24px,2.4vw,36px);width:350px;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,visibility 0s .3s}
+.sit.on .sit-more{position:relative;left:auto;bottom:auto;margin-top:auto;padding-top:24px;opacity:1;visibility:visible;transform:none;transition:opacity .6s .35s,transform .8s .35s cubic-bezier(.22,1,.36,1),visibility 0s}
+.sit-turn{margin:0 0 18px;font:700 21px/1.3 var(--ui);color:#F7F5EF}
+.sit .ticks{margin:0 0 22px}
+.sit .ticks li{color:rgba(247,245,239,.82)}
+.sit .more{color:#F7F5EF}
+.sit:not(.on)::after{content:"+";position:absolute;right:22px;top:22px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:400 22px/1 var(--ui);color:#121314;box-shadow:inset 0 0 0 1px rgba(18,19,20,.15);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.sit:not(.on):hover::after{transform:rotate(90deg)}
+.sit.on .sit-pain{max-width:350px}
+.sit-vis[data-scene=china] .world{left:56%;top:46%;scale:.5}
+.sit-h,.sit-pain,.sit-more{z-index:2}.sit-h,.sit-pain{position:relative}
+.sit-vis{position:absolute;right:0;top:0;bottom:0;width:54%;perspective:1100px;opacity:0;transition:opacity .4s;pointer-events:none;
+  background:radial-gradient(60% 55% at 55% 55%,rgba(247,245,239,.07),transparent 70%)}
+.sit.on .sit-vis{opacity:1;transition:opacity .9s .25s}
+.sit-vis .world{left:50%;top:56%;scale:.74;transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+@media (max-width:1100px){.sit-vis .world{scale:.6}}
+@media (max-width:900px){
+  .sits{flex-direction:column;height:auto;gap:10px}
+  .sit{flex:none!important;padding:24px 22px}
+  .sit-pain{margin-top:12px}
+  .sit:not(.on)::after{top:20px;right:18px}
+  .sit-h{padding-right:44px}
+  .sit-more{position:static;width:auto;display:none}
+  .sit.on .sit-more{display:block;margin-top:8px}
+  .sit-vis{position:relative;width:auto;height:230px;margin:6px -22px 0;display:none;order:3}
+  .sit.on .sit-vis{display:block}
+  .sit-vis .world{scale:.62}
+}
+
+
+/* ================= Hero als Scroll-Video ================= */
+body>section.sv{position:relative;height:430vh;padding:0!important;margin:0!important;background:var(--bg)}
+.sv-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.sv-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0b0c}
+.sv-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,11,12,.84) 0%,rgba(10,11,12,.5) 34%,rgba(10,11,12,0) 60%),linear-gradient(0deg,rgba(10,11,12,.55) 0%,transparent 34%),linear-gradient(180deg,rgba(10,11,12,.55) 0%,transparent 18%)}
+.sv-copy{position:absolute;left:clamp(20px,6.5vw,110px);bottom:clamp(56px,10vh,120px);width:min(640px,calc(100vw - 40px));height:0}
+.sv-b{position:absolute;left:0;bottom:0;width:100%;opacity:0;visibility:hidden;will-change:opacity,transform}
+.sv-open{opacity:1;visibility:visible}
+.sv-h{margin:0;font:800 clamp(48px,6.2vw,100px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.005em;color:#F7F5EF}
+.sv-h span,.sv-h em{display:block}.sv-h em{font-style:normal;color:#D6523A}
+.sv-sub{margin:26px 0 0;max-width:46ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:rgba(247,245,239,.86)}
+.sv-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.sv-t{margin:0;font:800 clamp(40px,5.2vw,82px)/.95 var(--display);color:#F7F5EF;letter-spacing:-.01em;text-wrap:balance}
+.sv-s{margin:20px 0 0;max-width:40ch;font-size:clamp(17px,1.35vw,20px);line-height:1.5;color:rgba(247,245,239,.84)}
+.sv-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font:700 12px/1 var(--ui);letter-spacing:.2em;text-transform:uppercase;color:rgba(247,245,239,.7);opacity:calc(1 - var(--p,0) * 12)}
+.sv-cue i{width:1px;height:40px;background:linear-gradient(180deg,transparent,#F7F5EF);transform-origin:top;animation:cue 1.8s cubic-bezier(.65,0,.35,1) infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.sv-steps{position:absolute;right:clamp(20px,4vw,64px);top:50%;transform:translateY(-50%);list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sv-steps li{width:3px;height:36px;border-radius:3px;background:rgba(247,245,239,.22);overflow:hidden;position:relative}
+.sv-steps li::after{content:"";position:absolute;inset:0;background:#D6523A;transform:scaleY(var(--f,0));transform-origin:top}
+@media (max-width:900px){
+  body>section.sv{height:360vh}
+  .sv-v{top:auto;height:58%}
+  .sv-shade{background:linear-gradient(180deg,#0a0b0c 0%,#0a0b0c 42%,rgba(10,11,12,0) 56%)}
+  .sv-copy{top:96px;bottom:auto;left:20px;width:calc(100vw - 40px)}
+  .sv-b{top:0;bottom:auto}
+  .sv-h{font-size:clamp(44px,13vw,64px)}
+  .sv-sub,.sv-s{font-size:16px;margin-top:16px}
+  .sv-cta{margin-top:22px}
+  .sv-t{font-size:clamp(34px,10vw,48px)}
+  .sv-steps{display:none}
+}
+@media (prefers-reduced-motion:reduce){body>section.sv{height:auto}.sv-pin{position:relative}.sv-cue{display:none}}
+/* Situationen mit Fotos */
+.sit-vis img{width:100%;height:100%;object-fit:cover;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%);mask-image:linear-gradient(90deg,transparent 0,#000 34%)}
+.sit-vis{background:none!important}
+@media (max-width:900px){.sit-vis{height:240px}.sit-vis img{-webkit-mask-image:none;mask-image:none;border-radius:0 0 22px 22px}}
+.sit.on .sit-vis{width:58%}
+/* Bildkopf über den Leistungen */
+.photo-head{position:relative;margin:0 clamp(6px,1vw,14px) clamp(48px,6vw,88px);height:clamp(420px,72vh,720px);border-radius:clamp(22px,3vw,40px);overflow:hidden}
+.photo-head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.photo-head::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,11,12,.86) 0%,rgba(10,11,12,.3) 45%,rgba(10,11,12,0) 70%)}
+.ph-copy{position:absolute;z-index:1;left:clamp(20px,6vw,100px);right:20px;bottom:clamp(28px,5vw,72px);max-width:900px}
+.ph-copy .h2{color:#F7F5EF;font-size:clamp(40px,5.6vw,88px);line-height:.95}
+.ph-copy .lead{margin-top:16px;color:rgba(247,245,239,.84)}
+#leistungen{padding-top:clamp(6px,1vw,14px)!important}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
+  .photo-head img{animation:phZoom linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+}}
+@keyframes phZoom{from{transform:scale(1.14)}to{transform:scale(1)}}
+
+
+/* ================= Warum wir: gestapelte Bildkarten ================= */
+body>section.why{padding-bottom:clamp(40px,6vw,96px)}
+.why-stack{margin-top:clamp(28px,3vw,44px);padding:0 clamp(6px,1vw,14px)}
+.why-card{position:sticky;top:84px;height:calc(100vh - 120px);height:calc(100svh - 120px);min-height:500px;max-height:820px;margin-bottom:28px;border-radius:clamp(22px,3vw,40px);overflow:hidden;background:#121416;
+  box-shadow:0 -24px 60px -24px rgba(0,0,0,.7)}
+.why-card:nth-child(2){top:100px}.why-card:nth-child(3){top:116px}
+.why-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.why-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,11,12,.88) 0%,rgba(10,11,12,.4) 42%,rgba(10,11,12,0) 68%),linear-gradient(90deg,rgba(10,11,12,.45),transparent 55%)}
+.why-copy{position:absolute;z-index:1;left:clamp(22px,5vw,88px);right:22px;bottom:clamp(28px,5vw,80px);max-width:820px}
+.why-n{display:block;margin-bottom:16px;font:700 14px/1 var(--ui);letter-spacing:.06em;color:#EC7A62}
+.why-copy h3{margin:0;font:800 clamp(38px,5.2vw,84px)/.95 var(--display);color:#F7F5EF;text-wrap:balance}
+.why-copy p{margin:20px 0 0;max-width:44ch;font-size:clamp(17px,1.4vw,21px);line-height:1.5;color:rgba(247,245,239,.86)}
+@media (max-width:900px){.why-card{top:72px;height:76svh;min-height:440px}.why-card:nth-child(2){top:84px}.why-card:nth-child(3){top:96px}}
+/* Versand: Haustür */
+.ship-photo{position:relative;margin:clamp(24px,3vw,40px) 0 clamp(28px,3vw,44px);height:clamp(300px,34vw,460px);border-radius:24px;overflow:hidden}
+.ship-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ship-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,12,.78) 0%,rgba(10,11,12,.35) 40%,transparent 65%)}
+.ship-photo figcaption{position:absolute;z-index:1;left:clamp(22px,4vw,56px);bottom:clamp(22px,4vw,48px);max-width:min(460px,80%)}
+.ship-photo b{display:block;font:800 clamp(28px,3.2vw,48px)/1 var(--display);color:#F7F5EF;text-wrap:balance}
+.ship-photo span{display:block;margin-top:14px;font-size:17px;line-height:1.5;color:rgba(247,245,239,.86)}
+@media (max-width:900px){.ship-photo::after{background:linear-gradient(0deg,rgba(10,11,12,.85) 0%,rgba(10,11,12,.2) 60%)}}
+/* Anfrage: Partnerbild */
+#anfrage .contact{align-items:start!important}
+#anfrage .form{margin-top:0!important}
+.send-err{margin:14px 0 0;padding:12px 14px;border-radius:10px;background:#fbe9e5;color:#7a2416;font-size:15px;line-height:1.45}
+.cta-photo{margin:0 0 clamp(24px,3vw,36px);height:clamp(200px,20vw,300px);border-radius:20px;overflow:hidden}
+.cta-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Responsive */
+@media (max-width:900px){
+  .proof .wrap,.who-row,.price-grid,.contact,.loc{grid-template-columns:1fr}
+  .photo{aspect-ratio:16/10}
+  .calc{position:static}
+  .ways{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:48px 24px}
+  .steps::before{display:none}
+  .groups{grid-template-columns:1fr 1fr;row-gap:40px}
+  .faq{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .route::before,.route::after{left:8px}
+  .stop{grid-template-columns:1fr;padding-left:40px}
+  .stop::before{left:8px}
+  .stop .body,.stop.r .body{grid-column:1;text-align:left}
+  .stop:not(.r) .body p{margin-left:0}
+  .hero-prices,.small-prices,.two{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .checks{grid-template-columns:1fr}
+  /* Streckenplan wird vertikal */
+  .map{height:430px;margin-top:8px}
+  .map .track{left:10px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(180deg,var(--accent),rgba(214,82,58,.25))}
+  .city{left:10px!important;top:var(--p);transform:none}
+  .city::before{left:0;top:-6px}
+  .city.home::before{top:-11px}
+  .city span,.city.up span,.city.down span,.city:last-child span,.city.home span{left:26px;right:auto;top:-9px;bottom:auto;transform:none;text-align:left}
+  .city span b{display:inline;margin-right:8px;font-size:17px}
+  footer .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+World: aerial freight line at night. Cream type on coal black, one signal-red accent (#D6523A). Condensed display caps for headlines only; body in sentence case.
+Signature: the rail. Hero axis (client brief, fixed) continues as the service route whose track fills red on scroll, and as the distance map from Detmold.
+Composition: every section a different family (statement, index rows, route, two-way split, price sheet + calculator, numbered steps, grouped columns, line map, open Q&A, form).
+Lean page: no duplicates (no SLA block, no fit list, no integrations section, no second hall photo). No order deadline and no next-day promise as a standard; the message is "we pack and ship for you". Prices shown as lowest "ab" tier. Hero: scroll-scrubbed POV video (warehouse to doorstep, all-keyframe MP4 in media/) with three beats at the matching frames. Photography (team, packing, container, conveyor) in the situation cards and as the services header; rounded like the light sheets. Motion: the "Why us" film (51 s, Apple-like restraint: one lit hero parcel in CSS 3D growing into a 3D field of parcels, container to pallet to carton, words flying through space, warm dawn at the turn, dot map of Germany with next-day wave, iOS-style call banner from "Detmold" (no names, no device), small print dissolving, channel marquees; words fade up from blur; scenes cross-dissolve into depth). No shake, flashes, pulse line or sound. Route fill + station lights.
+Story: answer a first-time visitor's questions (pain first; never personal names or fake devices in the film).
+Page order follows the buying mind: recognise (hero, film, figures, "Wo stehst du gerade?" situation chooser), understand (services diorama, shipping, location), trust (commitments, security), decide (start + integrations, prices, FAQ, request). Light sections are rounded sheets on the dark stage. Textured cardboard material on every 3D box; process diorama (slab, racks, packing table, truck, returns bin, glowing route, upright labels); plain-language copy (no "cut-off" jargon). Dark base broken by light paper sections (solutions, shipping, security, FAQ) and a red CTA block; 3D scenes in tabs, isometric warehouse zones in the process, dot map at location; no price calculator. Enterprise structure (KPI band, solutions tabs, sticky process, SLA cards, comparison table, security, column footer) with a fixed left guide whose red dot travels to the active section; never claim market leadership (no price calculator). CTA red block uses #BF432C for AA contrast. Mobile: film scenes centred, comparison table stacked; film transcript is screen-reader only. Section headings in sentence case (caps only in the hero). Guide labels appear on hover only. (for whom, what, why us) via setup/payoff, not the parcel's journey.
+Voice: German "du", short native lines, values modern, fast, personal, solution-minded; working claim "Läuft." (never claim "we ship our own goods").
+Rules: no eyebrows below the hero, no dashes as separators, no shipping/material prices, no Google services.
+-->
+<a class="skip" href="#warum" data-i18n="skip">Zum Inhalt springen</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">Profit Logistic<b>.</b></a>
+  <ul>
+    <li><a href="#leistungen" data-i18n="nav_services">Leistungen</a></li>
+    <li><a href="#preise" data-i18n="nav_prices">Preise</a></li>
+    <li><a href="#china" data-sit="2" data-i18n="nav_china">China-Seller</a></li>
+    <li><a href="#standort" data-i18n="nav_location">Standort</a></li>
+  </ul>
+  <div class="lang" role="group" aria-label="Sprache / Language / 语言">
+    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+  </div>
+  <a class="btn small" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a>
+</header>
+
+<nav class="guide" id="guide" aria-label="Seitenübersicht">
+  <div class="g-line"><i class="g-fill" id="g-fill"></i><span class="g-dot" id="g-dot"></span></div>
+  <ol id="g-list"></ol>
+</nav>
+<div class="gbar" aria-hidden="true"><i id="gbar"></i></div>
+
+<!-- ================= HERO: Scroll-Video, das Paket reist vom Lager bis zur Haustür ================= -->
+<section class="sv" id="top" aria-labelledby="sv-h">
+  <span class="sentinel" aria-hidden="true"></span>
+  <div class="sv-pin">
+    <video class="sv-v" id="sv-v" muted playsinline preload="auto" disablepictureinpicture poster="media/hero-poster.jpg"
+      aria-label="Ein Paket wird aus der Lagerhalle bis an die Haustür eines Kunden getragen"></video>
+    <div class="sv-shade" aria-hidden="true"></div>
+    <div class="sv-copy">
+      <div class="sv-b sv-open" data-in="0" data-out=".16">
+        <h1 class="sv-h" id="sv-h"><span data-i18n="hl1">Lagern.</span> <span data-i18n="hl2">Packen.</span> <span data-i18n="hl3">Versenden.</span> <em data-i18n="hl4">Läuft.</em></h1>
+        <p class="sv-sub" data-i18n="sv_sub">Fulfillment aus der Mitte Deutschlands für Online-Händler und Seller aus China. Mehr als 100.000 Pakete im Jahr.</p>
+        <div class="sv-cta"><a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a><a class="btn ghost" href="#preise" data-i18n="cta_calc">Preise ansehen</a></div>
+      </div>
+      <div class="sv-b" data-in=".24" data-out=".44"><p class="sv-t" data-i18n="sv_b1">Deine Ware liegt in Detmold.</p><p class="sv-s" data-i18n="sv_b1s">Jeder Wareneingang wird gezählt, Abweichungen belegen wir mit Fotos.</p></div>
+      <div class="sv-b" data-in=".5" data-out=".7"><p class="sv-t" data-i18n="sv_b2">Wir packen für dich.</p><p class="sv-s" data-i18n="sv_b2s">In deiner Verpackung, mit Beilage und Lieferschein.</p></div>
+      <div class="sv-b" data-in=".78" data-out="1"><p class="sv-t" data-i18n="sv_b3">Und verschicken für dich.</p><p class="sv-s" data-i18n="sv_b3s">Mit deinem Versandvertrag oder mit unserem. Nach Deutschland, Österreich, in die Schweiz und in die EU.</p>
+        <div class="sv-cta"><a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a></div></div>
+    </div>
+    <div class="sv-cue" aria-hidden="true"><i></i><span data-i18n="sv_cue">Scrollen</span></div>
+    <ol class="sv-steps" aria-hidden="true"><li></li><li></li><li></li></ol>
+  </div>
+</section>
+
+<!-- 0 · Warum wir: drei Gründe als gestapelte Bildkarten -->
+<section id="warum" class="guided why" data-gd="gd1" aria-labelledby="film-h">
+  <div class="wrap"><h2 class="h2" id="film-h" data-i18n="film_h">Warum wir</h2></div>
+  <div class="why-stack">
+    <article class="why-card"><img src="media/handover-1672.webp" srcset="media/handover-900.webp 900w, media/handover-1672.webp 1672w" sizes="100vw" alt="" loading="lazy" decoding="async" style="object-position:50% 55%"><div class="why-copy"><span class="why-n">01</span><h3 data-i18n="wy1_h">Ein fester Ansprechpartner.</h3><p data-i18n="wy1_p">Kein Callcenter, kein Ticketsystem. Dein Kontakt in Detmold kennt deine Ware, deine Kunden und deine Sonderwünsche.</p></div></article>
+    <article class="why-card"><img src="media/routes-1672.webp" srcset="media/routes-900.webp 900w, media/routes-1672.webp 1672w" sizes="100vw" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><div class="why-copy"><span class="why-n">03</span><h3 data-i18n="wy3_h">Egal, wie deine Ware ankommt.</h3><p data-i18n="wy3_p">Per LKW, im Container oder als Luftfracht: Wir nehmen sie in Detmold an, zählen sie und lagern sie ein.</p></div></article>
+  </div>
+</section>
+
+<!-- A · Kennzahlen -->
+<section class="kpi-band" id="zahlen" aria-label="Kennzahlen">
+  <div class="wrap">
+    <div class="logos" aria-label="Angebunden an">
+      <span class="logos-l" data-i18n="lg_h">Angebunden an</span>
+      <div class="logos-track"><div class="logos-row">
+        <b>Shopify</b><b>Amazon</b><b>Otto</b><b>Kaufland</b><b>TikTok Shop</b><b>Temu</b><b>SHEIN</b><b>Shopware</b><b>JTL</b><b>Billbee</b><b>DHL</b><b>DPD</b><b>GLS</b><b>UPS</b>
+        <b aria-hidden="true">Shopify</b><b aria-hidden="true">Amazon</b><b aria-hidden="true">Otto</b><b aria-hidden="true">Kaufland</b><b aria-hidden="true">TikTok Shop</b><b aria-hidden="true">Temu</b><b aria-hidden="true">SHEIN</b><b aria-hidden="true">Shopware</b><b aria-hidden="true">JTL</b><b aria-hidden="true">Billbee</b><b aria-hidden="true">DHL</b><b aria-hidden="true">DPD</b><b aria-hidden="true">GLS</b><b aria-hidden="true">UPS</b>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- B · Situation: Wiedererkennen statt Kategorie wählen -->
+<section id="loesungen" class="guided light" data-gd="gd2" aria-labelledby="so-h">
+  <div class="wrap">
+    <h2 class="h2" id="so-h" data-i18n="so_h">Wo stehst du gerade?</h2>
+    <div class="sits" id="sits">
+      <article class="sit on">
+        <button class="sit-h" type="button" aria-expanded="true" aria-controls="sit1"><span class="sit-n">01</span><span class="sit-t" data-i18n="si1_t">Du packst noch selbst.</span></button>
+        <p class="sit-pain" data-i18n="si1_p">Abends Kartons, am Wochenende Retouren. Jeder neue Kanal heißt noch mehr packen.</p>
+        <div class="sit-more" id="sit1">
+          <p class="sit-turn" data-i18n="si1_c">Ab jetzt packen wir. Du kümmerst dich um Produkt und Verkauf.</p>
+          <ul class="ticks"><li data-i18n="si1_b1">Shop und Marktplätze automatisch angebunden</li><li data-i18n="si1_b2">Prime-fähig, wenn du es brauchst</li><li data-i18n="si1_b3">Dein Versandvertrag bleibt, wenn du willst</li></ul>
+          <a class="more" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a>
+        </div>
+        <div class="sit-vis" aria-hidden="true"><img src="media/team-900.webp" srcset="media/team-900.webp 900w, media/team-1672.webp 1672w" sizes="(max-width:900px) 100vw, 44vw" alt="" loading="lazy" decoding="async" style="object-position:42% 50%"></div>
+      </article>
+      <article class="sit">
+        <button class="sit-h" type="button" aria-expanded="false" aria-controls="sit2"><span class="sit-n">02</span><span class="sit-t" data-i18n="si2_t">Dein Dienstleister kennt dich nicht.</span></button>
+        <p class="sit-pain" data-i18n="si2_p">Antworten nach drei Tagen, Fehler ohne Erklärung, jede Frage wird zum Ticket.</p>
+        <div class="sit-more" id="sit2">
+          <p class="sit-turn" data-i18n="si2_c">Ein fester Ansprechpartner in Detmold, der deine Ware kennt. Den Umzug planen wir mit dir.</p>
+          <ul class="ticks"><li data-i18n="si2_b1">Antwort am selben Werktag</li><li data-i18n="si2_b2">Wareneingang und Bestand mit Fotos belegt</li><li data-i18n="si2_b3">Monatlich kündbar, ohne Mindestlaufzeit</li></ul>
+          <a class="more" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a>
+        </div>
+        <div class="sit-vis" aria-hidden="true"><img src="media/packing-900.webp" srcset="media/packing-900.webp 900w, media/packing-1672.webp 1672w" sizes="(max-width:900px) 100vw, 44vw" alt="" loading="lazy" decoding="async" style="object-position:36% 50%"></div>
+      </article>
+      <article class="sit" id="china">
+        <button class="sit-h" type="button" aria-expanded="false" aria-controls="sit3"><span class="sit-n">03</span><span class="sit-t" data-i18n="si3_t">Du verkaufst aus China nach Europa.</span></button>
+        <p class="sit-pain" data-i18n="si3_p">Seit Juli 2026 kostet jede Kleinsendung 3 € Zoll pro Warenposition. Und lange Lieferzeiten kosten Bewertungen.</p>
+        <div class="sit-more" id="sit3">
+          <p class="sit-turn" data-i18n="si3_c">Hol deine Ware gebündelt per Container. Wir entladen, lagern und versenden in ganz Europa.</p>
+          <ul class="ticks"><li data-i18n="so3_b1">Entladung von 20- und 40-Fuß-Containern</li><li data-i18n="so3_b2">Anbindung an Lingxing, ECCANG und Mabang</li><li data-i18n="so3_b3">Partner für Zoll, Umsatzsteuer und EU-Vertretung</li></ul>
+          <a class="more" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a>
+        </div>
+        <div class="sit-vis" aria-hidden="true"><img src="media/container-900.webp" srcset="media/container-900.webp 900w, media/container-1672.webp 1672w" sizes="(max-width:900px) 100vw, 44vw" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- C · Prozess als Scroll-Geschichte -->
+<section id="leistungen" class="guided" data-gd="gd3" aria-labelledby="svc-h">
+  <div class="photo-head">
+    <img src="media/conveyor-1672.webp" srcset="media/conveyor-900.webp 900w, media/conveyor-1672.webp 1672w" sizes="100vw" alt="" loading="lazy" decoding="async">
+    <div class="ph-copy"><h2 class="h2" id="svc-h" data-i18n="svc_h">Alles zwischen Container und Haustür.</h2><p class="lead" data-i18n="svc_sub">Sechs Stationen, ein Ablauf, ein Ansprechpartner.</p></div>
+  </div>
+  <div class="proc">
+    <div class="proc-stick" aria-hidden="true">
+      <div class="proc-idx"><span id="proc-n">01</span><small>/ 06</small></div>
+      <div class="proc-name" id="proc-name"></div>
+      <div class="wh-scene"><div class="world" id="whw"></div></div>
+      <ol class="proc-rail" id="proc-rail"><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+    </div>
+    <ol class="proc-steps" id="proc-steps">
+      <li class="pstep"><h3 data-i18n="sv1_h">Wareneingang und Container</h3><p data-i18n="sv1_p">Sortenreine Paletten, Mischkartons, lose 20- und 40-Fuß-Container. Gezählt, dokumentiert, Abweichungen mit Foto.</p></li>
+      <li class="pstep"><h3 data-i18n="sv2_h">Lagerung</h3><p data-i18n="sv2_p">Europaletten, Fachboden, Kleinteile. Dein Bestand ist jeden Tag aktuell, und im Weihnachtsgeschäft kostet die Lagerung nicht mehr.</p></li>
+      <li class="pstep"><h3 data-i18n="sv3_h">Pick &amp; Pack</h3><p data-i18n="sv3_p">Einzel- und Mehrfachaufträge, Beilagen, Lieferschein. Versandtasche oder Karton, je nachdem, was deine Ware braucht.</p></li>
+      <li class="pstep"><h3 data-i18n="sv4_h">Versand</h3><p data-i18n="sv4_p">Mit deinem eigenen Vertrag bei DHL, DPD, GLS, UPS oder Hermes oder über unsere DHL-Anbindung. Nach Deutschland, Österreich, in die Schweiz und die EU.</p></li>
+      <li class="pstep"><h3 data-i18n="sv5_h">Retouren</h3><p data-i18n="sv5_p">Annahme, Prüfung, Fotos, Wiedereinlagerung oder Entsorgung. Nach deinen Regeln, mit Rückmeldung an deinen Shop.</p></li>
+      <li class="pstep"><h3 data-i18n="sv6_h">Zusatzleistungen</h3><p data-i18n="sv6_p">FNSKU und Umetikettierung, FBA-Prep und Nachschub an Amazon, Sets, Qualitätskontrolle, Produktfotos, B2B- und Palettenversand.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- E · Versand im Vergleich -->
+<section id="versand" class="guided light" data-gd="gd5" aria-labelledby="ship-h">
+  <div class="wrap">
+    <h2 class="h2" id="ship-h" data-i18n="ship_h">Versand mit deinen Konditionen oder unseren</h2>
+    <figure class="ship-photo"><img src="media/doorstep-1672.webp" srcset="media/doorstep-900.webp 900w, media/doorstep-1672.webp 1672w" sizes="(max-width:900px) 100vw, 1240px" alt="" loading="lazy" decoding="async" style="object-position:50% 55%"><figcaption><b data-i18n="ship_ph">Dein Paket, dein Versandweg.</b><span data-i18n="ship_ps">Mit deinem Versandvertrag oder mit unserem. Nach Deutschland, Österreich, in die Schweiz und in die EU.</span></figcaption></figure>
+    <div class="cmp-wrap"><table class="cmp-t">
+      <thead><tr><th scope="col"><span class="sr" data-i18n="cmp_k">Merkmal</span></th><th scope="col" class="hl" data-i18n="cmp_a">Dein Vertrag</th><th scope="col" data-i18n="cmp_b">Unser DHL-Vertrag</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" data-i18n="cmp_r1">Paketdienste</th><td class="hl">DHL, DPD, GLS, UPS, Hermes</td><td>DHL</td></tr>
+        <tr><th scope="row" data-i18n="cmp_r2">Labels</th><td class="hl" data-i18n="cmp_r2a">Wir drucken über dein Konto</td><td data-i18n="cmp_r2b">Wir drucken über unser Konto</td></tr>
+        <tr><th scope="row" data-i18n="cmp_r3">Abrechnung Porto</th><td class="hl" data-i18n="cmp_r3a">Direkt mit deinem Paketdienst</td><td data-i18n="cmp_r3b">Mit unserer Monatsrechnung</td></tr>
+        <tr><th scope="row" data-i18n="cmp_r4">Zielländer</th><td class="hl" data-i18n="cmp_r4a">Laut deinem Vertrag</td><td data-i18n="cmp_r4b">Deutschland, Österreich, Schweiz, EU</td></tr>
+        <tr><th scope="row" data-i18n="cmp_r5">Abholung</th><td class="hl" data-i18n="cmp_r5a">Zu einer festen Zeit bei uns</td><td data-i18n="cmp_r5b">Täglich bei uns</td></tr>
+        <tr><th scope="row" data-i18n="cmp_r6">Passt, wenn</th><td class="hl" data-i18n="cmp_r6a">du gute Konditionen hast</td><td data-i18n="cmp_r6b">du keinen Vertrag oder kleine Mengen hast</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- 8 · Standort -->
+<section id="standort" class="joined" data-gd="gd10" aria-labelledby="loc-h">
+  <div class="loc">
+    <div>
+      <h2 class="h2" id="loc-h" data-i18n="loc_h">Detmold liegt in der Mitte</h2>
+      <p class="lead" data-i18n="loc_lead">Ostwestfalen-Lippe, nah an A2 und A33. Kurze Wege zu den Paketzentren und in alle Richtungen.</p>
+    </div>
+    <div>
+      <div class="dmap" role="img" aria-label="Karte: Detmold liegt zentral in Deutschland. Köln 200 km, Hamburg 250 km, Frankfurt 290 km, Berlin 380 km, München 600 km"><canvas id="dmap" width="1100" height="1180"></canvas></div>
+      <p class="map-note" data-i18n="map_note">Straßenkilometer ab Detmold, gerundet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- I · Sicherheit -->
+<section id="sicherheit" class="guided light" data-gd="gd9" aria-labelledby="sec-h">
+  <div class="wrap">
+    <h2 class="h2" id="sec-h" data-i18n="sec_h">Sicher und regelkonform</h2>
+    <ul class="secg">
+      <li><h3 data-i18n="sec1h">Deine Kundendaten</h3><p data-i18n="sec1p">Wir verarbeiten Adressen nur in deinem Auftrag, mit Auftragsverarbeitungsvertrag nach DSGVO.</p></li>
+      <li><h3 data-i18n="sec2h">Klare Haftung</h3><p data-i18n="sec2p">Lagerung und Versand nach ADSp 2017 und unseren Logistik-AGB. Versicherungsschutz stimmen wir mit dir ab.</p></li>
+      <li><h3 data-i18n="sec3h">Geprüfte Ware</h3><p data-i18n="sec3p">Vor dem ersten Wareneingang prüfen wir LUCID, WEEE, Batterie-Registrierung und die verantwortliche Person nach GPSR.</p></li>
+      <li><h3 data-i18n="sec4h">Lückenlos dokumentiert</h3><p data-i18n="sec4p">Wareneingang, Bestand und Retouren werden gezählt und mit Fotos belegt, wenn etwas nicht stimmt.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6 · Ablauf -->
+<section id="ablauf" class="guided" data-gd="gd7" aria-labelledby="flow-h">
+  <div class="wrap"><h2 class="h2" id="flow-h" data-i18n="flow_h">So startest du</h2></div>
+  <ol class="steps">
+    <li><h3 data-i18n="f1_h">Anfrage</h3><p data-i18n="f1_p">Kanäle, Mengen und Ware in drei kurzen Schritten.</p></li>
+    <li><h3 data-i18n="f2_h">Angebot</h3><p data-i18n="f2_p">Innerhalb eines Werktags, mit allen Positionen.</p></li>
+    <li><h3 data-i18n="f3_h">Anbindung</h3><p data-i18n="f3_p">Shop oder ERP verbinden, Nachweise prüfen, Ware anmelden.</p></li>
+    <li><h3 data-i18n="f4_h">Erster Versand</h3><p data-i18n="f4_p">Die Ware liegt im Regal. Ab jetzt packen wir.</p></li>
+  </ol>
+</section>
+
+<!-- 5 · Preise -->
+<section id="preise" class="guided" data-gd="gd6" aria-labelledby="pr-h">
+  <div class="wrap"><h2 class="h2" id="pr-h" data-i18n="pr_h">Was es kostet</h2></div>
+  <div class="price-grid">
+    <div>
+      <div class="hero-prices">
+        <div class="big-price"><span class="v num" data-price="12.49" data-from></span><span class="u" data-i18n="p1">pro Palettenplatz und Monat</span><span class="d" data-i18n="p1d">Europalette bis 1,80 m. Der genaue Preis richtet sich nach deiner Menge.</span></div>
+        <div class="big-price"><span class="v num" data-price="1.45" data-from></span><span class="u" data-i18n="p2">Pick &amp; Pack pro Auftrag</span><span class="d" data-i18n="p2d">Erster Artikel, jeder weitere ab 0,30 €. Der genaue Preis richtet sich nach deiner Auftragsmenge.</span></div>
+      </div>
+      <div class="small-prices">
+        <div><span class="v num" data-price="15.49" data-from></span><span class="d" data-i18n="p3">pro m³ und Monat, für Kleinmengen und Fachboden</span></div>
+        <div><span class="v num" data-price="6.50" data-from></span><span class="d" data-i18n="p4">Wareneingang pro Palette mit einer Artikelsorte, vorher angemeldet</span></div>
+        <div><span class="v num" data-price="1.49" data-from></span><span class="d" data-i18n="p5">pro Retoure, zuzüglich 0,40 € je Artikel</span></div>
+        <div><span class="v num" data-price="189" data-from></span><span class="d" data-i18n="p6">Container entladen, 20 Fuß lose. 40 Fuß ab 339 €</span></div>
+      </div>
+      <p class="terms" data-rich="terms"><strong>Keine Grundgebühr, keine Einrichtungskosten, kein Aufschlag im Weihnachtsgeschäft, monatlich kündbar.</strong> Mindestumsatz 149 € im Monat, verrechnet mit allen Leistungen; ab 300 Aufträgen entfällt er. Versand, Verpackung und Zusatzleistungen stehen in deinem Angebot. Alle Preise netto, nur für Unternehmen.</p>
+    </div>
+
+    <div class="quote-card" id="rechner">
+      <h3 data-i18n="qc_h">Dein genauer Preis hängt an deinem Volumen.</h3>
+      <p data-i18n="qc_p">Wie viele Pakete verschickst du im Monat? Du bekommst ein Angebot mit allen Positionen, inklusive Versand und Verpackung.</p>
+      <div class="qc-opts">
+        <button type="button" data-vol="lt500" data-i18n="o_v1">unter 500</button>
+        <button type="button" data-vol="500-2000" data-i18n="o_v2">500 bis 2.000</button>
+        <button type="button" data-vol="2000-10000" data-i18n="o_v3">2.000 bis 10.000</button>
+        <button type="button" data-vol="gt10000" data-i18n="o_v4">über 10.000</button>
+      </div>
+      <small data-i18n="qc_s">Antwort am selben Werktag. Unverbindlich.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · FAQ -->
+<section id="faq" class="guided light" data-gd="gd11" aria-labelledby="faq-h">
+  <div class="wrap"><h2 class="h2" id="faq-h" data-i18n="faq_h">Häufige Fragen</h2></div>
+  <div class="faq">
+    <div><h3 data-i18n="q3">Welche Waren lagert ihr?</h3><p data-i18n="a3">Alles, was rechtlich gelagert und versendet werden darf. Elektrogeräte und Batterien nur mit gültiger Hersteller-Registrierung. Gefahrgut wie Lithium-Akkus prüfen wir im Einzelfall.</p></div>
+    <div><h3 data-i18n="q4">Beliefert ihr Amazon FBA?</h3><p data-i18n="a4">Ja. Wir etikettieren mit FNSKU, bereiten Kartons und Paletten nach Amazon-Vorgaben vor und schicken Nachschub an die FBA-Lager.</p></div>
+    <div><h3 data-i18n="q5">Übernehmt ihr die Verzollung aus China?</h3><p data-i18n="a5">Die Einfuhr läuft über unseren Partner-Zollagenten auf deinen Namen, mit deiner EORI und USt-IdNr. Wir koordinieren Ankunft, Entladung und Einlagerung.</p></div>
+    <div><h3 data-i18n="q6">Wie schnell kann ich starten?</h3><p data-i18n="a6">Sobald Angebot, Anbindung und Nachweise stehen. Standard-Shopsysteme sind schnell verbunden. ERP- und API-Anbindungen planen wir gemeinsam mit dir.</p></div>
+  </div>
+</section>
+
+<!-- Film „Kurz erklärt“: Zusammenfassung direkt vor der Anfrage -->
+<section id="film" class="joined" aria-labelledby="film2-h">
+  <div class="wrap"><h2 class="h2" id="film2-h" data-i18n="film2_h">Kurz erklärt</h2></div>
+  <div class="film" id="film-el">
+    <div class="screen" aria-describedby="film-tr">
+      <div class="fstage" id="fstage">
+
+        <div class="shot" data-shot="0">
+          <div class="glow" style="left:200px;top:40px;width:880px;height:640px"></div>
+          <div class="persp" style="perspective:1500px;perspective-origin:50% 30%"><div class="world" id="w1" style="left:640px;top:575px"></div></div>
+          <div class="tx c top"><p class="mt" data-k="fm1a">Dein Shop wächst.</p><p class="mt dim" data-k="fm1b">Und mit ihm der Versand.</p><p class="mt s" data-k="fm1c" style="margin-top:14px">Kartons im Flur. Labels um Mitternacht.</p></div>
+        </div>
+
+        <div class="shot" data-shot="1">
+          <div class="fly" id="fly"></div>
+          <div class="tx c top"><p class="mt" data-k="fm2a">Oder ein Dienstleister,</p><p class="mt dim" data-k="fm2b">der dich warten lässt.</p></div>
+        </div>
+
+        <div class="shot" data-shot="2">
+          <div class="dawn" id="dawn"></div>
+          <div class="tx c mid"><p class="mt dim" data-k="fm3a">Es geht auch anders.</p><p class="mt xl" data-k="fm3b" style="margin-top:28px">Profit Logistic</p><p class="mt s" data-k="fm3c">Fulfillment aus Detmold.</p></div>
+        </div>
+
+        <div class="shot" data-shot="3">
+          <div class="glow" style="left:520px;top:60px;width:780px;height:620px"></div>
+          <div class="persp" style="perspective:1500px;perspective-origin:62% 36%"><div class="world" id="w4" style="left:870px;top:470px"></div></div>
+          <div class="tx l"><p class="mt xl" data-k="fm4a">Container.</p><p class="mt xl" data-k="fm4b">Paletten.</p><p class="mt xl acc" data-k="fm4c">Einzelne Kartons.</p><p class="mt s" data-k="fm4d">Wir nehmen deine Ware so an, wie sie kommt, lagern sie sauber ein und verschicken jede Bestellung einzeln.</p></div>
+        </div>
+
+        <div class="shot" data-shot="4">
+          <div class="vis mapw" style="left:600px;top:70px"><div class="mapp" id="mapp"><canvas id="mapc" width="1280" height="1200"></canvas></div></div>
+          <div class="tx l"><p class="mt" data-k="fm5a">Bestellung rein.</p><p class="mt" data-k="fm5b">Gepackt.</p><p class="mt acc" data-k="fm5c">Und für dich verschickt.</p><p class="mt s" data-k="fm5d">Detmold liegt mitten in Deutschland. Kurze Wege in alle Richtungen.</p></div>
+        </div>
+
+        <div class="shot" data-shot="5">
+          <div class="glow" style="left:560px;top:100px;width:700px;height:520px"></div>
+          <div class="isl" id="isl" style="left:900px;top:360px"><div class="ic"><b>Detmold</b><small data-i18n="fm_who">Dein Ansprechpartner</small></div><span class="ct2" id="ctime">0:00</span></div>
+          <div class="tx l"><p class="mt" data-k="fm6a">Kein Ticket.</p><p class="mt acc" data-k="fm6b">Ein Mensch, der rangeht.</p><p class="mt s" data-k="fm6c">Ein fester Ansprechpartner, der deine Ware kennt. Antwort am selben Werktag.</p></div>
+        </div>
+
+        <div class="shot" data-shot="6">
+          <div class="ghosts" id="ghosts"><p data-i18n="gh1">Einrichtungsgebühr</p><p data-i18n="gh2">Mindestlaufzeit</p><p data-i18n="gh3">Q4-Zuschlag</p><p data-i18n="gh4">Versand nur über uns</p></div>
+          <div class="tx l"><p class="mt m dim" data-k="fm7a">Und ohne Kleingedrucktes.</p><p class="mt m" data-k="fm7b" style="margin-top:26px">Keine Einrichtungsgebühr.</p><p class="mt m" data-k="fm7c">Monatlich kündbar.</p><p class="mt m" data-k="fm7d">Dein Versandvertrag bleibt.</p></div>
+        </div>
+
+        <div class="shot" data-shot="7">
+          <div class="rows" id="rows"></div>
+          <div class="tx c top"><p class="mt" data-k="fm8a">Deine Kanäle. Automatisch angebunden.</p></div>
+          <div class="tx c bot"><p class="mt s" data-k="fm8b">Ob deine Ware aus Stuttgart kommt oder aus Shenzhen.</p></div>
+        </div>
+
+        <div class="shot" data-shot="8">
+          <div class="glow" style="left:340px;top:-40px;width:600px;height:460px"></div>
+          <div class="persp" style="perspective:1400px;perspective-origin:50% 20%"><div class="world" id="w9" style="left:640px;top:200px"></div></div>
+          <div class="end" style="padding-top:150px">
+            <p class="mt xl" data-k="fm9a">Fulfillment,</p>
+            <p class="mt xl acc" data-k="fm9b">das einfach läuft.</p>
+            <a class="btn" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a>
+            <small data-i18n="fm9c">Antwort am selben Werktag.</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="film-ui">
+      <div class="segs" id="segs"></div>
+      <div class="film-meta"><span class="film-chap" id="film-chap"></span><button type="button" class="btn ghost small" id="film-btn"></button></div>
+    </div>
+    <p class="sr" id="film-tr"></p>
+    <div hidden>
+      <span data-i18n="fc1">Wachstum</span><span data-i18n="fc2">Warten</span><span data-i18n="fc3">Wendepunkt</span><span data-i18n="fc4">Wareneingang</span><span data-i18n="fc5">Tempo</span>
+      <span data-i18n="fc6">Ansprechpartner</span><span data-i18n="fc7">Fair</span><span data-i18n="fc8">Kanäle</span><span data-i18n="fc9">Start</span>
+      <span data-i18n="f_play">Abspielen</span><span data-i18n="f_pause">Pause</span><span data-i18n="f_again">Nochmal ansehen</span>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · Anfrage -->
+<section id="anfrage" class="guided red" data-gd="gd12" aria-labelledby="req-h">
+  <div class="wrap">
+  </div>
+  <div class="contact">
+    <div class="cta-copy">
+      <figure class="cta-photo"><img src="media/partners-1672.webp" srcset="media/partners-900.webp 900w, media/partners-1672.webp 1672w" sizes="(max-width:900px) 100vw, 60vw" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+      <h2 class="h2" id="req-h" data-i18n="req_h">Lass uns über deinen Versand sprechen.</h2>
+      <p class="lead" data-i18n="req_lead">Drei Schritte, etwa zwei Minuten. Dein Angebot bekommst du innerhalb eines Werktags.</p>
+      <ul class="cta-trust"><li data-i18n="ct_t1">Ein fester Ansprechpartner in Detmold</li><li data-i18n="ct_t2">Keine Einrichtungsgebühr, monatlich kündbar</li><li data-i18n="ct_t3">Dein Versandvertrag bleibt, wenn du willst</li></ul>
+      <p class="cta-direct"><span data-i18n="ct_d">Lieber direkt?</span> <a href="tel:+4952327053550">05232 7053550</a> <a href="mailto:info@profit-gmbh.de">info@profit-gmbh.de</a></p>
+    </div>
+    <form class="form" id="qform" novalidate>
+      <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <div class="stepno" id="stepno"></div>
+
+      <div class="fs" data-step="1">
+        <fieldset><legend data-i18n="fq1">Wo verkaufst du?</legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="channel" value="Shopify"><span>Shopify</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="Shopware"><span>Shopware</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="WooCommerce"><span>WooCommerce</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="Amazon"><span>Amazon</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="Otto/Kaufland/eBay"><span>Otto, Kaufland, eBay</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="TikTok Shop"><span>TikTok Shop</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="Temu"><span>Temu</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="SHEIN"><span>SHEIN</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="AliExpress"><span>AliExpress</span></label>
+            <label class="opt"><input type="checkbox" name="channel" value="other"><span data-i18n="o_other">Andere</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend data-i18n="fq2">Sendungen pro Monat</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="volume" value="notlive"><span data-i18n="o_notlive">Noch nicht live</span></label>
+            <label class="opt"><input type="radio" name="volume" value="lt500"><span data-i18n="o_v1">unter 500</span></label>
+            <label class="opt"><input type="radio" name="volume" value="500-2000" checked><span data-i18n="o_v2">500 bis 2.000</span></label>
+            <label class="opt"><input type="radio" name="volume" value="2000-10000"><span data-i18n="o_v3">2.000 bis 10.000</span></label>
+            <label class="opt"><input type="radio" name="volume" value="gt10000"><span data-i18n="o_v4">über 10.000</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="fs" data-step="2" hidden>
+        <fieldset><legend data-i18n="fq3">Was brauchst du?</legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="service" value="fulfillment" checked><span data-i18n="o_ff">Lagerung und Versand</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="returns"><span data-i18n="o_ret">Retouren</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="fba"><span data-i18n="o_fba">FBA-Prep und Nachschub</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="container"><span data-i18n="o_cont">Containerentladung</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="b2b"><span data-i18n="o_b2b">B2B und Palettenversand</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend data-i18n="fq4">Woher kommt deine Ware?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="origin" value="DE/EU" checked><span data-i18n="o_eu">Deutschland oder EU</span></label>
+            <label class="opt"><input type="radio" name="origin" value="China"><span data-i18n="o_cn">China</span></label>
+            <label class="opt"><input type="radio" name="origin" value="other"><span data-i18n="o_other">Andere</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend data-i18n="fq5">Hast du einen eigenen Versandvertrag?</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="carrier" value="yes"><span data-i18n="o_yes">Ja</span></label>
+            <label class="opt"><input type="radio" name="carrier" value="no"><span data-i18n="o_no">Nein</span></label>
+            <label class="opt"><input type="radio" name="carrier" value="unsure" checked><span data-i18n="o_unsure">Weiß ich noch nicht</span></label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="fs" data-step="3" hidden>
+        <div class="two">
+          <div class="inp"><label for="f-company" data-i18n="fl_company">Firma</label><input id="f-company" name="company" autocomplete="organization" required><span class="err" data-i18n="err_req">Bitte ausfüllen.</span></div>
+          <div class="inp"><label for="f-name" data-i18n="fl_name">Dein Name</label><input id="f-name" name="name" autocomplete="name" required><span class="err" data-i18n="err_req">Bitte ausfüllen.</span></div>
+        </div>
+        <div class="two">
+          <div class="inp"><label for="f-mail" data-i18n="fl_mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="name@firma.de" required><span class="err" data-i18n="err_mail">Bitte eine gültige E-Mail-Adresse angeben, zum Beispiel name@firma.de</span></div>
+          <div class="inp"><label for="f-phone"><span data-i18n="fl_phone">Telefon oder WeChat</span> <em data-i18n="optional">(optional)</em></label><input id="f-phone" name="phone" autocomplete="tel"></div>
+        </div>
+        <div class="inp"><label for="f-msg"><span data-i18n="fl_msg">Was sollten wir noch wissen?</span> <em data-i18n="optional">(optional)</em></label><textarea id="f-msg" name="message" rows="3"></textarea></div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="t" id="f-t"><input type="hidden" name="lang" id="f-lang">
+        <p class="send-err" id="send-err" role="alert" hidden data-i18n="err_send">Das hat leider nicht geklappt. Schreib uns bitte direkt an info@profit-gmbh.de oder ruf an: 05232 7053550.</p>
+        <p class="privacy"><span data-i18n="privacy">Wir nutzen deine Angaben nur für dein Angebot. Keine Weitergabe, kein Newsletter.</span> <a href="datenschutz.html" data-i18n="l_dsg">Datenschutz</a></p>
+      </div>
+
+      <div class="nav-btns">
+        <button type="button" class="btn ghost" id="back" data-i18n="back" hidden>Zurück</button>
+        <button type="button" class="btn" id="next" data-i18n="next">Weiter</button>
+        <button type="submit" class="btn" id="send" data-i18n="cta_quote" hidden>Angebot anfordern</button>
+      </div>
+
+      <div class="done" id="done" role="status" tabindex="-1">
+        <h3 data-i18n="done_h">Danke, deine Anfrage ist angekommen.</h3>
+        <p data-i18n="done_p">Dein Angebot kommt innerhalb eines Werktags per E-Mail.</p>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand"><div class="brand">Profit Logistic<b>.</b></div><p data-i18n="foot_p">Ein Fulfillment-Service der Profit GmbH, Detmold. Angebot ausschließlich für Unternehmer nach § 14 BGB.</p><a class="btn small" href="#anfrage" data-i18n="cta_quote">Angebot anfordern</a></div>
+      <nav class="foot-col" aria-label="Leistungen"><h4 data-i18n="ft1">Leistungen</h4><a href="#leistungen" data-i18n="sv1_h">Wareneingang und Container</a><a href="#leistungen" data-i18n="sv2_h">Lagerung</a><a href="#leistungen" data-i18n="sv3_h">Pick &amp; Pack</a><a href="#versand" data-i18n="sv4_h">Versand</a><a href="#leistungen" data-i18n="sv5_h">Retouren</a></nav>
+      <nav class="foot-col" aria-label="Lösungen"><h4 data-i18n="ft2">Lösungen</h4><a href="#loesungen" data-sit="0" data-i18n="tab1">Online-Shops</a><a href="#loesungen" data-sit="1" data-i18n="tab2">Marktplatz-Händler</a><a href="#china" data-sit="2" data-i18n="tab3">Cross-Border aus China</a><a href="#ablauf" data-i18n="g1">Shopsysteme</a></nav>
+      <nav class="foot-col" aria-label="Unternehmen"><h4 data-i18n="ft3">Unternehmen</h4><a href="#standort" data-i18n="nav_location">Standort</a><a href="#preise" data-i18n="nav_prices">Preise</a><a href="#faq" data-i18n="faq_h">Häufige Fragen</a><a href="#anfrage" data-i18n="a_mail">E-Mail</a></nav>
+    </div>
+    <div class="foot-bot"><span>© 2026 Profit GmbH</span><nav aria-label="Rechtliches"><a href="impressum.html" data-i18n="l_imp">Impressum</a><a href="datenschutz.html" data-i18n="l_dsg">Datenschutz</a><a href="agb.html" data-i18n="l_agb">AGB</a></nav></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var T={
+de:{step:"Schritt {n} von 3"},
+en:{
+ err_send:"That did not work, sorry. Please email us at info@profit-gmbh.de or call +49 5232 7053550.", ship_ps:"With your carrier contract or ours. To Germany, Austria, Switzerland and the EU.", ship_ph:"Your parcel, your carrier.", film2_h:"In short", wy3_p:"By truck, in a container or as air freight: we receive them in Detmold, count them and put them away.", wy3_h:"However your goods arrive.", wy2_p:"You stay because it works. And your carrier contract stays too, if you want.", wy2_h:"No setup fee. Cancel monthly.", wy1_p:"No call centre, no ticket system. Your contact in Detmold knows your goods, your customers and your special requests.", wy1_h:"One fixed contact.", svc_sub:"Six stations, one process, one contact.", sv_cue:"Scroll", sv_b3s:"With your carrier contract or ours. Within Germany, Austria, Switzerland and the EU.", sv_b3:"And ship for you.", sv_b2s:"In your packaging, with inserts and delivery note.", sv_b2:"We pack for you.", sv_b1s:"Every inbound is counted, and we document discrepancies with photos.", sv_b1:"Your goods are stored in Detmold.", sv_sub:"Fulfillment from the heart of Germany for online retailers and sellers from China. More than 100,000 parcels a year.", si3_c:"Ship in bulk by container. We unload, store and ship across Europe.", si3_p:"Since July 2026 every small parcel from China costs €3 duty per item line. And slow delivery costs reviews.", si3_t:"You sell from China to Europe.", si2_b3:"Cancel monthly, no minimum term", si2_b2:"Inbound and stock documented with photos", si2_b1:"Answers the same working day", si2_c:"One fixed contact in Detmold who knows your goods. We plan the move with you.", si2_p:"Answers after three days, mistakes without explanation, every question becomes a ticket.", si2_t:"Your provider doesn't know you.", si1_b3:"Keep your own carrier contract if you like", si1_b2:"Prime-ready when you need it", si1_b1:"Shop and marketplaces connected automatically", si1_c:"From now on, we pack. You focus on product and sales.", si1_p:"Boxes in the evening, returns at the weekend. Every new channel means more packing.", si1_t:"You still pack yourself.", sla4p:"You stay because it works. Not because a contract holds you.", ct_d:"Prefer to talk directly?", ct_t3:"Keep your carrier contract if you like", ct_t2:"No setup fee, cancel monthly", ct_t1:"One fixed contact in Detmold", req_h:"Let's talk about your shipping.", qc_s:"Answer the same working day. Non-binding.", qc_p:"How many parcels do you ship per month? You get a quote with every line item, including shipping and packaging.", qc_h:"Your exact price depends on your volume.", ft3:"Company", ft2:"Solutions", ft1:"Services", sec4p:"Inbound, stock and returns are counted and photographed whenever something is off.", sec4h:"Fully documented", sec3p:"Before the first inbound we check LUCID, WEEE, battery registration and the GPSR responsible person.", sec3h:"Checked goods", sec2p:"Storage and shipping under ADSp 2017 and our logistics terms. We agree insurance cover with you.", sec2h:"Clear liability", sec1p:"We process addresses only on your behalf, with a data processing agreement under GDPR.", sec1h:"Your customer data", sec_h:"Secure and compliant", cmp_r6b:"you have no contract or small volumes", cmp_r6a:"you have good rates", cmp_r6:"Right for you if", cmp_r5b:"Daily from us", cmp_r5a:"At a fixed time from us", cmp_r5:"Collection", cmp_r4b:"Germany, Austria, Switzerland, EU", cmp_r4a:"As per your contract", cmp_r4:"Destinations", cmp_r3b:"On our monthly invoice", cmp_r3a:"Directly with your carrier", cmp_r3:"Postage billing", cmp_r2b:"We print on our account", cmp_r2a:"We print on your account", cmp_r2:"Labels", cmp_r1:"Carriers", cmp_b:"Our DHL contract", cmp_a:"Your contract", cmp_k:"Feature", sla4:"cancellable, no minimum term", sla4v:"monthly", sla3p:"We connect standard shop systems without setup costs.", sla3:"setup fee", sla2:"response from your contact", sla2v:"1 working day", sla1:"order by then, shipped today", so3_f2:"ERP integration", so3_f1:"container unloading", so3_b3:"Partners for customs, VAT and EU representation", so3_b2:"Connected to Lingxing, ECCANG and Mabang", so3_b1:"Unloading of 20 ft and 40 ft containers", so3_p:"Since July 2026 every low-value parcel from China pays €3 duty per tariff line. Import in bulk by container. We unload, store and deliver locally.", so3_h:"Your warehouse in Germany.", so2_f2:"prep and replenishment in-house", so2_f1:"delivery within Germany", so2_b3:"One stock, no overselling between channels", so2_b2:"FBA prep with FNSKU, cartons and pallets to spec", so2_b1:"Prime-ready shipping from the middle of Germany", so2_p:"Amazon, Otto, Kaufland, eBay and TikTok Shop draw on the same stock. We meet Prime requirements and prepare FBA replenishment.", so2_h:"Every marketplace from one stock.", so1_f2:"setup fee", so1_f1:"order by then, shipped today", uhr:"", so1_b3:"Returns with feedback to your shop", so1_b2:"Shipping on your own carrier contract", so1_b1:"Your own packaging, inserts and gift wrap", so1_p:"Shopify, Shopware or WooCommerce: orders reach us automatically. We pack in your packaging and ship the same day.", so1_h:"Your shop, our warehouse.", tab3:"Cross-border from China", tab2:"Marketplace sellers", tab1:"Online shops", so_h:"Where are you right now?", lg_h:"Connected to", st4:"shipping destinations", st4v:"DE · AT · CH · EU", st3:"warehouse space in Detmold", st2:"parcels a day at peak", st1:"parcels a year", gd12:"Quote", gd11:"FAQ", gd10:"Location", gd9:"Security", gd8:"Integrations", gd7:"Getting started", gd6:"Pricing", gd5:"Shipping", gd4:"Commitments and security", gd3:"Services", gd2:"Your situation", gd1:"Why us", fw1:"Ticket system.",fw2:"On hold.",fw3:"Minimum term.",fw4:"Setup fee.",fw5:"Q4 surcharge.", fc9:"Start", fc8:"Channels", fc7:"Fair", fc6:"Contact", fc5:"Speed", fc4:"Inbound", fc3:"Turning point", fc2:"Waiting", fc1:"Growth", fm9c:"Answers the same working day.", fm9b:"that just works.", fm9a:"Fulfillment", fm8b:"Whether your goods come from Stuttgart or from Shenzhen.", fm8a:"Your channels. Connected automatically.", fm7d:"Your carrier contract stays.", fm7c:"Cancel monthly.", fm7b:"No setup fee.", fm7a:"And no small print.", gh4:"Shipping only through us", gh3:"Q4 surcharge", gh2:"Minimum term", gh1:"Setup fee", fm6c:"One fixed contact who knows your products. Answers the same working day.", fm6b:"A person who picks up.", fm6a:"No ticket.", fm_who:"Your contact", fm_call:"Call", fm5d:"Detmold sits in the middle of Germany. Short routes in every direction.", fm5c:"And shipped for you.", fm5b:"Packed.", fm5a:"Order in.", fm4d:"We take your goods however they arrive, store them properly and ship every order individually.", fm4c:"Single cartons.", fm4b:"Pallets.", fm4a:"Containers.", fm3c:"Fulfillment from Detmold.", fm3b:"Profit Logistic", fm3a:"There is another way.", fm2b:"who keeps you waiting.", fm2a:"Or a provider", fm1c:"Boxes in the hallway. Labels at midnight.", fm1b:"And so is the shipping.", fm1a:"Your shop is growing.", f9c:"Answers the same working day.", f9b:"that just works.", f9a:"Fulfillment", f8b:"Whether your goods come from Stuttgart or from Shenzhen.", f8a:"Your channels. Connected automatically.", af4:"No surcharge in December.", af3:"Your carrier contract stays.", af2:"Cancel monthly.", af1:"No setup fee.", f7a:"And no small print.", f6b:"Call. It gets solved.", f6a:"One name. One direct line.", f5d:"Ordered by {{CUTOFF}}, shipped the same day. Prime-ready.", f5c:"At your customer tomorrow.", f5b:"Out today.", f5a:"Ordered today.", tri3:"Ship", tri2:"Pack", tri1:"Store", f4a:"We store, pack and ship your orders.", f3c:"Fulfillment from Detmold.", f3b:"Profit Logistic", f3a:"There is another way.", ct4:"Peak-season surcharge", ct3:"Shipping only on our contract", ct2:"12-month minimum term", ct1:"Setup fee", ct_h:"Fulfillment contract", tk_p:"We will get back to you within 72 hours.", tk_s:"In progress", tk_l:"Support request", f2b:"And you feel like a ticket number.", f2a:"Or you already have a fulfillment provider.", cnt:"Orders today", f1d:"And at night you print labels.", f1c:"In the hallway. In the office. In the basement.", f1b:"So is your stockroom.", f1a:"Your shop is growing.", snd_on:"Sound on",snd_off:"Sound off", p_role:"Your contact in Detmold", ph:"Photo to follow", fit4:"bring goods from China to Europe in bulk.", fit3:"want to keep your own carrier contract,", fit2:"want one fixed contact instead of a ticket system,", fit1:"ship from around 300 parcels a month,", fit_h:"A good fit if you …", pv4b:"No setup fee, no minimum term, cancel monthly.", pv4a:"No small print.", pv3b:"Change an address, swap an insert, build bundles, gift-wrap: tell us and we do it.", pv3a:"Special requests are normal.", pv2b:"You get one fixed contact in Detmold. Answers the same working day, no ticket system.", pv2a:"A person who picks up.", pv1b:"Orders received by {{CUTOFF}} leave our warehouse the same day. Prime-ready too.", pv1a:"Ordered by {{CUTOFF}}, shipped today.", pv_h:"What you can expect from us", ch9:"Start", chat2:"Sure. New label is on, the parcel still goes out today.", chat1:"Lea just moved. Can you still get the parcel to her new address?", chat_who:"Your contact in Detmold", s5:"Shipped.", s45b:"A person who picks up.", s45a:"No ticket.", film_h:"Why us",n_app:"Your shop",n_now:"now",n_title:"New order",n_body:"Floor lamp “Oslo”, 1 item, to Lea K. in Hamburg",
+ s1:"Lea in Hamburg orders from you.",s2a:"Seconds later, it reaches us.",s2b:"In Detmold.",s2c:"Your stock is already on the shelf, whether it came from Stuttgart or from Shenzhen.",
+ s3a:"Picked.",s3b:"Checked.",s4:"Packed.",s5a:"One of up to",s5b:"2,000 parcels a day.",
+ s6a:"At Lea's door the next day.",s6b:"On time.",s6c:"And at her new address.",
+ s7a:"And you?",s7b:"You had your head free for your next launch.",s7c:"We ship our own products, too.",s7d:"More than 100,000 parcels a year.",s7e:"That's why we treat yours like ours.",
+ s8a:"Sorted.",s8b:"Shipped fast. Looked after personally.",c_hh:"Hamburg",c_be:"Berlin",c_fr:"Frankfurt",c_dt:"Detmold",
+ ch1:"Growth",ch2:"Provider",ch3:"Turning point",ch4:"Service",ch5:"Speed",ch6:"Contact",ch7:"Fair",ch8:"Channels",clk:"",f_play:"Play",f_pause:"Pause",f_again:"Watch again",
+ skip:"Skip to content",nav_services:"Services",nav_prices:"Pricing",nav_china:"China sellers",nav_location:"Location",cta_quote:"Get a quote",cta_calc:"See pricing",
+ hero_eyebrow:"Fulfillment from the heart of Germany",hl1:"Store.",hl2:"Pack.",hl3:"Ship.",hl4:"Sorted.",
+ fl_h:"One point of|contact",fl_p:"No call centre, no ticket system.|Your contact in Detmold knows your|products and your customers.",
+ fr_h:"Same-day|dispatch",fr_p:"Ordered by {{CUTOFF}}, shipped the|same day. Prime-ready and at your|customer the next day.",
+ proof:"|More than 100,000 parcels| a year leave from here, |up to 2,000| on peak days. On |2,000 m²| in Detmold.",
+ photo:"Photo to follow: Detmold warehouse, packing stations at work",
+ who_h:"Who we work for",who1_h:"Online retailers in Germany, Austria and Switzerland",
+ who1_p:"You sell on Shopify, Amazon, Otto, Kaufland or your own store. We store, pack and ship. Shipping from Austria or Switzerland into Germany costs noticeably more per parcel and takes a day longer.",who1_a:"See services",
+ who2_h:"Cross-border sellers from China",who2_p:"Since 1 July 2026, every low-value parcel from China pays €3 customs duty per tariff line. Import in bulk by container instead. We unload, store and deliver locally for Temu, SHEIN, TikTok Shop, AliExpress, Amazon and your own store.",
+ svc_h:"Everything between container and doorstep.",
+ sv1_h:"Inbound and containers",sv1_p:"Single-SKU pallets, mixed cartons, floor-loaded 20 ft and 40 ft containers. Counted, documented, discrepancies photographed.",
+ sv2_h:"Storage",sv2_p:"Euro pallets, shelving, small parts. Your stock is up to date every day, and storage costs no more in peak season.",
+ sv3_h:"Pick & pack",sv3_p:"Single and multi-item orders, inserts, packing slip. Mailer bag or carton, whatever your product needs.",
+ sv4_h:"Shipping",sv4_p:"On your own DHL, DPD, GLS, UPS or Hermes contract, or through our DHL account. To Germany, Austria, Switzerland and the EU.",
+ sv5_h:"Returns",sv5_p:"Receipt, inspection, photos, restocking or disposal. By your rules, with feedback to your store.",
+ sv6_h:"Value-added services",sv6_p:"FNSKU and relabelling, FBA prep and replenishment, bundles, quality control, product photos, B2B and pallet shipping.",
+ ship_h:"Ship on your rates or ours",ship_l_t:"Default",ship_l_h:"Your own carrier",ship_l_p:"Already have good rates? Keep them. We print labels on your account and your carrier collects from us at a fixed time.",
+ or:"or",ship_r_t:"No contract of your own",ship_r_h:"Through our DHL account",ship_r_p:"No contract, or volumes too small? Ship through us. Your rates are in the quote.",ship_r_l:"Germany, Austria, Switzerland, EU",
+ pr_h:"What it costs",p1:"per pallet space per month",p1d:"Euro pallet up to 1.80 m. Your exact price depends on your volume.",p2:"Pick & pack per order",p2d:"First item, each additional from €0.30. Your exact price depends on your order volume.",
+ p3:"per m³ per month, for small quantities and shelving",p4:"Inbound per pallet, single SKU, announced in advance",p5:"per return, plus €0.40 per item",p6:"Container unloading, 20 ft floor-loaded. 40 ft from €339",
+ terms:"|No base fee, no setup costs, no peak-season surcharge, cancel monthly.| Minimum spend €149 per month, offset against all services; waived from 300 orders. Shipping, packaging and value-added services are in your quote. All prices net, businesses only.",
+ calc_h:"Estimate your costs",c_orders:"Orders per month",c_items:"Items per order",c_pallets:"Pallet spaces",c_returns:"Return rate",c_month:"per month, that is",c_perorder:"per order",c_pp:"Pick & pack",c_st:"Storage",cy_st:"Stuttgart",c_rt:"Returns",
+ c_note:"Estimate at list price, net. Excludes shipping, packaging, inbound and value-added services.",
+ flow_h:"How to start",f1_h:"Enquiry",f1_p:"Channels, volumes and products in three short steps.",f2_h:"Quote",f2_p:"Within one working day, every line item included.",f3_h:"Onboarding",f3_p:"Connect store or ERP, verify registrations, announce goods.",f4_h:"First shipment",f4_p:"Your stock is on the shelf. From now on, we pack.",
+ ck_h:"Before the first inbound we check",ck_p:"VAT ID and EORI, LUCID packaging register, WEEE registration for electronics, battery registration and the GPSR responsible person. German law requires this of us. If anything is missing, we connect you with partners for customs, VAT and EU representation.",
+ ch_h:"Where your orders come from",ch_lead:"Via API, plugin, ERP connector or CSV. We never work inside your seller account; we only receive the data we need to ship.",
+ g1:"Store systems",g2:"Marketplaces",g3:"Tools and ERP",g4:"Chinese ERP",
+ loc_h:"Detmold is in the middle",loc_lead:"East Westphalia-Lippe, close to the A2 and A33. Short routes to the parcel hubs and in every direction.",city1:"Cologne",city5:"Munich",map_note:"Road kilometres from Detmold, rounded.",
+ faq_h:"Common questions",
+ q1:"Is there a minimum volume?",a1:"No, and no base fee either. There is a minimum spend of €149 per month, offset against all services. It is waived from 300 orders per month.",
+ q2:"Can I use my own shipping contract?",a2:"Yes, that is our default. We print labels on your account and your carrier collects from us at a fixed time.",
+ q3:"What goods do you store?",a3:"Anything that may legally be stored and shipped. Electronics and batteries only with a valid producer registration. Dangerous goods such as lithium batteries are reviewed case by case.",
+ q4:"Do you supply Amazon FBA?",a4:"Yes. We apply FNSKU labels, prepare cartons and pallets to Amazon requirements and send replenishment to FBA warehouses.",
+ q5:"Do you handle customs clearance from China?",a5:"Import runs through our partner customs broker in your name, with your own EORI and VAT ID. We coordinate arrival, unloading and put-away.",
+ q6:"How fast can I start?",a6:"Once quote, connection and registrations are in place. Standard store systems connect quickly. ERP and API connections we plan together with you.",
+ req_lead:"Three steps, about two minutes. You get your quote within one working day.",
+ fq1:"Where do you sell?",fq2:"Shipments per month",fq3:"What do you need?",fq4:"Where do your goods come from?",fq5:"Do you have your own shipping contract?",
+ o_other:"Other",o_notlive:"Not live yet",o_v1:"under 500",o_v2:"500 to 2,000",o_v3:"2,000 to 10,000",o_v4:"over 10,000",o_ff:"Storage and shipping",o_ret:"Returns",o_fba:"FBA prep and replenishment",o_cont:"Container unloading",o_b2b:"B2B and pallet shipping",o_eu:"Germany or EU",o_cn:"China",o_yes:"Yes",o_no:"No",o_unsure:"Not sure yet",
+ fl_company:"Company",fl_name:"Your name",fl_mail:"Email",fl_phone:"Phone or WeChat",fl_msg:"Anything else we should know?",optional:"(optional)",
+ err_req:"Please fill this in.",err_mail:"Please enter a valid email address, for example name@company.com",
+ privacy:"We only use your details for your quote. No sharing, no newsletter.",
+ back:"Back",next:"Continue",step:"Step {n} of 3",
+ done_h:"Thank you, your enquiry has arrived.",done_p:"Your quote follows by email within one working day.",
+ a_mail:"Email",a_phone:"Phone",a_note:"Answers the same working day. Personally, not by ticket.",
+ foot_p:"A fulfillment service by Profit GmbH, Detmold, Germany. For businesses only (§ 14 BGB).",
+ l_imp:"Legal notice",l_dsg:"Privacy",l_agb:"Terms",l_avv:"Data processing agreement"
+},
+zh:{
+ err_send:"发送失败。请直接发邮件至 info@profit-gmbh.de 或致电 +49 5232 7053550。", ship_ps:"使用您的快递协议或我们的协议，发往德国、奥地利、瑞士和欧盟。", ship_ph:"您的包裹，您选择的快递。", film2_h:"一分钟了解我们", wy3_p:"卡车、集装箱或空运：我们在代特莫尔德收货、清点并上架。", wy3_h:"无论货物如何到达。", wy2_p:"您留下，是因为合作顺畅。如果您愿意，也可以继续使用自己的快递协议。", wy2_h:"无开户费，按月可解约。", wy1_p:"没有呼叫中心，没有工单系统。您在代特莫尔德的对接人了解您的货物、您的客户和您的特殊要求。", wy1_h:"固定的专属对接人。", svc_sub:"六个环节，一套流程，一位对接人。", sv_cue:"向下滚动", sv_b3s:"使用您的快递协议或我们的协议，发往德国、奥地利、瑞士和欧盟。", sv_b3:"并为您发货。", sv_b2s:"使用您的包装，附带随单附件和发货单。", sv_b2:"我们为您打包。", sv_b1s:"每次入库都会清点，差异均拍照记录。", sv_b1:"您的货物存放在代特莫尔德。", sv_sub:"来自德国中部的仓储履约服务，面向电商卖家和中国跨境卖家。每年发货超过10万个包裹。", si3_c:"用集装箱批量发货。我们负责卸柜、仓储，并发往欧洲各地。", si3_p:"自2026年7月起，每个来自中国的小包裹按商品行缴纳3欧元关税。配送太慢还会影响评价。", si3_t:"您从中国向欧洲销售。", si2_b3:"按月可解约，无最短期限", si2_b2:"入库和库存均有照片记录", si2_b1:"同一工作日内回复", si2_c:"代特莫尔德的固定对接人，熟悉您的货物。换仓由我们和您一起规划。", si2_p:"三天才回复，出错没有解释，每个问题都变成工单。", si2_t:"您的服务商并不了解您。", si1_b3:"可沿用您自己的快递协议", si1_b2:"需要时可满足亚马逊Prime时效", si1_b1:"店铺和平台自动对接", si1_c:"从现在起由我们打包，您专注于产品和销售。", si1_p:"晚上打包，周末处理退货。每多一个渠道，就多一份打包工作。", si1_t:"您还在自己打包。", sla4p:"您留下，是因为合作顺畅，而不是因为合同约束。", ct_d:"想直接联系？", ct_t3:"可沿用您的快递协议", ct_t2:"无开户费，按月可解约", ct_t1:"代特莫尔德的专属对接人", req_h:"聊聊您的发货需求。", qc_s:"同一工作日内回复，无约束。", qc_p:"您每月发多少件包裹？我们会给您一份列明所有费用的报价，含派送和包材。", qc_h:"具体价格取决于您的单量。", ft3:"公司", ft2:"解决方案", ft1:"服务", sec4p:"入库、库存和退货均有清点记录，异常拍照留证。", sec4h:"全程记录", sec3p:"首次入库前审核LUCID、WEEE、电池法注册及GPSR欧盟负责人。", sec3h:"货物合规审核", sec2p:"仓储和发货适用ADSp 2017及我们的物流条款。保险范围与您协商确定。", sec2h:"责任清晰", sec1p:"我们仅受您委托处理地址数据，并签署符合GDPR的数据处理协议。", sec1h:"您的客户数据", sec_h:"安全合规", cmp_r6b:"没有协议或单量较小", cmp_r6a:"已有优惠协议价", cmp_r6:"适合", cmp_r5b:"每日上门揽收", cmp_r5a:"固定时间上门揽收", cmp_r5:"揽收", cmp_r4b:"德国、奥地利、瑞士、欧盟", cmp_r4a:"按您的协议", cmp_r4:"目的国", cmp_r3b:"计入我们的月度账单", cmp_r3a:"直接与快递公司结算", cmp_r3:"运费结算", cmp_r2b:"用我们的账户打印", cmp_r2a:"用您的账户打印", cmp_r2:"面单", cmp_r1:"快递公司", cmp_b:"我们的DHL协议", cmp_a:"您的协议", cmp_k:"项目", sla4:"可解约，无最低合同期", sla4v:"按月", sla3p:"标准电商平台对接不收开户费。", sla3:"开户费", sla2:"对接人回复时间", sla2v:"1个工作日", sla1:"点前下单，当天发出", so3_f2:"ERP对接", so3_f1:"拆柜", so3_b3:"清关、VAT和欧代合作伙伴", so3_b2:"已对接领星、易仓和马帮", so3_b1:"20尺和40尺集装箱拆柜", so3_p:"自2026年7月起，欧盟对来自中国的小包裹按每个税号征收3欧元关税。整柜头程进口，我们负责拆柜、仓储和本地派送。", so3_h:"您在德国的仓库。", so2_f2:"中转与补货自营", so2_f1:"德国境内派送", so2_b3:"一个库存，避免跨平台超卖", so2_b2:"FBA中转：FNSKU、纸箱和托盘按要求处理", so2_b1:"从德国中部发货，支持Prime时效", so2_p:"亚马逊、Otto、Kaufland、eBay和TikTok Shop共用同一库存。我们满足Prime时效要求，并准备FBA补货。", so2_h:"所有平台，共用一个库存。", so1_f2:"开户费", so1_f1:"点前下单，当天发出", uhr:"点", so1_b3:"退货处理并回传至店铺", so1_b2:"可使用您自己的快递协议", so1_b1:"自有包装、随单附件和礼品包装", so1_p:"Shopify、Shopware或WooCommerce：订单自动同步到我们这里。我们用您的包装打包，当天发货。", so1_h:"您的店铺，我们的仓库。", tab3:"中国跨境卖家", tab2:"平台卖家", tab1:"独立站", so_h:"您现在处于哪个阶段？", lg_h:"已对接", st4:"发货目的地", st4v:"DE · AT · CH · EU", st3:"代特莫尔德仓储面积", st2:"高峰日单日包裹", st1:"年发货包裹", gd12:"获取报价", gd11:"常见问题", gd10:"仓库位置", gd9:"安全", gd8:"系统对接", gd7:"开始合作", gd6:"价格", gd5:"派送", gd4:"承诺与安全", gd3:"服务", gd2:"您的情况", gd1:"为什么选择我们", fw1:"工单系统。",fw2:"排队等待。",fw3:"最低合同期。",fw4:"开户费。",fw5:"旺季附加费。", fc9:"开始", fc8:"渠道", fc7:"公平", fc6:"对接人", fc5:"时效", fc4:"收货", fc3:"转折", fc2:"等待", fc1:"增长", fm9c:"同一工作日内回复。", fm9b:"就该这么顺。", fm9a:"履约服务，", fm8b:"无论货物来自斯图加特，还是深圳。", fm8a:"您的销售渠道，自动对接。", fm7d:"沿用您的快递协议。", fm7c:"按月可解约。", fm7b:"无开户费。", fm7a:"没有隐藏条款。", gh4:"只能用我们的快递", gh3:"旺季附加费", gh2:"最低合同期", gh1:"开户费", fm6c:"固定对接人，熟悉您的产品。同一工作日内回复。", fm6b:"有人接电话。", fm6a:"不用工单。", fm_who:"您的专属对接人", fm_call:"来电", fm5d:"代特莫尔德位于德国中部，通往各个方向的路程都很短。", fm5c:"并为您发货。", fm5b:"打包完成。", fm5a:"订单进来。", fm4d:"无论货物以何种方式到达，我们都能接收、妥善上架，并逐单发货。", fm4c:"单箱。", fm4b:"托盘。", fm4a:"整柜。", fm3c:"来自代特莫尔德的履约服务。", fm3b:"Profit Logistic", fm3a:"其实可以不一样。", fm2b:"总让您等待。", fm2a:"或者，您的服务商", fm1c:"走廊里堆满纸箱，半夜还在打印面单。", fm1b:"发货量也在增长。", fm1a:"您的店铺在增长。", f9c:"同一工作日内回复。", f9b:"就该这么顺。", f9a:"履约服务，", f8b:"无论货物来自斯图加特，还是深圳。", f8a:"您的销售渠道，自动对接。", af4:"12月不加价。", af3:"沿用您的快递协议。", af2:"按月可解约。", af1:"无开户费。", f7a:"没有隐藏条款。", f6b:"打个电话，问题解决。", f6a:"一个名字，一个直线电话。", f5d:"{{CUTOFF}}点前下单，当天发货。支持Prime时效。", f5c:"明天送达您的客户。", f5b:"今天发出。", f5a:"今天下单。", tri3:"发货", tri2:"打包", tri1:"仓储", f4a:"我们为您仓储、打包、发货。", f3c:"来自代特莫尔德的履约服务。", f3b:"Profit Logistic", f3a:"其实可以不一样。", ct4:"旺季附加费", ct3:"只能使用我们的快递协议", ct2:"最低合同期12个月", ct1:"开户费", ct_h:"履约服务合同", tk_p:"我们将在72小时内回复。", tk_s:"处理中", tk_l:"客服工单", f2b:"却感觉自己只是一个工单号。", f2a:"或者，您已经有一家物流服务商。", cnt:"今日订单", f1d:"晚上还要自己打印面单。", f1c:"堆在走廊、办公室、地下室。", f1b:"库存也在增长。", f1a:"您的店铺在增长。", snd_on:"开启声音",snd_off:"关闭声音", p_role:"您在代特莫尔德的专属对接人", ph:"照片待补", fit4:"从中国整柜发货到欧洲。", fit3:"想继续使用自己的快递协议，", fit2:"想要固定对接人，而不是工单系统，", fit1:"每月发货约300件以上，", fit_h:"适合您，如果您……", pv4b:"无开户费，无最低合同期，按月可解约。", pv4a:"没有隐藏条款。", pv3b:"改地址、换随单物品、组套、礼品包装：告诉我们，我们来做。", pv3a:"特殊需求很正常。", pv2b:"代特莫尔德的专属对接人，同一工作日内回复，没有工单系统。", pv2a:"有人接电话。", pv1b:"{{CUTOFF}}点前收到的订单，当天出库。同样适用于亚马逊Prime。", pv1a:"{{CUTOFF}}点前下单，当天发出。", pv_h:"您可以期待什么", ch9:"开始", chat2:"没问题。新面单已贴好，今天就发出。", chat1:"Lea刚搬家了。包裹还能改寄到新地址吗？", chat_who:"您在代特莫尔德的专属对接人", s5:"发出。", s45b:"有人接电话，马上解决。", s45a:"不用提交工单。", film_h:"为什么选择我们",n_app:"您的店铺",n_now:"刚刚",n_title:"新订单",n_body:"落地灯「Oslo」1件，寄往汉堡 Lea K.",
+ s1:"汉堡的Lea在您的店里下单了。",s2a:"几秒后，订单就到了我们这里。",s2b:"代特莫尔德。",s2c:"您的货早已上架，无论它来自斯图加特还是深圳。",
+ s3a:"拣货。",s3b:"核对。",s4:"打包。",s5a:"每天多达2,000个包裹，",s5b:"它是其中之一。",
+ s6a:"第二天，送到Lea手上。",s6b:"准时。",s6c:"而且送到了她的新地址。",
+ s7a:"那您呢？",s7b:"您可以专心准备下一次上新。",s7c:"我们自己也在发货。",s7d:"每年超过10万件包裹。",s7e:"所以，我们待您的货如同己出。",
+ s8a:"搞定。",s8b:"发货快，服务贴心。",c_hh:"汉堡",c_be:"柏林",c_fr:"法兰克福",c_dt:"代特莫尔德",
+ ch1:"增长",ch2:"服务商",ch3:"转折",ch4:"服务",ch5:"时效",ch6:"对接人",ch7:"公平",ch8:"渠道",clk:"",f_play:"播放",f_pause:"暂停",f_again:"再看一遍",
+ skip:"跳到正文",nav_services:"服务",nav_prices:"价格",nav_china:"中国卖家",nav_location:"仓库位置",cta_quote:"获取报价",cta_calc:"查看价格",
+ hero_eyebrow:"德国中部海外仓 · 一件代发",hl1:"仓储。",hl2:"拣货。",hl3:"发货。",hl4:"搞定。",
+ fl_h:"专属|对接人",fl_p:"没有呼叫中心，没有工单系统。|您在代特莫尔德的专属对接人|了解您的货物与客户。",
+ fr_h:"当日|出库",fr_p:"截单前的订单当日出库，|支持亚马逊Prime时效，|德国境内次日达。",
+ proof:"每年|超过10万件包裹|从这里发出，高峰日|多达2,000件|。仓库面积|2,000平方米|，位于代特莫尔德。",
+ photo:"照片待补：代特莫尔德仓库，打包作业现场",
+ who_h:"我们服务谁",who1_h:"德国、奥地利、瑞士电商卖家",
+ who1_p:"您通过Shopify、亚马逊、Otto、Kaufland或独立站销售，我们负责仓储、打包与发货。从奥地利或瑞士发往德国，每个包裹明显更贵，还要多等一天。",who1_a:"查看服务",
+ who2_h:"中国跨境卖家",who2_p:"自2026年7月1日起，欧盟对来自中国的小包裹按每个税号征收3欧元关税。改为整柜头程进口：我们负责拆柜、仓储并在德国本地派送，支持Temu、SHEIN、TikTok Shop、速卖通、亚马逊及独立站。",
+ svc_h:"从集装箱到客户家门口，全部交给我们。",
+ sv1_h:"入库与拆柜",sv1_p:"单品托盘、混装箱、散装20尺和40尺集装箱。清点、记录，异常拍照留证。",
+ sv2_h:"仓储",sv2_p:"欧标托盘、货架、小件。动态库位，库存每日精准，旺季不加价。",
+ sv3_h:"一件代发",sv3_p:"单件与多件订单、随单附件、装箱单。快递袋或纸箱，按货物需要选择。",
+ sv4_h:"尾程派送",sv4_p:"使用您自己的DHL、DPD、GLS、UPS或Hermes协议，或通过我们的DHL渠道。覆盖德国、奥地利、瑞士及欧盟。",
+ sv5_h:"退货处理",sv5_p:"签收、质检、拍照、重新上架或销毁。按您的规则执行，并回传至您的店铺。",
+ sv6_h:"增值服务",sv6_p:"FNSKU换标贴标、FBA中转与补货、组套、质检、产品拍照、B2B及整托发货。",
+ ship_h:"用您的协议价，或用我们的",ship_l_t:"默认方式",ship_l_h:"您自己的快递",ship_l_p:"已有优惠价格？继续使用。我们用您的账户打印面单，您的快递按固定时间上门揽收。",
+ or:"或",ship_r_t:"没有自己的协议",ship_r_h:"通过我们的DHL渠道",ship_r_p:"没有协议或单量较小？通过我们发货。具体价格见报价。",ship_r_l:"德国、奥地利、瑞士、欧盟",
+ pr_h:"费用",p1:"每个托盘位每月",p1d:"欧标托盘，高度不超过1.8米。具体价格取决于您的数量。",p2:"拣货打包，每单",p2d:"首件价格，每增加一件0.30欧元起。具体价格取决于您的订单量。",
+ p3:"每立方米每月，适用于少量货物与货架",p4:"托盘入库，单品且已预报",p5:"每件退货，另加每件商品0.40欧元",p6:"拆柜，20尺散装。40尺339欧元起",
+ terms:"|无月费，无开户费，旺季不加价，按月可解约。|每月最低消费149欧元，可抵扣所有服务费用；每月满300单免除。派送、包材及增值服务见报价。所有价格不含税，仅面向企业客户。",
+ calc_h:"费用试算",c_orders:"每月订单数",c_items:"每单件数",c_pallets:"托盘位",c_returns:"退货率",c_month:"每月，折合",c_perorder:"每单",c_pp:"拣货打包",c_st:"仓储",cy_st:"斯图加特",c_rt:"退货",
+ c_note:"按标准价格估算，不含税。不含派送、包材、入库及增值服务。",
+ flow_h:"合作流程",f1_h:"咨询",f1_p:"三个简短步骤：渠道、单量、货物。",f2_h:"报价",f2_p:"一个工作日内，列明所有费用。",f3_h:"对接",f3_p:"对接店铺或ERP，审核资质，预报入库。",f4_h:"首次发货",f4_p:"货物已上架。从此由我们打包发货。",
+ ck_h:"首次入库前我们会审核",ck_p:"德国VAT税号与EORI、包装法LUCID注册、电子产品WEEE注册、电池法注册，以及GPSR欧盟负责人。这是德国法律对我们的要求。资料不全时，我们可为您对接清关、VAT及欧代合作伙伴。",
+ ch_h:"订单从哪里来",ch_lead:"支持API、插件、ERP接口或CSV。我们不登录您的卖家账户，只接收发货所需的数据。",
+ g1:"建站系统",g2:"电商平台",g3:"工具与ERP",g4:"中国ERP",
+ loc_h:"代特莫尔德位于德国中部",loc_lead:"北威州东部，紧邻A2与A33高速。距离各大包裹分拨中心都很近。",city1:"科隆",city5:"慕尼黑",map_note:"从代特莫尔德出发的公路里程，取整。",
+ faq_h:"常见问题",
+ q1:"有最低单量要求吗？",a1:"没有，也没有月费。每月最低消费149欧元，可抵扣所有服务费用。每月满300单免除。",
+ q2:"可以使用我自己的快递协议吗？",a2:"可以，这是我们的默认方式。我们用您的账户打印面单，您的快递按固定时间上门揽收。",
+ q3:"可以存放哪些货物？",a3:"凡依法可以仓储和运输的货物均可。电子产品和电池须有有效的生产者注册。锂电池等危险品需逐一评估。",
+ q4:"支持亚马逊FBA补货吗？",a4:"支持。我们贴FNSKU标签，按亚马逊要求准备纸箱和托盘，并补货至FBA仓库。",
+ q5:"可以办理从中国进口的清关吗？",a5:"进口由我们的合作清关行以您的名义办理，使用您自己的EORI与VAT税号。我们负责协调到货、拆柜与上架。",
+ q6:"多久可以开始？",a6:"报价、系统对接与资质审核完成后即可开始。标准电商平台对接很快。ERP与API对接我们与您共同规划。",
+ req_lead:"三个步骤，约两分钟。一个工作日内收到报价。",
+ fq1:"您在哪些平台销售？",fq2:"每月发货量",fq3:"需要哪些服务？",fq4:"货物来自哪里？",fq5:"是否有自己的快递协议？",
+ o_other:"其他",o_notlive:"尚未上线",o_v1:"500以下",o_v2:"500至2,000",o_v3:"2,000至10,000",o_v4:"10,000以上",o_ff:"仓储与发货",o_ret:"退货处理",o_fba:"FBA中转与补货",o_cont:"拆柜",o_b2b:"B2B及整托发货",o_eu:"德国或欧盟",o_cn:"中国",o_yes:"有",o_no:"没有",o_unsure:"还不确定",
+ fl_company:"公司名称",fl_name:"联系人",fl_mail:"邮箱",fl_phone:"手机或微信号",fl_msg:"其他需要说明的情况",optional:"（选填）",
+ err_req:"请填写此项。",err_mail:"请输入有效的邮箱地址，例如 name@company.com",
+ privacy:"您的信息仅用于制作报价。不转交第三方，不发送营销邮件。",
+ back:"返回",next:"下一步",step:"第 {n} 步，共 3 步",
+ done_h:"谢谢，已收到您的咨询。",done_p:"我们将在一个工作日内通过邮件发送报价。",
+ a_mail:"邮箱",a_phone:"电话",a_note:"同一工作日内回复。真人服务，不走工单。",
+ foot_p:"Profit GmbH（德国代特莫尔德）旗下的履约服务。仅面向企业客户（德国民法典第14条）。",
+ l_imp:"法律声明",l_dsg:"隐私政策",l_agb:"条款",l_avv:"数据处理协议"
+}};
+
+/* Deutsche Texte aus dem DOM übernehmen (nur Text, kein HTML) */
+document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(!(k in T.de))T.de[k]=el.textContent.trim()});
+document.querySelectorAll("[data-k]").forEach(function(el){T.de[el.dataset.k]=el.textContent.trim()});
+Object.assign(T.de,{"gd1": "Warum wir", "gd2": "Wo stehst du", "gd3": "Leistungen", "gd4": "Zusagen und Sicherheit", "gd5": "Versand", "gd6": "Preise", "gd7": "Start", "gd8": "Anbindung", "gd9": "Sicherheit", "gd10": "Standort", "gd11": "Fragen", "gd12": "Angebot", "ft1": "Leistungen", "ft2": "Lösungen", "ft3": "Unternehmen"});
+Object.assign(T.de,{fw1:"Ticketsystem.",fw2:"Warteschleife.",fw3:"Mindestlaufzeit.",fw4:"Einrichtungsgebühr.",fw5:"Q4-Zuschlag."});
+document.querySelectorAll("[data-lines]").forEach(function(el){T.de[el.getAttribute("data-lines")]=Array.prototype.map.call(el.children,function(c){return c.textContent}).join("|")});
+document.querySelectorAll("[data-rich]").forEach(function(el){
+  T.de[el.getAttribute("data-rich")]=Array.prototype.map.call(el.childNodes,function(n){return n.nodeType===1?"|"+n.textContent+"|":n.textContent}).join("").replace(/\|\|/g,"");
+});
+
+var lang="de",cur=1,locales={de:"de-DE",en:"en-IE",zh:"zh-CN"};
+var $=function(id){return document.getElementById(id)};
+function t(k){return (T[lang]&&T[lang][k]!=null)?T[lang][k]:T.de[k]}
+var tr=t;
+function money(v,dec){return new Intl.NumberFormat(locales[lang],{style:"currency",currency:"EUR",minimumFractionDigits:dec,maximumFractionDigits:dec}).format(v)}
+
+function apply(l){
+  lang=T[l]?l:"de";
+  document.documentElement.lang=lang==="zh"?"zh-Hans":lang;
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var s=t(el.getAttribute("data-i18n"));
+    if(el.hasAttribute("data-em")){el.textContent="";var em=document.createElement("em");em.textContent=s;el.appendChild(em)}else el.textContent=s;
+  });
+  document.querySelectorAll("[data-lines]").forEach(function(el){
+    el.textContent="";t(el.getAttribute("data-lines")).split("|").forEach(function(s){var sp=document.createElement("span");sp.textContent=s;el.appendChild(sp)});
+  });
+  /* "|…|" markiert hervorgehobene Teile */
+  document.querySelectorAll("[data-rich]").forEach(function(el){
+    el.textContent="";t(el.getAttribute("data-rich")).split("|").forEach(function(s,i){
+      if(!s)return;
+      if(i%2){var b=document.createElement("strong");b.textContent=s;el.appendChild(b)}else el.appendChild(document.createTextNode(s));
+    });
+  });
+  document.querySelectorAll("[data-price]").forEach(function(el){
+    var v=parseFloat(el.getAttribute("data-price")),s=money(v,v%1?2:0);
+    if(el.hasAttribute("data-from"))s=lang==="de"?"ab "+s:lang==="en"?"from "+s:s+"起";
+    el.textContent=s;
+  });
+  document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.lang===lang))});
+  try{localStorage.setItem("lang",lang)}catch(e){}
+  setStep(cur);calc();
+  if(window.filmRefresh)window.filmRefresh();
+  if(window.guideRefresh){guideRefresh();procRefresh();sitsRefresh()}
+  if(window.dmapDraw)dmapDraw();
+  if(window.cmpRefresh)cmpRefresh();
+}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){apply(b.dataset.lang)})});
+
+if("IntersectionObserver" in window){
+  /* Navigation wird solide, sobald der Hero-Anfang verlassen ist */
+  new IntersectionObserver(function(es){$("nav").classList.toggle("solid",!es[0].isIntersecting)}).observe(document.querySelector(".sentinel"));
+  /* Stationen leuchten auf, wenn sie die Bildschirmmitte erreichen */
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");so.unobserve(e.target)}})},{rootMargin:"0px 0px -45% 0px"});
+  document.querySelectorAll(".stop").forEach(function(s){so.observe(s)});
+}else{$("nav").classList.add("solid");document.querySelectorAll(".stop").forEach(function(s){s.classList.add("on")})}
+
+
+
+
+
+
+/* Film „Warum wir“: neun Szenen, weiche Überblendungen in die Tiefe, ein Paket als Hauptobjekt. */
+(function(){
+  var film=$("film-el");if(!film)return;
+  var fst=$("fstage"),screen=film.querySelector(".screen"),shots=[].slice.call(film.querySelectorAll(".shot"));
+  var D=[6.5,6.5,4.6,7.5,6,5.5,5.5,5.5,5.5],START=[],TOT=0,TR=.9;D.forEach(function(d){START.push(TOT);TOT+=d});
+  var cl=function(x,a,b){return Math.min(b==null?1:b,Math.max(a||0,x))},seg=function(p,a,b){return cl((p-a)/(b-a))};
+  var eo=function(x){return 1-Math.pow(1-x,3)},ex=function(x){return x>=1?1:1-Math.pow(2,-9*x)},eio=function(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+  function div(c,parent){var d=document.createElement("div");if(c)d.className=c;if(parent)parent.appendChild(d);return d}
+
+  /* Schrift: Wörter kommen weich aus der Unschärfe */
+  var mts=[].slice.call(film.querySelectorAll(".mt[data-k]"));
+  function build(){mts.forEach(function(e){var txt=tr(e.dataset.k),zh=lang==="zh",toks=zh?Array.from(txt):txt.split(" ");e.textContent="";e._w=[];
+      toks.forEach(function(w,i){var n=document.createElement("span");n.className="w";n.textContent=w;e.appendChild(n);e._w.push(n);if(!zh&&i<toks.length-1)e.appendChild(document.createTextNode(" "))})});
+    $("film-tr").textContent=mts.map(function(k){return tr(k.dataset.k)}).join(" ")}
+  function say(e,p,a,b){var w=e._w,n=w.length,sp=b-a;
+    for(var i=0;i<n;i++){var s0=a+sp*.5*i/Math.max(1,n-1),x=ex(seg(p,s0,s0+sp*.5));
+      w[i].style.opacity=x.toFixed(3);w[i].style.transform="translateY("+((1-x)*.32).toFixed(3)+"em)";w[i].style.filter=x<1?"blur("+((1-x)*9).toFixed(1)+"px)":"none"}}
+  function fadeEl(e,x){e.style.opacity=x}
+  function M(i){return shots[i].querySelectorAll(".mt[data-k]")}
+
+  /* Paket in 3D (z nach oben) */
+  function box(X,Y,Z,cls){cls=cls||"pk";var b=div("box "+cls);
+    [["t",X,Y,"translateZ("+Z+"px)"],["fr",X,Z,"translateZ("+Z/2+"px) translateY("+Y/2+"px) rotateX(-90deg)"],["bk",X,Z,"translateZ("+Z/2+"px) translateY("+(-Y/2)+"px) rotateX(-90deg)"],
+     ["rt",Z,Y,"translateZ("+Z/2+"px) translateX("+X/2+"px) rotateY(90deg)"],["lf",Z,Y,"translateZ("+Z/2+"px) translateX("+(-X/2)+"px) rotateY(90deg)"]].forEach(function(f){
+      var e=div("f "+f[0],b);e.style.width=f[1]+"px";e.style.height=f[2]+"px";e.style.transform="translate(-50%,-50%) "+f[3];b[f[0]]=e});
+    if(cls.indexOf("pk")===0){b.tape=div("tape",b.t);b.tag=div("tag",b.fr)}return b}
+  function shadow(w,size){var s0=div("gshadow",w);s0.style.width=size+"px";s0.style.height=size*.7+"px";return s0}
+  var w1=$("w1"),w4=$("w4"),w9=$("w9");
+  /* 1 Paketfeld: ein Paket, dann Reihe um Reihe */
+  var field1=[];for(var gy=-4;gy<=1;gy++)for(var gx=-3;gx<=3;gx++){var hero=gx===0&&gy===0,dd=gy>=0?0:(gy>=-1?1:(gy>=-3?2:3));
+    var sh=shadow(w1,hero?330:250);var bb=box(hero?190:170,hero?140:130,hero?125:112,"pk"+(hero?"":" plain")+(dd?" d"+dd:""));if(hero)bb.tape.style.transform="scaleY(1)";
+    w1.appendChild(bb);var o={b:bb,s:sh,x:gx*235,y:gy*200,d:Math.hypot(gx,gy),hero:hero};field1.push(o)}
+  /* 4 Container, Palette, Karton */
+  var CT=box(560,180,170,"ct");w4.appendChild(CT);
+  var PG=div("grp",w4);var PL=box(250,210,24,"pl");PG.appendChild(PL);
+  [[-62,-52],[62,-52],[-62,52],[62,52]].forEach(function(q){[0,1].forEach(function(lv){var c=box(112,92,82,"pk plain");c.style.transform="translate3d("+q[0]+"px,"+q[1]+"px,"+(24+lv*84)+"px)";PG.appendChild(c)})});
+  shadow(w4,460);var P4=box(260,190,170);w4.appendChild(P4);
+  shadow(w9,260);var P9=box(150,110,100);w9.appendChild(P9);P9.tape.style.transform="scaleY(1)";P9.tag.style.opacity=1;
+
+  /* 2 Worte im Raum */
+  var fly=$("fly"),FW=["fw1","fw2","fw3","fw4","fw5"],POS=[[-300,-30],[260,90],[-160,150],[300,-90],[0,40]],flyEls=FW.map(function(k,i){var e=div("fw",fly);e.dataset.k2=k;return e});
+  function flyText(){flyEls.forEach(function(e){e.textContent=tr(e.dataset.k2)})}
+
+  /* 5 Punktkarte Deutschland */
+  var mapc=$("mapc"),ctx=mapc.getContext("2d"),mapp=$("mapp");
+  var GER=[[6.0,51.9],[6.8,53.3],[7.2,53.6],[8.6,53.9],[9.0,54.8],[10.0,54.8],[11.0,54.4],[12.4,54.5],[14.2,53.9],[14.4,53.2],[14.6,52.6],[14.7,51.6],[15.0,51.1],[14.3,50.9],[12.6,50.4],[12.1,50.3],[12.5,49.8],[13.8,48.8],[13.0,48.3],[13.0,47.6],[12.2,47.7],[10.5,47.5],[9.6,47.6],[8.6,47.6],[7.6,47.6],[7.6,48.1],[8.2,49.0],[6.4,49.5],[6.1,50.1],[6.0,50.8],[5.9,51.3]];
+  function proj(lon,lat){return [(lon-5.4)*68*.63*2+60,(55.2-lat)*68*2+40]}
+  var poly=GER.map(function(c){return proj(c[0],c[1])}),DT=proj(8.88,51.94),dots=[];
+  function inside(x,y){var c=false;for(var i=0,j=poly.length-1;i<poly.length;j=i++){var a=poly[i],b=poly[j];if(((a[1]>y)!==(b[1]>y))&&(x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0]))c=!c}return c}
+  for(var gx=0;gx<1280;gx+=22)for(var gy=0;gy<1200;gy+=22)if(inside(gx,gy))dots.push([gx,gy,Math.hypot(gx-DT[0],gy-DT[1])]);
+  var maxD=dots.reduce(function(m,d){return Math.max(m,d[2])},0);
+  function drawMap(p){ctx.clearRect(0,0,1280,1200);var R=(maxD+60)*eio(seg(p,.28,.82)),band=70;
+    dots.forEach(function(d){var lit=d[2]<R,edge=Math.max(0,1-Math.abs(d[2]-R)/band),a=.16+(lit?.38:0)+edge*.4;
+      ctx.fillStyle=edge>.05?"rgba(255,226,196,"+a.toFixed(3)+")":(lit?"rgba(247,245,239,"+a.toFixed(3)+")":"rgba(247,245,239,.14)");
+      ctx.beginPath();ctx.arc(d[0],d[1],lit?3.6:2.8,0,6.283);ctx.fill()});
+    var g=ctx.createRadialGradient(DT[0],DT[1],0,DT[0],DT[1],60);g.addColorStop(0,"rgba(214,82,58,.55)");g.addColorStop(1,"rgba(214,82,58,0)");ctx.fillStyle=g;ctx.beginPath();ctx.arc(DT[0],DT[1],60,0,6.283);ctx.fill();
+    ctx.fillStyle="#D6523A";ctx.beginPath();ctx.arc(DT[0],DT[1],11,0,6.283);ctx.fill();
+    ctx.font="700 40px UI, sans-serif";ctx.fillStyle="#F7F5EF";ctx.fillText("Detmold",DT[0]+26,DT[1]+13)}
+
+  /* 6 Telefon */
+  var isl=$("isl"),islc=isl.querySelector(".ic"),ctime=$("ctime");
+  /* 7 Kleingedrucktes */
+  var ghosts=[].slice.call($("ghosts").querySelectorAll("p"));
+  /* 8 Laufbänder */
+  var rows=$("rows"),CH=["Shopify","Amazon","Otto","Kaufland","TikTok Shop","Temu","SHEIN","Shopware","WooCommerce","eBay","AliExpress","Billbee","JTL","Xentral","领星","易仓","马帮","CSV","REST-API"],RW=[];
+  [0,1,2].forEach(function(r){var row=div("row"+(r===1?" m":""),rows);var list=CH.slice(r*5).concat(CH.slice(0,r*5));
+    for(var rep=0;rep<3;rep++)list.forEach(function(n){var sp=document.createElement("span");sp.textContent=n;row.appendChild(sp)});RW.push(row)});
+
+  var U=[
+  function(p){/* 1 Wachstum */
+    var pull=eio(seg(p,.24,.86)),sc=1.6-1.05*pull;
+    w1.style.transform="translate3d(0,"+(-30*pull)+"px,0) rotateX(62deg) rotateZ("+(-34+18*eio(p))+"deg) scale3d("+sc+","+sc+","+sc+")";
+    field1.forEach(function(o){var a=o.hero?0:.3+o.d*.07,x=o.hero?ex(seg(p,0,.12)):ex(seg(p,a,a+.16)),k=.3+.7*x;
+      o.b.style.transform="translate3d("+o.x+"px,"+o.y+"px,"+((1-x)*40)+"px) scale3d("+k+","+k+","+k+")";o.b.style.opacity=x>.02?1:0;o.s.style.opacity=x;
+      o.s.style.transform="translate(-50%,-50%) translate("+o.x+"px,"+o.y+"px)"});
+    var m=M(0);say(m[0],p,.06,.24);say(m[1],p,.42,.6);say(m[2],p,.62,.8);
+  },
+  function(p){/* 2 Warten */
+    var m=M(1);say(m[0],p,.04,.18);say(m[1],p,.14,.3);
+    flyEls.forEach(function(e,i){var a=.16+i*.14,x=seg(p,a,a+.42),z=-2600+3300*x,o=x<=0||x>=1?0:Math.min(1,x*4)*(z>200?Math.max(0,1-(z-200)/500):1),bl=z>150?(z-150)/40:Math.max(0,-z/400);
+      e.style.opacity=o.toFixed(3);e.style.transform="translate(-50%,-50%) perspective(900px) translate3d("+POS[i][0]+"px,"+POS[i][1]+"px,"+z.toFixed(0)+"px)";e.style.filter="blur("+Math.min(18,bl).toFixed(1)+"px)"});
+  },
+  function(p){/* 3 Wendepunkt */
+    var d=$("dawn"),x=eio(seg(p,.05,.7));d.style.opacity=(x*.95).toFixed(3);d.style.transform="scale("+(.2+.8*x)+")";
+    var m=M(2);say(m[0],p,.1,.32);say(m[1],p,.42,.6);say(m[2],p,.56,.74);
+  },
+  function(p){/* 4 Container, Paletten, Kartons */
+    w4.style.transform="rotateX(60deg) rotateZ("+(-38+30*eio(p))+"deg)";
+    var a=1-eio(seg(p,.28,.4)),ca=ex(seg(p,0,.1));CT.style.opacity=ca*a>.01?1:0;var k1=(.92+.08*ca)*(1+.5*(1-a));CT.style.transform="scale3d("+k1+","+k1+","+k1+")";CT.style.visibility=a*ca>.02?"visible":"hidden";
+    var bi=ex(seg(p,.34,.46)),bo=1-eio(seg(p,.6,.72)),bk=(.7+.3*bi)*(1+.45*(1-bo));PG.style.visibility=bi*bo>.02?"visible":"hidden";PG.style.transform="scale3d("+bk+","+bk+","+bk+")";
+    var ci=ex(seg(p,.66,.78)),out=Math.pow(seg(p,.88,1),2.4),ck=.7+.3*ci;P4.style.visibility=ci>.02?"visible":"hidden";
+    P4.style.transform="translate3d("+(out*900)+"px,0,0) scale3d("+ck+","+ck+","+ck+")";
+    P4.tape.style.transform="scaleY("+ex(seg(p,.76,.84))+")";P4.tag.style.opacity=ex(seg(p,.82,.88));
+    var m=M(3);say(m[0],p,.04,.16);say(m[1],p,.36,.48);say(m[2],p,.68,.8);say(m[3],p,.74,.9);
+    [m[0],m[1]].forEach(function(e,i){e.style.opacity=p>(i?.7:.38)?.36:1});
+  },
+  function(p){/* 5 Tempo */
+    mapp.style.transform="rotateX("+(48-6*eo(p))+"deg) rotateZ("+(-10+6*eo(p))+"deg) scale("+(.92+.08*eo(p))+")";drawMap(p);
+    var m=M(4);say(m[0],p,.04,.16);say(m[1],p,.14,.26);say(m[2],p,.46,.6);say(m[3],p,.6,.78);
+  },
+  function(p){/* 6 Ansprechpartner */
+    var g=eio(seg(p,.06,.3)),w=150+430*g,h=46+82*g;isl.style.width=w+"px";isl.style.height=h+"px";isl.style.borderRadius=(h/2)+"px";
+    isl.style.opacity=ex(seg(p,0,.08));islc.style.opacity=eo(seg(p,.24,.36));ctime.style.opacity=eo(seg(p,.3,.42));
+    isl.style.transform="translate(-50%,-50%) translateY("+(-14*eo(p))+"px)";
+    var sec=Math.max(0,Math.floor((p-.3)*D[5]*1.6));ctime.textContent="0:"+(sec<10?"0":"")+Math.min(59,sec);
+    var m=M(5);say(m[0],p,.08,.22);say(m[1],p,.22,.38);say(m[2],p,.42,.62);
+  },
+  function(p){/* 7 Fair */
+    ghosts.forEach(function(g,i){var a=.18+i*.13,x=eio(seg(p,a,a+.28));g.style.opacity=(.5*(1-x)).toFixed(3);g.style.filter="blur("+(x*16).toFixed(1)+"px)";g.style.letterSpacing=(-.01+x*.18).toFixed(3)+"em";g.style.transform="translateX("+(x*40)+"px)"});
+    var m=M(6);say(m[0],p,.03,.16);say(m[1],p,.22,.34);say(m[2],p,.36,.48);say(m[3],p,.5,.62);
+  },
+  function(p){/* 8 Kanäle */
+    var tt=t;RW.forEach(function(r,i){var w=r.scrollWidth/3||1,v=[38,58,30][i],dir=i===1?-1:1,o=((tt*v)%w);r.style.transform="translateX("+(dir>0?-o:o-w)+"px)"});
+    rows.style.opacity=eo(seg(p,0,.3));
+    var m=M(7);say(m[0],p,.08,.26);say(m[1],p,.46,.64);
+  },
+  function(p){/* 9 Start */
+    w9.style.transform="rotateX(62deg) rotateZ("+(-30+40*p)+"deg)";
+    var m=M(8);say(m[0],p,.06,.22);say(m[1],p,.16,.34);
+    shots[8].querySelector(".btn").style.opacity=eo(seg(p,.42,.56));shots[8].querySelector("small").style.opacity=eo(seg(p,.5,.64));
+  }];
+
+  /* Wiedergabe mit Überblendung in die Tiefe */
+  var segs=$("segs"),bars=[];for(var i=0;i<9;i++){var b=document.createElement("button");b.type="button";b.className="sg";
+    var ii=document.createElement("i"),bb=document.createElement("b");ii.appendChild(bb);b.appendChild(ii);segs.appendChild(b);bars.push(bb);(function(n){b.addEventListener("click",function(){seek(n)})})(i)}
+  var segBtns=[].slice.call(segs.children);
+  var t=0,playing=false,visible=false,started=false,ended=false,last=0,raf=0,cur=-1;
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,btn=$("film-btn"),chap=$("film-chap");
+  function show(j,op,tf,fl){var s0=shots[j];s0.style.visibility=op>0?"visible":"hidden";s0.style.opacity=op;s0.style.transform=tf;s0.style.filter=fl}
+  function render(){
+    var i=0;while(i<8&&t>=START[i+1])i++;var lt=t-START[i],p=cl(lt/D[i]);
+    shots.forEach(function(s0,j){if(j!==i&&j!==i-1&&s0.style.visibility!=="hidden"){s0.style.visibility="hidden";s0.style.opacity=0}});
+    if(i>0&&lt<TR&&!reduce){var x=eio(lt/TR);U[i-1](1);
+      show(i-1,1-x,"scale("+(1+.08*x).toFixed(4)+")","blur("+(x*14).toFixed(1)+"px)");
+      show(i,x,"scale("+(.94+.06*x).toFixed(4)+")",x<1?"blur("+((1-x)*10).toFixed(1)+"px)":"none")}
+    else{if(i>0)show(i-1,0,"","none");show(i,1,"","none")}
+    U[i](p);
+    bars.forEach(function(f,j){f.style.transform="scaleX("+(j<i?1:j>i?0:p)+")"});
+    if(i!==cur){cur=i;segBtns.forEach(function(s0,j){s0.setAttribute("aria-current",String(j===i));s0.setAttribute("aria-label",tr("fc"+(j+1)))});chap.textContent=tr("fc"+(i+1))}
+  }
+  function label(){btn.textContent=tr(ended?"f_again":playing?"f_pause":"f_play")}
+  function tick(ts){raf=0;var dt=last?Math.min(.05,(ts-last)/1000):0;last=ts;
+    if(playing&&visible){t+=dt;if(t>=TOT){t=TOT-.0001;playing=false;ended=true;label()}}
+    render();if(playing&&visible)raf=requestAnimationFrame(tick);else last=0}
+  function run(){if(!raf&&playing&&visible){last=0;raf=requestAnimationFrame(tick)}}
+  function seek(i){t=START[i]+(!playing?D[i]*.9:0);ended=false;cur=-1;render();label();run()}
+  btn.addEventListener("click",function(){if(ended){t=0;ended=false;playing=true}else playing=!playing;started=true;label();run()});
+  function fit(){var pt=screen.clientWidth<640;film.classList.toggle("portrait",pt);fst.style.transform="scale("+(screen.clientWidth/(pt?720:1280))+")"}
+  fit();if("ResizeObserver" in window)new ResizeObserver(fit).observe(screen);else window.addEventListener("resize",fit);
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;
+      if(visible&&!started&&!reduce){started=true;playing=true;label()}run()},{threshold:.5}).observe(screen)}else visible=true;
+  window.filmRefresh=function(){build();flyText();cur=-1;render();label()};
+  window.filmSeekTime=function(x){t=x;cur=-1;render()};
+  window.filmPause=function(){playing=false;label()};
+  build();flyText();if(reduce)t=START[0]+D[0]*.9;render();label();
+})();
+
+
+/* Leitfaden: Stationen aus den Abschnitten, roter Punkt wandert zur aktiven Station */
+(function(){
+  var secs=[].slice.call(document.querySelectorAll("section.guided")),list=$("g-list"),guide=$("guide"),fill=$("g-fill"),dot=$("g-dot"),bar=$("gbar"),links=[];
+  secs.forEach(function(sec,i){var li=document.createElement("li"),a=document.createElement("a"),sp=document.createElement("span");a.href="#"+sec.id;sp.dataset.gd=sec.dataset.gd;a.appendChild(sp);li.appendChild(a);list.appendChild(li);links.push(a)});
+  window.guideRefresh=function(){links.forEach(function(a){var sp=a.firstChild;sp.textContent=tr(sp.dataset.gd)})};guideRefresh();
+  function setActive(i){links.forEach(function(a,j){a.setAttribute("aria-current",String(j===i))});var f=secs.length>1?i/(secs.length-1):0;
+    fill.style.transform="scaleY("+f+")";var a=links[i];if(a){dot.style.top=(a.offsetTop+a.offsetHeight/2)+"px"}bar.style.transform="scaleX("+((i+1)/secs.length)+")"}
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setActive(secs.indexOf(e.target))})},{rootMargin:"-45% 0px -50% 0px"});
+    secs.forEach(function(s0){io.observe(s0)});
+    new IntersectionObserver(function(es){guide.classList.toggle("on",!es[0].isIntersecting)}).observe(document.querySelector(".sv"));
+    var foot=document.querySelector("footer");new IntersectionObserver(function(es){if(es[0].isIntersecting)guide.classList.remove("on")}).observe(foot);
+  }
+  setActive(0);
+  window.cmpRefresh=function(){var hs=[].slice.call(document.querySelectorAll(".cmp-t thead th"));[].forEach.call(document.querySelectorAll(".cmp-t tbody tr"),function(tr){[].forEach.call(tr.querySelectorAll("td"),function(td,i){td.setAttribute("data-l",hs[i+1]?hs[i+1].textContent:"")})})};cmpRefresh();
+  /* Zähler */
+  var nums=[].slice.call(document.querySelectorAll("[data-count]"));
+  function count(e){var end=+e.dataset.count,t0=null,reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function f(ts){if(!t0)t0=ts;var x=Math.min(1,(ts-t0)/1600),v=Math.round(end*(1-Math.pow(1-x,4)));e.textContent=new Intl.NumberFormat(locales[lang]).format(v);if(x<1)requestAnimationFrame(f)}
+    if(reduce){e.textContent=new Intl.NumberFormat(locales[lang]).format(end);return}requestAnimationFrame(f)}
+  if("IntersectionObserver" in window){var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);co.unobserve(e.target)}})},{threshold:.6});nums.forEach(function(n){co.observe(n)})}
+  /* Situationen */
+  var sits=[].slice.call(document.querySelectorAll(".sit")),fine=matchMedia("(hover:hover) and (min-width:901px)"),hov;
+  function openSit(i){sits.forEach(function(x,j){var on=j===i;x.classList.toggle("on",on);x.querySelector(".sit-h").setAttribute("aria-expanded",String(on))})}
+  sits.forEach(function(x,i){x.addEventListener("click",function(){openSit(i)});
+    x.addEventListener("mouseenter",function(){if(!fine.matches)return;clearTimeout(hov);hov=setTimeout(function(){openSit(i)},140)});
+    x.addEventListener("mouseleave",function(){clearTimeout(hov)})});
+  [].forEach.call(document.querySelectorAll("[data-sit]"),function(l){l.addEventListener("click",function(){openSit(+l.dataset.sit)})});
+  window.sitsRefresh=function(){if(lang==="zh")openSit(2)};
+  window.tabsRefresh=function(){};
+  /* Prozess: aktive Station */
+  var steps=[].slice.call(document.querySelectorAll(".pstep")),rail=[].slice.call(document.querySelectorAll("#proc-rail li")),pn=$("proc-n"),pname=$("proc-name");
+  function act(i){steps.forEach(function(s0,j){s0.classList.toggle("on",j===i)});rail.forEach(function(r,j){r.classList.toggle("on",j<=i)});pn.textContent=("0"+(i+1)).slice(-2);pname.textContent=steps[i].querySelector("h3").textContent}
+  window.procRefresh=function(){if(window.whStep){var k=steps.findIndex(function(s0){return s0.classList.contains("on")});whStep(k<0?0:k)}var i=steps.findIndex(function(s0){return s0.classList.contains("on")});act(i<0?0:i)};
+  if("IntersectionObserver" in window){var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)act(steps.indexOf(e.target))})},{rootMargin:"-45% 0px -45% 0px"});steps.forEach(function(s0){po.observe(s0)})}
+  act(0);
+  /* ruhiges Einblenden */
+  var rs=[].slice.call(document.querySelectorAll(".kpis>div,.sla>div,.cmp-wrap,.secg li,.steps li,.groups>div,.faq>div,.price-grid,.contact"));
+  rs.forEach(function(e,i){e.classList.add("rise");e.style.transitionDelay=((i%4)*80)+"ms"});
+  if("IntersectionObserver" in window){var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}})},{threshold:.15});rs.forEach(function(e){ro.observe(e)})}
+  else rs.forEach(function(e){e.classList.add("in")});
+})();
+
+
+/* Bildelemente: 3D-Szenen, Lager-Zonen, Punktkarte, Mengenauswahl */
+(function(){
+  function div(c,parent){var d=document.createElement("div");if(c)d.className=c;if(parent)parent.appendChild(d);return d}
+  function box(X,Y,Z,cls){cls=cls||"pk";var b=div("box "+cls);
+    [["t",X,Y,"translateZ("+Z+"px)"],["fr",X,Z,"translateZ("+Z/2+"px) translateY("+Y/2+"px) rotateX(-90deg)"],["bk",X,Z,"translateZ("+Z/2+"px) translateY("+(-Y/2)+"px) rotateX(-90deg)"],
+     ["rt",Z,Y,"translateZ("+Z/2+"px) translateX("+X/2+"px) rotateY(90deg)"],["lf",Z,Y,"translateZ("+Z/2+"px) translateX("+(-X/2)+"px) rotateY(90deg)"]].forEach(function(f){
+      var e=div("f "+f[0],b);e.style.width=f[1]+"px";e.style.height=f[2]+"px";e.style.transform="translate(-50%,-50%) "+f[3];b[f[0]]=e});
+    if(cls.indexOf("pk")===0){b.tape=div("tape",b.t);b.tag=div("tag",b.fr)}return b}
+  function put(w,b,x,y,z){b.style.transform="translate3d("+x+"px,"+y+"px,"+(z||0)+"px)";w.appendChild(b);return b}
+  function shadow(w,x,y,sw,sh){var s0=div("gshadow",w);s0.style.width=sw+"px";s0.style.height=sh+"px";s0.style.transform="translate(-50%,-50%) translate("+x+"px,"+y+"px)";s0.style.opacity=.35;return s0}
+  /* Tabs */
+  [].forEach.call(document.querySelectorAll(".sit-vis"),function(v){var w=v.querySelector(".world");if(!w)return;var sc=v.dataset.scene,a0={shop:-30,market:-40,china:-26}[sc]||-34,card=v.parentNode;
+    function cam(d){w.style.transform="rotateX(60deg) rotateZ("+(a0+d)+"deg)"}cam(-14);
+    new MutationObserver(function(){cam(card.classList.contains("on")?0:-14)}).observe(card,{attributes:true,attributeFilter:["class"]});if(card.classList.contains("on"))setTimeout(function(){cam(0)},400);
+    if(sc==="shop"){shadow(w,0,0,340,260);var b=put(w,box(150,116,96),-30,10);b.tape.style.transform="scaleY(1)";b.tag.style.opacity=1;put(w,box(92,72,58,"pk plain"),110,-50);put(w,box(70,56,44,"pk plain"),104,-52,58);put(w,box(80,64,40,"pk plain"),-150,-80)}
+    if(sc==="market"){shadow(w,0,0,320,240);put(w,box(120,96,80,"pk plain"),-70,-40);put(w,box(120,96,80,"pk plain"),70,-40);var t=put(w,box(130,100,86),0,50);t.tape.style.transform="scaleY(1)";t.tag.style.opacity=1;put(w,box(110,90,72,"pk plain"),-70,-40,80)}
+    if(sc==="china"){shadow(w,0,0,420,220);put(w,box(330,110,104,"ct"),-40,-30);var pg=div("grp",w);pg.style.transform="translate3d(150px,90px,0)";put(pg,box(140,120,16,"pl"),0,0);
+      [[-34,-28],[34,-28],[-34,28],[34,28]].forEach(function(q){put(pg,box(62,52,46,"pk plain"),q[0],q[1],16)})}
+  });
+  /* Lager-Diorama */
+  var whw=$("whw");if(whw){
+    var NS="http://www.w3.org/2000/svg",steps=[].slice.call(document.querySelectorAll(".pstep h3"));
+    var ZP=[[-210,-95],[0,-95],[210,-95],[210,95],[0,95],[-210,95]],zones=[],labels=[];
+    put(whw,box(640,400,16,"slab"),0,0,-16);
+    var svg=document.createElementNS(NS,"svg");svg.setAttribute("class","route");svg.setAttribute("width","640");svg.setAttribute("height","400");svg.setAttribute("viewBox","-320 -200 640 400");
+    svg.style.transform="translate(-320px,-200px) translateZ(1px)";
+    var d="M"+ZP.map(function(q){return q[0]+" "+q[1]}).join(" L");
+    var base=document.createElementNS(NS,"path");base.setAttribute("d",d);base.setAttribute("stroke","rgba(247,245,239,.18)");base.setAttribute("stroke-width","3");base.setAttribute("stroke-dasharray","2 10");svg.appendChild(base);
+    var prog=document.createElementNS(NS,"path");prog.setAttribute("d",d);prog.setAttribute("stroke","#D6523A");prog.setAttribute("stroke-width","4");svg.appendChild(prog);
+    whw.appendChild(svg);var PL=prog.getTotalLength(),SEG=[0];for(var i=1;i<ZP.length;i++)SEG.push(SEG[i-1]+Math.hypot(ZP[i][0]-ZP[i-1][0],ZP[i][1]-ZP[i-1][1]));
+    prog.style.strokeDasharray=PL;prog.style.transition="stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)";
+    ZP.forEach(function(q){var z=div("zone",whw);z.style.width="170px";z.style.height="140px";z.style.transform="translate("+(q[0]-85)+"px,"+(q[1]-70)+"px) translateZ(.5px)";zones.push(z)});
+    /* 1 Wareneingang: Container und Palette */
+    put(whw,box(118,48,50,"ct"),-232,-118);var pg=div("grp",whw);pg.style.transform="translate3d(-190px,-62px,0)";put(pg,box(56,46,8,"pl"),0,0);put(pg,box(24,20,18,"pk plain"),-12,-10,8);put(pg,box(24,20,18,"pk plain"),12,-10,8);put(pg,box(24,20,18,"pk plain"),0,12,8);
+    /* 2 Lager: zwei Regale */
+    [-40,40].forEach(function(rx){[[-48,-14],[48,-14],[-48,14],[48,14]].forEach(function(pq){put(whw,box(4,4,96,"post"),rx+pq[0]*.5,-95+pq[1])});
+      [12,46,80].forEach(function(h,li){put(whw,box(56,32,3,"shelf"),rx,-95,h);[-14,14].forEach(function(bx,bi){if((li+bi+(rx>0?1:0))%3!==2)put(whw,box(22,22,(li%2?18:24),"pk plain"),rx+bx,-95,h+3)})})});
+    /* 3 Pick & Pack: Packtisch */
+    put(whw,box(96,46,34,"tbl"),210,-105);put(whw,box(30,24,20,"pk plain"),192,-108,34);put(whw,box(26,22,4,"shelf"),232,-104,34);
+    /* 4 Versand: LKW an der Rampe */
+    put(whw,box(116,52,58,"trl"),198,96);put(whw,box(34,48,44,"cab"),276,96);
+    /* 5 Retouren: Behälter */
+    put(whw,box(62,46,36,"bin"),-20,98);put(whw,box(28,22,20,"pk plain d1"),40,92);
+    /* 6 Zusatzleistungen: Sets */
+    put(whw,box(34,28,24,"pk plain"),-230,92);put(whw,box(34,28,24,"pk plain"),-192,92);put(whw,box(30,26,20,"pk plain"),-212,92,24);
+    /* Beschriftungen zur Kamera gedreht */
+    ZP.forEach(function(q,i){var l=div("blabel",whw);l._x=q[0];l._y=q[1];labels.push(l)});
+    function faceLabels(rz){labels.forEach(function(l){l.style.transform="translate3d("+l._x+"px,"+(l._y+52)+"px,64px) rotateZ("+(-rz)+"deg) rotateX(-58deg) translate(-50%,-50%)"})}
+    var ring=div("mring",whw);
+    window.whStep=function(i){zones.forEach(function(z,j){z.classList.toggle("on",j===i)});
+      labels.forEach(function(l,j){l.classList.toggle("on",j===i);l.textContent=steps[j]?steps[j].textContent:""});
+      var q=ZP[i],rz=-36+(i<3?i-1:4-i)*3;whw.style.transform="rotateX(58deg) rotateZ("+rz+"deg) scale3d(.76,.76,.76)";faceLabels(rz);
+      prog.style.strokeDashoffset=PL-SEG[i];ring.style.transform="translate("+q[0]+"px,"+q[1]+"px)"};
+    window.whStep(0);
+    var stepsEl=[].slice.call(document.querySelectorAll(".pstep"));
+    if("MutationObserver" in window)stepsEl.forEach(function(st,i){new MutationObserver(function(){if(st.classList.contains("on"))window.whStep(i)}).observe(st,{attributes:true,attributeFilter:["class"]})});
+  }
+  /* Punktkarte Standort */
+  var cv=$("dmap");if(cv){var c=cv.getContext("2d");
+    var GER=[[6.0,51.9],[6.8,53.3],[7.2,53.6],[8.6,53.9],[9.0,54.8],[10.0,54.8],[11.0,54.4],[12.4,54.5],[14.2,53.9],[14.4,53.2],[14.6,52.6],[14.7,51.6],[15.0,51.1],[14.3,50.9],[12.6,50.4],[12.1,50.3],[12.5,49.8],[13.8,48.8],[13.0,48.3],[13.0,47.6],[12.2,47.7],[10.5,47.5],[9.6,47.6],[8.6,47.6],[7.6,47.6],[7.6,48.1],[8.2,49.0],[6.4,49.5],[6.1,50.1],[6.0,50.8],[5.9,51.3]];
+    function pr(lon,lat){return [(lon-5.6)*66*.63*2+40,(55.1-lat)*66*2+30]}
+    var poly=GER.map(function(q){return pr(q[0],q[1])}),DT=pr(8.88,51.94),dots=[];
+    function ins(x,y){var r=false;for(var i=0,j=poly.length-1;i<poly.length;j=i++){var a=poly[i],b=poly[j];if(((a[1]>y)!==(b[1]>y))&&(x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0]))r=!r}return r}
+    for(var x=0;x<1100;x+=20)for(var y=0;y<1180;y+=20)if(ins(x,y))dots.push([x,y,Math.hypot(x-DT[0],y-DT[1])]);
+    var maxD=dots.reduce(function(m,d){return Math.max(m,d[2])},0);
+    var CITY=[["Hamburg",10.0,53.55,"250 km"],["Berlin",13.4,52.52,"380 km"],["Köln",6.96,50.94,"200 km"],["Frankfurt",8.68,50.11,"290 km"],["Stuttgart",9.18,48.78,""],["München",11.58,48.14,"600 km"]];
+    function draw(R){c.clearRect(0,0,1100,1180);dots.forEach(function(d){var lit=d[2]<R,edge=Math.max(0,1-Math.abs(d[2]-R)/60);c.fillStyle=edge>.05?"rgba(255,220,190,"+(.3+edge*.6).toFixed(2)+")":(lit?"rgba(247,245,239,.42)":"rgba(247,245,239,.12)");c.beginPath();c.arc(d[0],d[1],lit?3.4:2.6,0,6.283);c.fill()});
+      CITY.forEach(function(q){var pt=pr(q[1],q[2]),name=q[0]==="Köln"&&lang!=="de"?(lang==="zh"?"科隆":"Cologne"):q[0]==="München"&&lang!=="de"?(lang==="zh"?"慕尼黑":"Munich"):q[0];
+        c.fillStyle="#F7F5EF";c.beginPath();c.arc(pt[0],pt[1],7,0,6.283);c.fill();c.font="700 28px UI, sans-serif";c.fillText(name,pt[0]+16,pt[1]+9);
+        if(q[3]){c.font="400 24px UI, sans-serif";c.fillStyle="rgba(247,245,239,.55)";c.fillText(q[3],pt[0]+16,pt[1]+38)}});
+      var g=c.createRadialGradient(DT[0],DT[1],0,DT[0],DT[1],90);g.addColorStop(0,"rgba(214,82,58,.6)");g.addColorStop(1,"rgba(214,82,58,0)");c.fillStyle=g;c.beginPath();c.arc(DT[0],DT[1],90,0,6.283);c.fill();
+      c.fillStyle="#D6523A";c.beginPath();c.arc(DT[0],DT[1],14,0,6.283);c.fill();c.font="700 34px UI, sans-serif";c.fillStyle="#F7F5EF";c.fillText("Detmold",DT[0]+24,DT[1]-14)}
+    var done=false;window.dmapDraw=function(){draw(done?maxD+80:0)};draw(0);
+    function wave(){var t0=null;function f(ts){if(!t0)t0=ts;var x=Math.min(1,(ts-t0)/1800);draw((maxD+80)*(1-Math.pow(1-x,3)));if(x<1)requestAnimationFrame(f);else done=true}requestAnimationFrame(f)}
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches){done=true;draw(maxD+80)}
+    else if("IntersectionObserver" in window){var mo=new IntersectionObserver(function(es){if(es[0].isIntersecting){wave();mo.disconnect()}},{threshold:.4});mo.observe(cv)}else{done=true;draw(maxD+80)}
+  }
+  /* Mengenauswahl führt ins Formular */
+  [].forEach.call(document.querySelectorAll(".qc-opts button"),function(b){b.addEventListener("click",function(){var r=document.querySelector('input[name="volume"][value="'+b.dataset.vol+'"]');if(r)r.checked=true;$("anfrage").scrollIntoView({behavior:"smooth"})})});
+})();
+
+/* Kostenrechner: Listenpreise aus docs/04 */
+function calc(){
+  if(!$("c-orders"))return;
+  var o=+$("c-orders").value,i=+$("c-items").value,p=+$("c-pallets").value,r=+$("c-returns").value/100;
+  var tier=o<1000?[1.65,.35]:o<5000?[1.55,.30]:o<15000?[1.45,.30]:[1.35,.25];
+  var pal=p<50?14.59:p<200?13.49:12.49;
+  var pp=o*(tier[0]+Math.max(0,i-1)*tier[1]),st=p*pal,rt=o*r*(1.49+.40),tot=Math.max(149,pp+st+rt);
+  var nf=new Intl.NumberFormat(locales[lang]);
+  $("o-orders").textContent=nf.format(o);
+  $("o-items").textContent=new Intl.NumberFormat(locales[lang],{maximumFractionDigits:1}).format(i);
+  $("o-pallets").textContent=nf.format(p);
+  $("o-returns").textContent=Math.round(r*100)+" %";
+  $("r-total").textContent=money(tot,0);$("r-per").textContent=money(o?tot/o:0,2);
+  $("r-pp").textContent=money(pp,0);$("r-st").textContent=money(st,0);$("r-rt").textContent=money(rt,0);
+}
+["c-orders","c-items","c-pallets","c-returns"].forEach(function(id){if($(id))$(id).addEventListener("input",calc)});
+
+/* Angebotsformular in drei Schritten */
+var form=$("qform");
+function setStep(n){
+  cur=n;
+  form.querySelectorAll(".fs").forEach(function(f){f.hidden=+f.dataset.step!==n});
+  form.querySelectorAll(".progress i").forEach(function(b,ix){b.classList.toggle("on",ix<n)});
+  $("stepno").textContent=t("step").replace("{n}",n);
+  $("back").hidden=n===1;$("next").hidden=n===3;$("send").hidden=n!==3;
+}
+$("next").addEventListener("click",function(){setStep(Math.min(3,cur+1));var f=form.querySelector('.fs[data-step="'+cur+'"] input');if(f)f.focus()});
+$("back").addEventListener("click",function(){setStep(Math.max(1,cur-1))});
+function check(inp){
+  var ok=inp.type==="email"?/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim()):inp.value.trim()!=="";
+  inp.closest(".inp").classList.toggle("bad",!ok);return ok;
+}
+form.querySelectorAll("input[required]").forEach(function(inp){inp.addEventListener("blur",function(){if(inp.value)check(inp)})});
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  if(form.website.value)return;
+  var bad=null;form.querySelectorAll("input[required]").forEach(function(inp){if(!check(inp)&&!bad)bad=inp});
+  if(bad){bad.focus();return}
+  var send=$("send"),err=$("send-err"),fd=new FormData(form),data={};
+  if(Date.now()-(+fd.get("t")||0)<4000)return;
+  fd.forEach(function(v,k){if(k==="website"||k==="t")return;data[k]=data[k]?data[k]+", "+v:v});
+  data.lang=lang;data._subject="Anfrage Fulfillment: "+(data.company||"");data._template="table";data._captcha="false";data._honey=fd.get("website")||"";
+  err.hidden=true;send.disabled=true;send.setAttribute("aria-busy","true");
+  /* Versand über FormSubmit (kostenlos, ohne eigenen Server). Nach der Aktivierung die Adresse durch den Alias von FormSubmit ersetzen. */
+  fetch("https://formsubmit.co/ajax/jerome@profit-gmbh.de",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+  .then(function(r){return r.json().catch(function(){return{}})}).then(function(j){
+    if(!j||String(j.success)!=="true")throw new Error("send");
+    form.querySelectorAll(".fs,.progress,.stepno,.nav-btns,#send-err").forEach(function(el){el.style.display="none"});
+    $("done").style.display="block";$("done").focus();
+  }).catch(function(){err.hidden=false;err.focus&&err.setAttribute("tabindex","-1");err.focus()}).then(function(){send.disabled=false;send.removeAttribute("aria-busy")});
+});
+$("f-t").value=String(Date.now());
+
+/* Hero: Video folgt dem Scrollen, drei Aussagen an den passenden Bildern */
+(function(){
+  var sv=document.querySelector(".sv"),v=$("sv-v");if(!sv||!v)return;
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  v.src=innerWidth<900?"media/scrub-960.mp4":"media/scrub-1600.mp4";
+  var beats=[].slice.call(sv.querySelectorAll(".sv-b")),steps=[].slice.call(sv.querySelectorAll(".sv-steps li")),dur=7,ready=false,cur=0,target=0,raf=0,F=.05;
+  if(reduce){sv.classList.add("still");return}
+  v.addEventListener("loadeddata",function(){if(v.currentTime===0){try{v.currentTime=.001}catch(e){}}});
+  v.addEventListener("loadedmetadata",function(){dur=v.duration||7;ready=true;var pr=v.play();if(pr&&pr.then)pr.then(function(){v.pause();tick()}).catch(function(){});else v.pause();tick()});
+  v.load();
+  function prog(){var h=sv.offsetHeight-innerHeight;return h>0?Math.min(1,Math.max(0,-sv.getBoundingClientRect().top/h)):0}
+  function paint(p){
+    beats.forEach(function(b){var a=+b.dataset.in,o=+b.dataset.out,k=Math.min(a<=0?1:(p-a)/F,o>=1?1:(o-p)/F);k=Math.max(0,Math.min(1,k));
+      b.style.opacity=k;b.style.visibility=k>.01?"visible":"hidden";b.style.transform="translateY("+((1-k)*(p<a+F?28:-28))+"px)"});
+    steps.forEach(function(li,i){var a=[.24,.5,.78][i];li.style.setProperty("--f",Math.max(0,Math.min(1,(p-a+.08)/.2)))});
+    sv.style.setProperty("--p",p)}
+  function tick(){raf=0;var p=prog();paint(p);target=p*Math.max(0,dur-.04);cur+=(target-cur)*.2;if(Math.abs(target-cur)<.003)cur=target;
+    if(ready&&Math.abs(v.currentTime-cur)>.008){try{v.currentTime=cur}catch(e){}}
+    if(cur!==target)raf=requestAnimationFrame(tick)}
+  function req(){if(!raf)raf=requestAnimationFrame(tick)}
+  addEventListener("scroll",req,{passive:true});addEventListener("resize",req);paint(prog());
+})();
+
+/* Falls Autoplay blockiert wurde: stumm erneut starten */
+var vid=document.querySelector("video.bg");
+if(vid&&vid.paused){var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){})}
+
+var q=new URLSearchParams(location.search).get("lang"),saved=null;
+try{saved=localStorage.getItem("lang")}catch(e){}
+var nl=(navigator.language||"de").slice(0,2);
+apply(q||saved||(nl==="zh"?"zh":nl==="de"?"de":"en"));
+})();
+</script>
+</body>
+</html>

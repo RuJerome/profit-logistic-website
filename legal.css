@@ -1,0 +1,26 @@
+@font-face{font-family:Display;font-weight:800;font-display:swap;src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald ExtraBold"),local("Bebas Neue"),local("AvenirNextCondensed-Heavy"),local("Impact")}
+@font-face{font-family:UI;font-weight:400;font-display:swap;src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald Regular"),local("Barlow Condensed"),local("AvenirNextCondensed-Regular"),local("Arial Narrow")}
+@font-face{font-family:UI;font-weight:700;font-display:swap;src:url("fonts/Oswald-Variable.woff2") format("woff2"),local("Oswald Bold"),local("Barlow Condensed Bold"),local("AvenirNextCondensed-Bold"),local("Arial Narrow Bold")}
+:root{--cream:#F7F5EF;--ink:rgba(247,245,239,.86);--mute:rgba(247,245,239,.6);--line:rgba(247,245,239,.13);--accent:#D6523A;--bg:#0a0b0c;
+  --ui:UI,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;--display:Display,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:18px;line-height:1.6}
+a{color:var(--cream);text-decoration-color:var(--accent);text-underline-offset:3px}
+a:hover{color:#fff}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px clamp(16px,5vw,72px);border-bottom:1px solid var(--line)}
+.brand{font:800 24px/1 var(--display);color:var(--cream);text-decoration:none;letter-spacing:.01em}
+.brand b{color:var(--accent)}
+.back{font-weight:700;font-size:15px}
+main{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(16px,5vw,32px) clamp(64px,10vw,120px)}
+h1{margin:0 0 clamp(32px,5vw,56px);font:800 clamp(40px,8vw,88px)/.95 var(--display);color:var(--cream);hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+h2{margin:0 0 8px;font:700 15px/1.3 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+section{padding:24px 0;border-top:1px solid var(--line)}
+p,address{margin:0;font-style:normal;color:var(--ink)}
+.small{font-size:16px;color:var(--mute)}
+footer{padding:28px clamp(16px,5vw,72px);border-top:1px solid var(--line);font-size:15px;color:var(--mute)}
+h3{margin:22px 0 6px;font:700 19px/1.35 var(--ui);color:var(--cream)}
+ol,ul{margin:8px 0 0;padding-left:1.2em}li{margin:6px 0}
+.stand{margin:-24px 0 40px;color:var(--mute);font-size:16px}
+section p+p{margin-top:12px}
+
