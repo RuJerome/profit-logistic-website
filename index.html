@@ -900,7 +900,7 @@ DIRECTION CONTRACT
 World: aerial freight line at night. Cream type on coal black, one signal-red accent (#D6523A). Condensed display caps for headlines only; body in sentence case.
 Signature: the rail. Hero axis (client brief, fixed) continues as the service route whose track fills red on scroll, and as the distance map from Detmold.
 Composition: every section a different family (statement, index rows, route, two-way split, price sheet + calculator, numbered steps, grouped columns, line map, open Q&A, form).
-Lean page: no duplicates (no SLA block, no fit list, no integrations section, no second hall photo). No order deadline and no next-day promise as a standard; the message is "we pack and ship for you". Prices shown as lowest "ab" tier. Hero: scroll-driven POV image sequence (96 WebP frames on canvas, coarse frames load first so scrubbing works immediately), three statements at the matching frames. Photography (team, packing, container, conveyor) in the situation cards and as the services header; rounded like the light sheets. Motion: the "Why us" film (51 s, Apple-like restraint: one lit hero parcel in CSS 3D growing into a 3D field of parcels, container to pallet to carton, words flying through space, warm dawn at the turn, dot map of Germany with next-day wave, iOS-style call banner from "Detmold" (no names, no device), small print dissolving, channel marquees; words fade up from blur; scenes cross-dissolve into depth). No shake, flashes, pulse line or sound. Route fill + station lights.
+Lean page: no duplicates (no SLA block, no fit list, no integrations section, no second hall photo). No order deadline and no next-day promise as a standard; the message is "we pack and ship for you". Prices shown as lowest "ab" tier. Hero: scroll-driven POV image sequence (64 WebP frames on canvas, coarse frames load first so scrubbing works immediately), three statements at the matching frames. Photography (team, packing, container, conveyor) in the situation cards and as the services header; rounded like the light sheets. Motion: the "Why us" film (51 s, Apple-like restraint: one lit hero parcel in CSS 3D growing into a 3D field of parcels, container to pallet to carton, words flying through space, warm dawn at the turn, dot map of Germany with next-day wave, iOS-style call banner from "Detmold" (no names, no device), small print dissolving, channel marquees; words fade up from blur; scenes cross-dissolve into depth). No shake, flashes, pulse line or sound. Route fill + station lights.
 Story: answer a first-time visitor's questions (pain first; never personal names or fake devices in the film).
 Page order follows the buying mind: recognise (hero, film, figures, "Wo stehst du gerade?" situation chooser), understand (services diorama, shipping, location), trust (commitments, security), decide (start + integrations, prices, FAQ, request). Light sections are rounded sheets on the dark stage. Textured cardboard material on every 3D box; process diorama (slab, racks, packing table, truck, returns bin, glowing route, upright labels); plain-language copy (no "cut-off" jargon). Dark base broken by light paper sections (solutions, shipping, security, FAQ) and a red CTA block; 3D scenes in tabs, isometric warehouse zones in the process, dot map at location; no price calculator. Enterprise structure (KPI band, solutions tabs, sticky process, SLA cards, comparison table, security, column footer) with a fixed left guide whose red dot travels to the active section; never claim market leadership (no price calculator). CTA red block uses #BF432C for AA contrast. Mobile: film scenes centred, comparison table stacked; film transcript is screen-reader only. Section headings in sentence case (caps only in the hero). Guide labels appear on hover only. (for whom, what, why us) via setup/payoff, not the parcel's journey.
 Voice: German "du", short native lines, values modern, fast, personal, solution-minded; working claim "Läuft." (never claim "we ship our own goods").
@@ -1847,18 +1847,19 @@ form.addEventListener("submit",function(e){
 });
 $("f-t").value=String(Date.now());
 
-/* Hero: Scroll steuert eine Bildfolge (96 Einzelbilder) auf einem Canvas.
+/* Hero: Scroll steuert eine Bildfolge (64 Einzelbilder) auf einem Canvas.
    Grobe Bilder laden zuerst, damit das Scrubben sofort funktioniert; feinere Zwischenbilder kommen nach. */
 (function(){
   var sv=document.querySelector(".sv"),cv=$("sv-cv");if(!sv||!cv)return;
-  var N=96,dir=innerWidth<900?"m":"d",imgs=new Array(N),ok=new Array(N),ctx=cv.getContext("2d"),
+  var N=64,dir=innerWidth<900?"m":"d",imgs=new Array(N),ok=new Array(N),ctx=cv.getContext("2d"),
       beats=[].slice.call(sv.querySelectorAll(".sv-b")),steps=[].slice.call(sv.querySelectorAll(".sv-steps li")),
       F=.05,cur=0,target=0,raf=0,drawn=-1;
   function src(i){return "media/f/"+dir+"/"+("00"+(i+1)).slice(-3)+".webp"}
-  function load(i){if(imgs[i])return;var im=new Image();im.decoding="async";im.onload=function(){ok[i]=true;if(Math.abs(i-Math.round(cur))<6)req(true)};im.src=src(i);imgs[i]=im}
+  function load(i,low){if(imgs[i])return;var im=new Image();im.decoding="async";if(low)im.fetchPriority="low";im.onload=function(){ok[i]=true;if(Math.abs(i-Math.round(cur))<6)req(true)};im.src=src(i);imgs[i]=im}
   /* Ladereihenfolge: erstes Bild, dann jedes 16., 8., 4., 2. und zuletzt alle */
-  var order=[0];[16,8,4,2,1].forEach(function(st){for(var i=0;i<N;i+=st)if(order.indexOf(i)<0)order.push(i)});order.push(N-1);
-  var q=0;function pump(){for(var k=0;k<6&&q<order.length;k++,q++)load(order[q]);if(q<order.length)setTimeout(pump,60)}
+  var order=[0];[8,4,2,1].forEach(function(st){for(var i=0;i<N;i+=st)if(order.indexOf(i)<0)order.push(i)});if(order.indexOf(N-1)<0)order.push(N-1);
+  /* Erst die 8 groben Bilder, danach die feinen gedrosselt im Hintergrund, damit die übrige Seite nicht wartet */
+  var q=0,COARSE=9;function pump(){var burst=q<COARSE?COARSE:3;for(var k=0;k<burst&&q<order.length;k++,q++)load(order[q],q>=COARSE);if(q<order.length)setTimeout(pump,q<=COARSE?400:120)}
   function size(){var r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);drawn=-1}
   function nearest(i){for(var o=0;o<N;o++){if(ok[i-o])return i-o;if(ok[i+o])return i+o}return -1}
   function draw(i){var k=nearest(i);if(k<0||k===drawn)return;var im=imgs[k],cw=cv.width,ch=cv.height,s=Math.max(cw/im.naturalWidth,ch/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
@@ -1874,7 +1875,7 @@ $("f-t").value=String(Date.now());
   function req(force){if(force)drawn=-1;if(!raf)raf=requestAnimationFrame(tick)}
   size();
   if(matchMedia("(prefers-reduced-motion: reduce)").matches){sv.classList.add("still");load(0);imgs[0].onload=function(){ok[0]=true;draw(0)};return}
-  pump();addEventListener("scroll",function(){req()},{passive:true});addEventListener("resize",function(){size();req(true)});paint(prog());req();
+  (document.readyState==="complete"?pump():addEventListener("load",function(){setTimeout(pump,50)}));addEventListener("scroll",function(){req()},{passive:true});addEventListener("resize",function(){size();req(true)});paint(prog());req();
 })();
 
 /* Falls Autoplay blockiert wurde: stumm erneut starten */
